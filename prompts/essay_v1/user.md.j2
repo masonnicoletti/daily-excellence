@@ -3,6 +3,9 @@ Today's idea is #{{ item.number }} from the list "{{ item.source_title }}":
 <idea>
 {{ item.title }}{% if item.body %}{{ item.get("joiner", ". ") }}{{ item.body }}{% endif %}
 </idea>
+{% if item.get("note") %}
+Note on this idea: {{ item.note }}
+{% endif %}
 {% if item.get("context") %}
 This question follows on from the earlier one(s) in the list: "{{ item.context | join(" ") }}" Write about today's question; use the earlier one(s) only to make its meaning clear.
 {% endif %}

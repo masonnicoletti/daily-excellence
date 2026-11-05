@@ -43,8 +43,9 @@ The format is detected automatically.
 |---|---|---|
 | `- ` | **Sub-item.** Nested inside the item above. Never a daily message by itself, but given to the writer as related practices | 101 Ways To Be a Better Person (41 sub-items), 101 Ways To Live Your Life To The Fullest (2) |
 | `+ ` | **Follow-up.** Its own daily item and number, with the question(s) before it attached as context | 101 Questions To Ask Yourself in Life (41 follow-ups) |
+| `[[note: …]]` at the end of a line | **Writer's note.** Guidance passed to the research and writing prompts, never shown on the page | 101 Questions #101 ("this article" means today's essay) |
 
-To leave out an item, such as "What are you going to do differently after reading this article?", delete its line. Before hand-editing a paste, save a backup as `<slug>.original.txt`.
+To leave out an item, delete its line. To keep an item that only makes sense in its original article, add a `[[note: …]]` instead. Before hand-editing a paste, save a backup as `<slug>.original.txt`.
 
 ## Current sources (4 of 10)
 
@@ -53,4 +54,4 @@ To leave out an item, such as "What are you going to do differently after readin
 | 101 Ways To Be a Better Person | 101 | 41 nested sub-items |
 | 101 Life Principles To Live By Daily | 101 | Term: text format |
 | 101 Ways To Live Your Life To The Fullest | 101 | 2 sub-items under #10 |
-| 101 Questions To Ask Yourself in Life | 100 | 41 follow-ups; #101 left out |
+| 101 Questions To Ask Yourself in Life | 101 | 41 follow-ups; #101 has a writer's note |

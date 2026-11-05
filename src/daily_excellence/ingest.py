@@ -13,6 +13,8 @@ Two paste formats are supported:
   (its "subitems" list) rather than becoming a daily message of its own.
   Prefix a line with "+ " to mark a follow-up question: it stays its own
   item, and the question(s) it follows are stored in its "context" list.
+  End a line with "[[note: ...]]" to give the writer guidance for that item
+  (stored as "note"; used in prompts, never shown on the page).
 
 Usage:
     python -m daily_excellence.ingest data/raw/<slug>.txt \
@@ -36,6 +38,7 @@ ALLOWED_HOSTS = {"personalexcellence.co", "www.personalexcellence.co"}
 NUMBERED_RE = re.compile(r"^\s*(\d{1,3})[.)]\s+(.+?)\s*$")
 SUB_RE = re.compile(r"^(?:\s*[-*•]\s+|\t+)(.*)$")
 FOLLOW_RE = re.compile(r"^\s*\+\s+(.*)$")  # follow-up question: own item, earlier question(s) as context
+NOTE_RE = re.compile(r"\s*\[\[note:\s*(.+?)\]\]\s*$")  # trailing writer's note; prompts only, never shown
 # First sentence end: . ? or ! (optionally inside a closing quote) followed by space/end, not an ellipsis.
 TITLE_END_RE = re.compile(r"(?<!\.)([.?!])([\"”’]?)(?=\s|$)")
 LEADING_NUM_RE = re.compile(r"^\d{1,3}[.)]\s+")  # a stray "1. " that survived the paste
@@ -122,6 +125,10 @@ def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
         fm = FOLLOW_RE.match(raw)
         m = None if fm else SUB_RE.match(raw)
         text = LEADING_NUM_RE.sub("", (fm or m).group(1).strip() if (fm or m) else raw.strip())
+        nm = NOTE_RE.search(text)
+        note = nm.group(1).strip() if nm else None
+        if nm:
+            text = text[: nm.start()].rstrip()
         tm = TERM_RE.match(text) if term_style else None
         title, body = (tm.group(1).strip(), tm.group(2).strip()) if tm else split_title(text)
         if m and items:
@@ -130,6 +137,8 @@ def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
             item = {"number": len(items) + 1, "title": title, "body": body, "subitems": []}
             if tm:
                 item["joiner"] = ": "  # how prompts rejoin title and body ("Ability: is more of...")
+            if note:
+                item["note"] = note
             if fm and chain:
                 item["context"] = list(chain)
                 chain.append(text)

@@ -19,6 +19,7 @@ Costs are the measured `api.estimated_cost_usd` values.
 **Edits made in place:**
 - **2026-11-04:** added "never mention the notes or how the essay was made". The first v2 essay included the sentence "The research notes add a useful detail."; that sentence was removed by hand from post `2026-11-04-2`.
 - **2026-11-05:** template changes for new source formats. Items now join title and body with their own `joiner`, and follow-up questions carry `context`. Output for existing items is unchanged.
+- **2026-11-05:** items may carry a writer's `note`, used by both prompts. It was added for 101 Questions #101.
 
 ## essay_v1 (2026-11-04)
 

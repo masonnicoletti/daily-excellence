@@ -40,4 +40,4 @@ This happened on 2026-11-05. The pipeline itself costs nothing on GitHub: public
 ## Things to watch
 
 - **Inactive repos:** GitHub may disable scheduled workflows in a repo it considers inactive for 60 days. If you get that email, re-enable the workflow from the Actions tab.
-- **Pool size:** 403 ideas across 4 sources. Selection never repeats an item until all have been used (`data/history.json`).
+- **Pool size:** 404 ideas across 4 sources. Selection never repeats an item until all have been used (`data/history.json`).

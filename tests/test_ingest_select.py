@@ -108,6 +108,13 @@ def test_follow_up_questions_get_context():
     assert items[3]["context"] == ["Is there a grudge you are holding on to?", "…Why are you holding on to it?"]
 
 
+def test_note_marker_is_stored_not_shown():
+    items, _ = ingest.parse_items("Here goes:\nWhat will you do differently? [[note: Means today's essay.]]\n")
+    assert items[0]["title"] == "What will you do differently?"
+    assert items[0]["note"] == "Means today's essay."
+    assert "[[" not in items[0]["title"] + items[0]["body"]
+
+
 def test_line_mode_count_mismatch_warns():
     flat = LINES.replace("- ", "")
     _, w = ingest.build_source(flat, "3 Ways To Test", URL)
