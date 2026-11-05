@@ -80,6 +80,13 @@ def test_term_style_splits_at_colon():
     assert warnings == []
 
 
+def test_split_title_quote_and_stray_number():
+    assert ingest.split_title("Rather than think “what if,” think “next time.” Don’t dwell.") == (
+        "Rather than think “what if,” think “next time.”", "Don’t dwell.")
+    items, _ = ingest.parse_items("Here goes:\n1. Live fresh. Every day.\nBe proactive. Act.\n")
+    assert [i["title"] for i in items] == ["Live fresh", "Be proactive"]
+
+
 def test_line_mode_count_mismatch_warns():
     flat = LINES.replace("- ", "")
     _, w = ingest.build_source(flat, "3 Ways To Test", URL)

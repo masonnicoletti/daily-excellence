@@ -34,7 +34,9 @@ ALLOWED_HOSTS = {"personalexcellence.co", "www.personalexcellence.co"}
 NUMBERED_RE = re.compile(r"^\s*(\d{1,3})[.)]\s+(.+?)\s*$")
 SUB_RE = re.compile(r"^(?:\s*[-*•]\s+|\t+)(.*)$")
 # First sentence end: . ? or ! followed by space/end, not part of an ellipsis.
-TITLE_END_RE = re.compile(r"(?<!\.)[.?!](?=\s|$)")
+# First sentence end: . ? or ! (optionally inside a closing quote) followed by space/end, not an ellipsis.
+TITLE_END_RE = re.compile(r"(?<!\.)([.?!])([\"”’]?)(?=\s|$)")
+LEADING_NUM_RE = re.compile(r"^\d{1,3}[.)]\s+")  # a stray "1. " that survived the paste
 TERM_RE = re.compile(r"^([^:]{1,40}):\s+(\S.*)$")
 READ_RE = re.compile(r"\s*Read:\s*(.+?)\s*$")
 
@@ -48,9 +50,12 @@ def split_title(line: str) -> tuple[str, str]:
     m = TITLE_END_RE.search(line)
     if not m:
         return line.strip(), ""
+    punct, quote = m.group(1), m.group(2)
     title = line[: m.start()].strip()
-    if line[m.start()] in "?!":
-        title += line[m.start()]
+    if quote:                       # 'think “next time.”' keeps its closing quote
+        title += punct + quote
+    elif punct in "?!":
+        title += punct
     return title, line[m.end():].strip()
 
 
@@ -108,7 +113,7 @@ def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
     term_style = bool(body_lines) and sum(bool(TERM_RE.match(l.strip())) for l in body_lines) >= 0.8 * len(body_lines)
     for raw in body_lines:
         m = SUB_RE.match(raw)
-        text = (m.group(1) if m else raw).strip()
+        text = LEADING_NUM_RE.sub("", (m.group(1) if m else raw).strip())
         tm = TERM_RE.match(text) if term_style else None
         title, body = (tm.group(1).strip(), tm.group(2).strip()) if tm else split_title(text)
         if m and items:
