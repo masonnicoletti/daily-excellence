@@ -27,7 +27,7 @@ export PYTHONPATH=src
 .venv/bin/python -m pytest -q
 ```
 
-In the raw file, prefix nested sub-items with `- ` so they stay with their parent item.
+For paste formats and the `- ` (sub-item) and `+ ` (follow-up) markers, see [docs/ADDING_SOURCES.md](docs/ADDING_SOURCES.md).
 
 ## Prompt versions
 
@@ -35,6 +35,15 @@ Prompts live in `prompts/essay_vN/`. To experiment, copy the latest folder, edit
 
 - `essay_v1`: one model searches and writes (Opus, about $0.36 per essay)
 - `essay_v2`: Haiku researches, Sonnet writes (about $0.04 per essay)
+
+What changed in each version, and why, is in [docs/PROMPT_CHANGELOG.md](docs/PROMPT_CHANGELOG.md).
+
+## Docs
+
+- [ADDING_SOURCES.md](docs/ADDING_SOURCES.md): how to paste and ingest a new article
+- [PROMPT_CHANGELOG.md](docs/PROMPT_CHANGELOG.md): prompt versions, the reasons for each, and measured costs
+- [OPERATIONS.md](docs/OPERATIONS.md): manual runs, backfilling a missed day, billing locks, costs, and secrets
+- [COMPLIANCE.md](docs/COMPLIANCE.md): the source site's Terms of Use and how this project follows them
 
 ## Attribution
 
