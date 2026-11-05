@@ -1,4 +1,4 @@
-Idea: {{ item.title }}{% if item.body %}. {{ item.body }}{% endif %}
+Idea: {{ item.title }}{% if item.body %}{{ item.get("joiner", ". ") }}{{ item.body }}{% endif %}
 {% if item.subitems %}
 Related practices: {{ item.subitems | map(attribute="title") | join("; ") }}
 {% endif %}

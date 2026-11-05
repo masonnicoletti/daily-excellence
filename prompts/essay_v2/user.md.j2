@@ -1,7 +1,7 @@
 Today's idea is #{{ item.number }} from the list "{{ item.source_title }}":
 
 <idea>
-{{ item.title }}{% if item.body %}. {{ item.body }}{% endif %}
+{{ item.title }}{% if item.body %}{{ item.get("joiner", ". ") }}{{ item.body }}{% endif %}
 </idea>
 {% if item.subitems %}
 It comes with these related practices, which you can draw on (you don't need to cover all of them):

@@ -35,6 +35,7 @@ NUMBERED_RE = re.compile(r"^\s*(\d{1,3})[.)]\s+(.+?)\s*$")
 SUB_RE = re.compile(r"^(?:\s*[-*•]\s+|\t+)(.*)$")
 # First sentence end: . ? or ! followed by space/end, not part of an ellipsis.
 TITLE_END_RE = re.compile(r"(?<!\.)[.?!](?=\s|$)")
+TERM_RE = re.compile(r"^([^:]{1,40}):\s+(\S.*)$")
 READ_RE = re.compile(r"\s*Read:\s*(.+?)\s*$")
 
 
@@ -91,7 +92,7 @@ def _find_start(lines: list[str], start_after: str | None) -> int:
         raise ValueError(f"Start marker {start_after!r} not found in the pasted text")
     for idx, line in enumerate(lines):
         s = line.strip()
-        if s.endswith(":") and len(s) <= 40:
+        if s.endswith(":") and len(s) <= 120:  # e.g. "Here goes:" or "I now present to you 101 ...:"
             return idx + 1
     raise ValueError(
         "Could not find where the list starts. Pass --start-after with the line just "
@@ -102,15 +103,21 @@ def _find_start(lines: list[str], start_after: str | None) -> int:
 def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
     """Top-level lines become items; '- ' lines nest under the previous item as subitems."""
     items: list[dict] = []
-    for raw in lines[_find_start(lines, start_after):]:
-        if not raw.strip():
-            continue
+    body_lines = [l for l in lines[_find_start(lines, start_after):] if l.strip()]
+    # "Term: text" articles (e.g. "Ability: is more of a function of...") split at the colon.
+    term_style = bool(body_lines) and sum(bool(TERM_RE.match(l.strip())) for l in body_lines) >= 0.8 * len(body_lines)
+    for raw in body_lines:
         m = SUB_RE.match(raw)
-        title, body = split_title((m.group(1) if m else raw).strip())
+        text = (m.group(1) if m else raw).strip()
+        tm = TERM_RE.match(text) if term_style else None
+        title, body = (tm.group(1).strip(), tm.group(2).strip()) if tm else split_title(text)
         if m and items:
             items[-1]["subitems"].append({"title": title, "body": body})
         else:
-            items.append({"number": len(items) + 1, "title": title, "body": body, "subitems": []})
+            item = {"number": len(items) + 1, "title": title, "body": body, "subitems": []}
+            if tm:
+                item["joiner"] = ": "  # how prompts rejoin title and body ("Ability: is more of...")
+            items.append(item)
     return items
 
 

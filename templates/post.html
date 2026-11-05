@@ -9,7 +9,7 @@
   <aside class="idea" aria-label="Today's idea">
     <p class="idea-label">Today's idea · #{{ post.item.number }}</p>
     <p class="idea-title">{{ post.item.title }}</p>
-    {% if post.item.body %}<p class="idea-body">{{ post.item.body }}</p>{% endif %}
+    {% if post.item.body %}<p class="idea-body">{% if post.item.joiner and post.item.body[:1].islower() %}{{ post.item.title }} {% endif %}{{ post.item.body }}</p>{% endif %}
     <p class="idea-credit">
       From <a href="{{ post.item.source_url }}">{{ post.item.source_title }}</a>
       by <a href="https://personalexcellence.co/">Personal Excellence</a>

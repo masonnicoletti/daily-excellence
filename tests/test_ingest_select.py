@@ -65,6 +65,21 @@ def test_line_mode_nests_subitems():
     assert w == []
 
 
+TERMS = """2 Life Principles
+Intro paragraph that is long, ending with a colon, the way some articles introduce lists:
+Ability: is more of a function of time. Read: 10,000 Hours To Develop Talent
+Beauty, #2: There is no one standard of beauty. You are beautiful as you are.
+"""
+
+
+def test_term_style_splits_at_colon():
+    items, warnings = ingest.parse_items(TERMS)
+    assert [(i["title"], i.get("joiner")) for i in items] == [("Ability", ": "), ("Beauty, #2", ": ")]
+    assert items[0]["body"] == "is more of a function of time."
+    assert items[0]["related_read"] == "10,000 Hours To Develop Talent"
+    assert warnings == []
+
+
 def test_line_mode_count_mismatch_warns():
     flat = LINES.replace("- ", "")
     _, w = ingest.build_source(flat, "3 Ways To Test", URL)
