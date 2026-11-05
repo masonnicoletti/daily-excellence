@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} · {{ site_title }}{% endblock %}
+{% block description %}{{ post.item.title }}: a Daily Excellence essay for {{ post.date_long }}.{% endblock %}
+{% block content %}
+<article class="post">
+  <p class="eyebrow"><time datetime="{{ post.date }}">{{ post.date_long }}</time> · {{ post.reading_minutes }} min read</p>
+  <h1 class="post-title">{{ post.title }}</h1>
+
+  <aside class="idea" aria-label="Today's idea">
+    <p class="idea-label">Today's idea · #{{ post.item.number }}</p>
+    <p class="idea-title">{{ post.item.title }}</p>
+    {% if post.item.body %}<p class="idea-body">{{ post.item.body }}</p>{% endif %}
+    <p class="idea-credit">
+      From <a href="{{ post.item.source_url }}">{{ post.item.source_title }}</a>
+      by <a href="https://personalexcellence.co/">Personal Excellence</a>
+    </p>
+  </aside>
+
+  <div class="essay">
+    {{ post.html | safe }}
+  </div>
+
+  {% if post.sources %}
+  <section class="sources" aria-labelledby="sources-h">
+    <h2 id="sources-h">Sources</h2>
+    <ol>
+      {% for s in post.sources %}<li><a href="{{ s.url }}">{{ s.title }}</a> <span class="host">{{ s.url.split('/')[2] | replace('www.', '') }}</span></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <p class="colophon">
+    Inspired by item #{{ post.item.number }} of
+    <a href="{{ post.item.source_url }}">{{ post.item.source_title }}</a> by Personal Excellence.
+    Essay written by {{ post.model }}{% if post.research_model %} with research by {{ post.research_model }}{% endif %},
+    prompt {{ post.prompt_version }}.
+  </p>
+</article>
+
+<nav class="post-nav" aria-label="More essays">
+  {% if older %}<a class="older" href="{{ older.slug }}.html"><span>Previous</span>{{ older.title }}</a>{% else %}<span></span>{% endif %}
+  {% if newer %}<a class="newer" href="{{ newer.slug }}.html"><span>Next</span>{{ newer.title }}</a>{% endif %}
+</nav>
+{% endblock %}

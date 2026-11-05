@@ -1,0 +1,5 @@
+Idea: {{ item.title }}{% if item.body %}. {{ item.body }}{% endif %}
+{% if item.subitems %}
+Related practices: {{ item.subitems | map(attribute="title") | join("; ") }}
+{% endif %}
+Find a real person's story that brings this idea to life{% if "research" in v.sections | join(" ") %}, plus one research finding about it{% endif %}.

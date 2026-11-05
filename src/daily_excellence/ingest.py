@@ -1,0 +1,203 @@
+"""Convert hand-pasted list articles into JSON items.
+
+Compliance (docs/COMPLIANCE.md): this module reads ONLY local files the user
+pasted by hand. It must never import a network library or fetch any URL.
+
+Two paste formats are supported:
+
+* Numbered: items start with "12." or "12)" on their own line, body follows.
+* Line-per-item (what a browser copy of an HTML list usually produces): after
+  the intro (ending at a short line like "Here goes:"), every non-blank line is
+  one item, written as "Title sentence. Body text...". Prefix a line with "- "
+  to mark it as a sub-item; it is nested inside the previous top-level item
+  (its "subitems" list) rather than becoming a daily message of its own.
+
+Usage:
+    python -m daily_excellence.ingest data/raw/<slug>.txt \
+        --title "101 Ways To Be a Better Person" \
+        --source-url "https://personalexcellence.co/blog/..."
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+from urllib.parse import urlparse
+
+MAX_SOURCE_ARTICLES = 10
+SOURCES_DIR = Path(__file__).resolve().parents[2] / "data" / "sources"
+ATTRIBUTION = "Adapted from {title} by Personal Excellence ({url})"
+ALLOWED_HOSTS = {"personalexcellence.co", "www.personalexcellence.co"}
+
+NUMBERED_RE = re.compile(r"^\s*(\d{1,3})[.)]\s+(.+?)\s*$")
+SUB_RE = re.compile(r"^(?:\s*[-*•]\s+|\t+)(.*)$")
+# First sentence end: . ? or ! followed by space/end, not part of an ellipsis.
+TITLE_END_RE = re.compile(r"(?<!\.)[.?!](?=\s|$)")
+READ_RE = re.compile(r"\s*Read:\s*(.+?)\s*$")
+
+
+def slugify(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def split_title(line: str) -> tuple[str, str]:
+    """Split "Be Bold. Life is an adventure." into ("Be Bold", "Life is an adventure.")."""
+    m = TITLE_END_RE.search(line)
+    if not m:
+        return line.strip(), ""
+    title = line[: m.start()].strip()
+    if line[m.start()] in "?!":
+        title += line[m.start()]
+    return title, line[m.end():].strip()
+
+
+def split_related(body: str) -> tuple[str, str | None]:
+    """Pull a trailing 'Read: <article name>' (an internal link on the site) out of the body."""
+    m = READ_RE.search(body)
+    if not m:
+        return body, None
+    return body[: m.start()].rstrip(), m.group(1)
+
+
+def _parse_numbered(lines: list[str]) -> list[dict]:
+    items: list[dict] = []
+    body: list[str] = []
+
+    def flush():
+        if items:
+            items[-1]["body"] = "\n\n".join(
+                p.strip() for p in "\n".join(body).split("\n\n") if p.strip()
+            )
+
+    for line in lines:
+        m = NUMBERED_RE.match(line)
+        if m:
+            flush()
+            items.append({"number": int(m.group(1)), "title": m.group(2).strip()})
+            body = []
+        elif items:
+            body.append(line.rstrip())
+    flush()
+    return items
+
+
+def _find_start(lines: list[str], start_after: str | None) -> int:
+    if start_after:
+        for idx, line in enumerate(lines):
+            if line.strip().lower() == start_after.strip().lower():
+                return idx + 1
+        raise ValueError(f"Start marker {start_after!r} not found in the pasted text")
+    for idx, line in enumerate(lines):
+        s = line.strip()
+        if s.endswith(":") and len(s) <= 40:
+            return idx + 1
+    raise ValueError(
+        "Could not find where the list starts. Pass --start-after with the line just "
+        "before the first item (for example 'Here goes:')."
+    )
+
+
+def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
+    """Top-level lines become items; '- ' lines nest under the previous item as subitems."""
+    items: list[dict] = []
+    for raw in lines[_find_start(lines, start_after):]:
+        if not raw.strip():
+            continue
+        m = SUB_RE.match(raw)
+        title, body = split_title((m.group(1) if m else raw).strip())
+        if m and items:
+            items[-1]["subitems"].append({"title": title, "body": body})
+        else:
+            items.append({"number": len(items) + 1, "title": title, "body": body, "subitems": []})
+    return items
+
+
+def parse_items(text: str, start_after: str | None = None) -> tuple[list[dict], list[str]]:
+    """Return (items, warnings)."""
+    lines = text.splitlines()
+    numbered = sum(bool(NUMBERED_RE.match(l)) for l in lines) >= 2
+    items = _parse_numbered(lines) if numbered else _parse_lines(lines, start_after)
+
+    for item in items:
+        item.setdefault("subitems", [])
+        for entry in [item, *item["subitems"]]:
+            entry["body"], related = split_related(entry["body"])
+            if related:
+                entry["related_read"] = related
+
+    warnings: list[str] = []
+    if numbered:
+        numbers = [i["number"] for i in items]
+        expected = list(range(1, len(items) + 1))
+        if numbers != expected:
+            missing = sorted(set(expected) - set(numbers))
+            dupes = sorted({n for n in numbers if numbers.count(n) > 1})
+            warnings.append(f"Numbering not sequential (missing={missing}, duplicates={dupes})")
+    for i in items:
+        if not i["body"] and not i["subitems"]:
+            warnings.append(f"Item {i['number']} ('{i['title']}') has no body text")
+    return items, warnings
+
+
+def build_source(text: str, title: str, source_url: str,
+                 start_after: str | None = None) -> tuple[dict, list[str]]:
+    if urlparse(source_url).netloc.lower() not in ALLOWED_HOSTS:
+        raise ValueError(f"source_url must be a personalexcellence.co article, got {source_url!r}")
+    slug = slugify(title)
+    items, warnings = parse_items(text, start_after)
+    if not items:
+        raise ValueError("No items found. Check the pasted text format.")
+    for i in items:
+        i["id"] = f"{slug}-{i['number']:03d}"
+
+    m = re.match(r"\s*(\d+)\b", title)
+    if m and int(m.group(1)) != len(items):
+        warnings.append(
+            f"Title says {m.group(1)} items but {len(items)} top-level items were found. "
+            "If the article has nested sub-items, prefix those lines with '- ' in the raw file."
+        )
+    return {
+        "slug": slug,
+        "source_title": title,
+        "source_url": source_url,
+        "attribution": ATTRIBUTION.format(title=title, url=source_url),
+        "items": items,
+    }, warnings
+
+
+def write_source(source: dict, sources_dir: Path = SOURCES_DIR) -> Path:
+    sources_dir.mkdir(parents=True, exist_ok=True)
+    out = sources_dir / f"{source['slug']}.json"
+    existing = set(sources_dir.glob("*.json"))
+    if out not in existing and len(existing) >= MAX_SOURCE_ARTICLES:
+        raise ValueError(
+            f"Refusing to add an article: the {MAX_SOURCE_ARTICLES}-article cap from the "
+            "source Terms of Use has been reached (see docs/COMPLIANCE.md)."
+        )
+    out.write_text(json.dumps(source, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return out
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("raw_file", type=Path)
+    ap.add_argument("--title", required=True)
+    ap.add_argument("--source-url", required=True)
+    ap.add_argument("--start-after", help="Line just before the first item (line-per-item pastes)")
+    args = ap.parse_args(argv)
+
+    source, warnings = build_source(
+        args.raw_file.read_text(encoding="utf-8"), args.title, args.source_url, args.start_after
+    )
+    out = write_source(source)
+    subs = sum(len(i["subitems"]) for i in source["items"])
+    print(f"Parsed {len(source['items'])} items (+{subs} nested sub-items) -> {out}")
+    for w in warnings:
+        print(f"WARNING: {w}", file=sys.stderr)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

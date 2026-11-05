@@ -1,0 +1,84 @@
+{
+  "title": "Seeing Through Another Pair of Eyes",
+  "essay_markdown": "**Most of us think we understand other people far better than we actually do.**\n\n## Why it's harder than it sounds\n\nThe biggest obstacle to empathy is the quiet assumption that other people feel the way we would feel in their place. We watch someone snap at a coworker and think, \"I'd never react like that,\" and the conversation ends before it starts. Their behavior becomes a verdict instead of a clue.\n\nThe way past this is to swap certainty for curiosity. Before you decide what someone is feeling, ask yourself what might be true from where they stand. What pressure are they under? What did their morning look like? What would have to be true for their reaction to make sense?\n\nA study of health care workers in a workplace conflict resolution program found that people who were better at perspective taking perceived less relational conflict. Cognitive flexibility, the ability to shift how you're looking at a situation, helped explain the effect. In the same study, higher empathy alone was linked to higher perceived conflict. Feeling *with* someone isn't always enough. Deliberately thinking about how the situation looks to them is the skill to practice.\n\n## When good intentions miss\n\nJo Ann Burkhalter, a consultant in Auburn, AL, remembers an early-career boss who would yell at his female secretary from his office rather than walk to her desk. Burkhalter was bothered by it and apologized to the secretary on his behalf. The secretary replied that the behavior did not bother her.\n\nBurkhalter writes: \"I did not understand at the time, but I was trying to provide empathy and compassion to someone who did not want it.\"\n\nIt's a gentle reminder that empathy isn't about deciding how someone *ought* to feel and rushing in to comfort them. It's about finding out how things actually are for them. Her mistake was assuming, not asking. Seeing from another's perspective means being willing to be wrong about what you see.\n\n## Try it today\n\nPick one interaction where you'd normally rely on your first impression: a curt message, a slow driver, a friend who went quiet. Then do three small things:\n\n1. **Pause before judging.** Give yourself ten seconds to come up with two other explanations for the behavior.\n2. **Ask instead of assuming.** \"How are things going for you with this?\" does more than a confident guess.\n3. **Reflect back what you heard.** \"It sounds like you felt overlooked\" lets them correct you if you're off.\n\nThese habits also pay off when things get tense. In a study of 307 adolescents by Minet de Wied and colleagues (*Aggressive Behavior*, 2007), affective empathy was positively linked to problem solving and negatively linked to conflict engagement in friendships. The people who felt more with their friends tended to look for solutions rather than escalate.\n\nYou won't get it right every time, and you don't need to. Each attempt to see another person's world makes your own a little larger.\n\nUnderstanding starts with the small, brave question: *What is this like for you?*",
+  "sources": [
+    {
+      "title": "Five Stories of Compassion That Will Inspire You to Show Up for Others - Thrive Global",
+      "url": "https://community.thriveglobal.com/compassion-empathy-emotional-intelligence-anecdotes-stories/"
+    },
+    {
+      "title": "Perspective Taking, Empathy, and Relational Conflict at Work",
+      "url": "https://www.researchgate.net/publication/251327754_Perspective_Taking_Empathy_and_Relational_Conflict_at_Work_An_Investigation_Among_Participants_in_a_Workplace_Conflict_Resolution_Program"
+    },
+    {
+      "title": "Empathy and conflict resolution in friendship relations among adolescents",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17441005/"
+    }
+  ],
+  "word_count": 499,
+  "item": {
+    "number": 39,
+    "title": "Be Empathetic",
+    "body": "Empathy is the key to successful relationships. Learn to see things from others’ perspectives. It’ll let you understand people better, resolve conflicts, and develop meaningful connections.",
+    "subitems": [],
+    "id": "101-ways-to-be-a-better-person-039",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Five Stories of Compassion That Will Inspire You to Show Up for Others - Thrive Global | https://community.thriveglobal.com/compassion-empathy-emotional-intelligence-anecdotes-stories/\n- Jo Ann Burkhalter, a consultant in Auburn, AL, recalls an early-career boss who would yell at his female secretary from his office instead of walking to her desk.\n- She apologized to the secretary, who replied that the behavior did not bother her. Burkhalter writes: \"I did not understand at the time, but I was trying to provide empathy and compassion to someone who did not want it.\"\n- Stephanie Thoma, a career coach in San Francisco, says losing a job early in her career gave her \"more compassion and empathy for those who are between jobs.\"\n\n## Perspective Taking, Empathy, and Relational Conflict at Work | https://www.researchgate.net/publication/251327754_Perspective_Taking_Empathy_and_Relational_Conflict_at_Work_An_Investigation_Among_Participants_in_a_Workplace_Conflict_Resolution_Program\n- Study finding: higher dispositional perspective taking correlated with lower perceived relational conflict among health care workers, while higher empathy correlated with higher perceived conflict.\n- Perspective taking reduced relational conflict perceptions through cognitive flexibility, so the writer should frame perspective-taking as the skill, not empathy alone.\n\n## Empathy and conflict resolution in friendship relations among adolescents | https://pubmed.ncbi.nlm.nih.gov/17441005/\n- Minet de Wied et al. (Aggressive Behavior, 2007) used self-report questionnaires with 307 adolescents (149 boys, 158 girls).\n- Dispositional affective empathy was positively linked to problem solving and negatively linked to conflict engagement.",
+  "variation": {
+    "length": 500,
+    "sections": [
+      "a common obstacle and how to get past it",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a bold one-sentence claim",
+    "tone": "warm and gentle",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [
+    "edited: removed one sentence referring to research notes (prompt bug fixed in essay_v2)"
+  ],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011CgjAUafMdU4AoFwdAQHUv"
+        ],
+        "input_tokens": 33477,
+        "output_tokens": 1361,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.024
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011CgjAVArv7dZw9KWmHtfqa"
+        ],
+        "input_tokens": 1551,
+        "output_tokens": 1213,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0152
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0392
+  },
+  "generated_at": "2026-11-05T04:39:23+00:00",
+  "date": "2026-11-04"
+}

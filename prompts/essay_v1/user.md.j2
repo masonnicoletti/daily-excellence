@@ -1,0 +1,19 @@
+Today's idea is #{{ item.number }} from the list "{{ item.source_title }}":
+
+<idea>
+{{ item.title }}{% if item.body %}. {{ item.body }}{% endif %}
+</idea>
+{% if item.subitems %}
+It comes with these related practices, which you can draw on (you don't need to cover all of them):
+
+<practices>
+{% for s in item.subitems %}- {{ s.title }}{% if s.body %}. {{ s.body }}{% endif %}
+{% endfor %}</practices>
+{% endif %}
+Structure plan for today (vary from day to day; treat section names as themes, not literal headings):
+- Length: about {{ v.length }} words (excluding the Sources list).
+- {% if v.use_headings %}Use 2–4 `## ` headings of your own wording.{% else %}No section headings: write it as continuous prose.{% endif %}
+- Cover these elements, in this order: {{ v.sections | join(", ") }}.
+- Open with: {{ v.opening }}.
+- Tone: {{ v.tone }}.
+- Close with: {{ v.closing }}.

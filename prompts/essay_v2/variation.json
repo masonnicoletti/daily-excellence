@@ -1,0 +1,30 @@
+{
+  "length": [300, 400, 500, 600],
+  "sections": {
+    "required": ["a real person's story or testimony (sourced)", "how to apply it today"],
+    "optional": ["overview of the idea", "a mental framework or reframe", "concrete examples from everyday life", "what the research says (sourced)", "a common obstacle and how to get past it", "a reflection question"],
+    "optional_count": [1, 3]
+  },
+  "use_headings_probability": 0.6,
+  "opening": [
+    "a short scene or moment from a real person's life",
+    "a surprising fact or research finding",
+    "a question to the reader",
+    "a well-sourced quote",
+    "a vivid everyday situation the reader will recognize",
+    "a bold one-sentence claim"
+  ],
+  "tone": [
+    "warm and gentle",
+    "energetic and rallying",
+    "calm and reflective",
+    "practical and direct",
+    "playful and light"
+  ],
+  "closing": [
+    "one small action to take today",
+    "a question to carry through the day",
+    "a short, memorable line",
+    "a callback to the opening"
+  ]
+}

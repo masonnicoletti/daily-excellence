@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+{% if posts %}
+{% set today = posts[0] %}
+<section class="hero">
+  <p class="eyebrow">Today · <time datetime="{{ today.date }}">{{ today.date_long }}</time></p>
+  <h1 class="hero-title"><a href="posts/{{ today.slug }}.html">{{ today.title }}</a></h1>
+  <p class="hero-idea">#{{ today.item.number }} · {{ today.item.title }}</p>
+  <p class="hero-excerpt">{{ today.excerpt | safe }}</p>
+  <a class="button" href="posts/{{ today.slug }}.html">Read today's essay <span aria-hidden="true">→</span></a>
+</section>
+
+<section class="archive" id="archive" aria-labelledby="archive-h">
+  <h2 id="archive-h">Archive <span class="count">{{ posts | length }} essay{{ "s" if posts | length != 1 }}</span></h2>
+  <ul class="archive-list">
+    {% for p in posts %}
+    <li>
+      <a href="posts/{{ p.slug }}.html">
+        <time datetime="{{ p.date }}">{{ p.date_short }}</time>
+        <span class="archive-title">{{ p.title }}</span>
+        <span class="archive-idea">{{ p.item.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<p class="index-credit">
+  Daily ideas are drawn from free articles by <a href="https://personalexcellence.co/">Personal Excellence</a>;
+  each essay links to the article it comes from.
+</p>
+{% else %}
+<section class="hero"><h1 class="hero-title">The first essay arrives tomorrow morning.</h1></section>
+{% endif %}
+{% endblock %}

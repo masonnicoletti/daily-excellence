@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+.DS_Store
+
+# Test essays from `generate --item-id/--random`
+data/drafts/
+
+# Hand-pasted source article text: never published (see docs/COMPLIANCE.md)
+data/raw/*
+!data/raw/.gitkeep
+
+# Local preview of draft essays
+site_preview/
+
+# Built by the workflow from data/posts (not committed)
+site/
