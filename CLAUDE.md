@@ -32,6 +32,9 @@ Data flows in one direction, and each stage is one module in `src/daily_excellen
 1. **`ingest.py`**: turns a raw paste (`data/raw/*.txt`, gitignored) into `data/sources/<slug>.json`.
    - Two paste formats are auto-detected: numbered (`12.`) and one item per line after a short `...:` line such as "Here goes:".
    - A `- ` prefix marks a sub-item. Sub-items are **nested inside the parent's `subitems`**; they are never standalone daily messages. Top-level `number` must match the article's own numbering.
+   - A `+ ` prefix marks a follow-up question. It stays its own item, and the question(s) it follows go into its `context` list. Prompts and the post's idea card show that context.
+   - "Term: text" articles (e.g. "Ability: is more of…") split at the colon and set `joiner: ": "`. Templates rejoin title and body with `item.get("joiner", ". ")`.
+   - The list starts after the last short line ending in ":" in the file's first half. Pass `--start-after` otherwise.
    - The parser warns when the count doesn't match the number in the title. That usually means some sub-items are missing their `- `.
 2. **`select_item.py`**: picks at random without repeats, using `data/history.json` (`cycle_reset` marks a pool restart). Picking is idempotent per date.
    - Default path arguments are bound when the module is imported, so tests must pass `sources_dir` and `history_file` explicitly.
