@@ -11,6 +11,8 @@ Two paste formats are supported:
   one item, written as "Title sentence. Body text...". Prefix a line with "- "
   to mark it as a sub-item; it is nested inside the previous top-level item
   (its "subitems" list) rather than becoming a daily message of its own.
+  Prefix a line with "+ " to mark a follow-up question: it stays its own
+  item, and the question(s) it follows are stored in its "context" list.
 
 Usage:
     python -m daily_excellence.ingest data/raw/<slug>.txt \
@@ -33,12 +35,14 @@ ALLOWED_HOSTS = {"personalexcellence.co", "www.personalexcellence.co"}
 
 NUMBERED_RE = re.compile(r"^\s*(\d{1,3})[.)]\s+(.+?)\s*$")
 SUB_RE = re.compile(r"^(?:\s*[-*•]\s+|\t+)(.*)$")
-# First sentence end: . ? or ! followed by space/end, not part of an ellipsis.
+FOLLOW_RE = re.compile(r"^\s*\+\s+(.*)$")  # follow-up question: own item, earlier question(s) as context
 # First sentence end: . ? or ! (optionally inside a closing quote) followed by space/end, not an ellipsis.
 TITLE_END_RE = re.compile(r"(?<!\.)([.?!])([\"”’]?)(?=\s|$)")
 LEADING_NUM_RE = re.compile(r"^\d{1,3}[.)]\s+")  # a stray "1. " that survived the paste
 TERM_RE = re.compile(r"^([^:]{1,40}):\s+(\S.*)$")
-READ_RE = re.compile(r"\s*Read:\s*(.+?)\s*$")
+# Trailing "(Read: X)" or "Read: X". The wrapped form is tried first so a title
+# ending in ")" (e.g. "Life Purpose (7-part series)") keeps its parenthesis.
+READ_RE = re.compile(r"\s*\(Read:\s*([^()]+(?:\([^()]*\)[^()]*)*)\)\s*$|\s*Read:\s*(.+?)\s*$")
 
 
 def slugify(text: str) -> str:
@@ -64,7 +68,7 @@ def split_related(body: str) -> tuple[str, str | None]:
     m = READ_RE.search(body)
     if not m:
         return body, None
-    return body[: m.start()].rstrip(), m.group(1)
+    return body[: m.start()].rstrip(), m.group(1) or m.group(2)
 
 
 def _parse_numbered(lines: list[str]) -> list[dict]:
@@ -95,10 +99,12 @@ def _find_start(lines: list[str], start_after: str | None) -> int:
             if line.strip().lower() == start_after.strip().lower():
                 return idx + 1
         raise ValueError(f"Start marker {start_after!r} not found in the pasted text")
-    for idx, line in enumerate(lines):
-        s = line.strip()
-        if s.endswith(":") and len(s) <= 120:  # e.g. "Here goes:" or "I now present to you 101 ...:"
-            return idx + 1
+    # The last short line ending in ":" in the first half, e.g. "Here goes:" or
+    # "I present to you, 101 ...:" (an earlier "Some things to note:" is skipped).
+    candidates = [idx for idx, line in enumerate(lines[: len(lines) // 2 + 1])
+                  if line.strip().endswith(":") and len(line.strip()) <= 120]
+    if candidates:
+        return candidates[-1] + 1
     raise ValueError(
         "Could not find where the list starts. Pass --start-after with the line just "
         "before the first item (for example 'Here goes:')."
@@ -111,9 +117,11 @@ def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
     body_lines = [l for l in lines[_find_start(lines, start_after):] if l.strip()]
     # "Term: text" articles (e.g. "Ability: is more of a function of...") split at the colon.
     term_style = bool(body_lines) and sum(bool(TERM_RE.match(l.strip())) for l in body_lines) >= 0.8 * len(body_lines)
+    chain: list[str] = []  # the current question and its follow-ups so far
     for raw in body_lines:
-        m = SUB_RE.match(raw)
-        text = LEADING_NUM_RE.sub("", (m.group(1) if m else raw).strip())
+        fm = FOLLOW_RE.match(raw)
+        m = None if fm else SUB_RE.match(raw)
+        text = LEADING_NUM_RE.sub("", (fm or m).group(1).strip() if (fm or m) else raw.strip())
         tm = TERM_RE.match(text) if term_style else None
         title, body = (tm.group(1).strip(), tm.group(2).strip()) if tm else split_title(text)
         if m and items:
@@ -122,6 +130,11 @@ def _parse_lines(lines: list[str], start_after: str | None) -> list[dict]:
             item = {"number": len(items) + 1, "title": title, "body": body, "subitems": []}
             if tm:
                 item["joiner"] = ": "  # how prompts rejoin title and body ("Ability: is more of...")
+            if fm and chain:
+                item["context"] = list(chain)
+                chain.append(text)
+            else:
+                chain = [text]
             items.append(item)
     return items
 

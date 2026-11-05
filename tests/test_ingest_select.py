@@ -87,6 +87,27 @@ def test_split_title_quote_and_stray_number():
     assert [i["title"] for i in items] == ["Live fresh", "Be proactive"]
 
 
+QUESTIONS = """3 Questions
+Some things to note:
+A note.
+I present to you, 3 questions:
+What are you grateful for? (Read: 14-Day Gratitude Challenge)
+Is there a grudge you are holding on to?
++ …Why are you holding on to it?
++ …Is it time to let it go?
+"""
+
+
+def test_follow_up_questions_get_context():
+    items, _ = ingest.parse_items(QUESTIONS)
+    assert [i["number"] for i in items] == [1, 2, 3, 4]       # starts after the LAST intro colon line
+    assert items[0]["body"] == "" and items[0]["related_read"] == "14-Day Gratitude Challenge"
+    assert "context" not in items[1]
+    assert ingest.split_related("Find it. Read: Life Purpose (7-part series)") == ("Find it.", "Life Purpose (7-part series)")
+    assert items[2]["context"] == ["Is there a grudge you are holding on to?"]
+    assert items[3]["context"] == ["Is there a grudge you are holding on to?", "…Why are you holding on to it?"]
+
+
 def test_line_mode_count_mismatch_warns():
     flat = LINES.replace("- ", "")
     _, w = ingest.build_source(flat, "3 Ways To Test", URL)

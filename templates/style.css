@@ -142,6 +142,7 @@ a:hover { color: var(--accent); }
   margin: 0.35rem 0 0.4rem !important;
 }
 .idea-body { color: var(--ink-soft); font-size: 1.05rem; }
+.idea-context { color: var(--ink-faint); font-size: 1rem; font-style: italic; margin-top: 0.35rem !important; }
 .idea-credit {
   margin-top: 0.75rem !important;
   font: 0.8rem/1.4 var(--sans);

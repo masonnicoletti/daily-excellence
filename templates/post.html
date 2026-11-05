@@ -8,6 +8,7 @@
 
   <aside class="idea" aria-label="Today's idea">
     <p class="idea-label">Today's idea · #{{ post.item.number }}</p>
+    {% if post.item.context %}<p class="idea-context">{{ post.item.context | join(" ") }}</p>{% endif %}
     <p class="idea-title">{{ post.item.title }}</p>
     {% if post.item.body %}<p class="idea-body">{% if post.item.joiner and post.item.body[:1].islower() %}{{ post.item.title }} {% endif %}{{ post.item.body }}</p>{% endif %}
     <p class="idea-credit">

@@ -1,5 +1,6 @@
 Idea: {{ item.title }}{% if item.body %}{{ item.get("joiner", ". ") }}{{ item.body }}{% endif %}
-{% if item.subitems %}
+{% if item.get("context") %}(This follows on from: {{ item.context | join(" ") }})
+{% endif %}{% if item.subitems %}
 Related practices: {{ item.subitems | map(attribute="title") | join("; ") }}
 {% endif %}
 Find a real person's story that brings this idea to life{% if "research" in v.sections | join(" ") %}, plus one research finding about it{% endif %}.
