@@ -42,5 +42,6 @@ def test_rendered_pages_meet_attribution_rules(tmp_path, monkeypatch):
         assert "not affiliated with or endorsed by Personal Excellence" in page
         assert "nofollow" not in page
     assert f'href="{URL}"' in post                      # link to the specific source article
-    assert "<script>" not in post                       # model output can't inject HTML
+    assert "<script>x</script>" not in post             # model output can't inject HTML
+    assert "&lt;script&gt;x" in post                    # ...it is shown as text instead
     assert (tmp_path / "site" / ".nojekyll").exists()

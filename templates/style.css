@@ -1,16 +1,18 @@
-/* Daily Excellence: original stylesheet ("morning light"). */
+/* Daily Excellence: original stylesheet ("morning light").
+   Light (beige) is the default; the header toggle sets data-theme="dark" on <html>. */
 
 :root {
-  --bg: #fbf7f0;
-  --surface: #f4ede1;
-  --ink: #2a2622;
-  --ink-soft: #5e564d;
-  --ink-faint: #8a8076;
-  --rule: #e4d9c8;
-  --accent: #c8553d;          /* sunrise coral */
+  --bg: #f3ebdd;              /* warm beige */
+  --surface: #eadfcd;         /* cards, toggle */
+  --ink: #2b2520;
+  --ink-soft: #5a5046;
+  --ink-faint: #73685b;
+  --rule: #dccfb8;
+  --accent: #ef8a6f;          /* sunrise coral: fills (brand mark, stripes, button) */
   --accent-2: #e9a23b;        /* morning gold */
-  --accent-ink: #fffaf3;
-  --link: #a6432f;
+  --accent-text: #b3472d;     /* deeper coral for small text and hovers on beige */
+  --accent-ink: #2b1a12;      /* text on a coral fill */
+  --link: #a8432b;
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --display: "Fraunces", Georgia, serif;
   --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -18,20 +20,19 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #17181c;
-    --surface: #212228;
-    --ink: #ece6dc;
-    --ink-soft: #b9b0a4;
-    --ink-faint: #8b8379;
-    --rule: #33343b;
-    --accent: #ef8a6f;
-    --accent-2: #f2bd62;
-    --accent-ink: #1a1410;
-    --link: #f3a48d;
-    color-scheme: dark;
-  }
+:root[data-theme="dark"] {
+  --bg: #17181c;
+  --surface: #212228;
+  --ink: #ece6dc;
+  --ink-soft: #b9b0a4;
+  --ink-faint: #8b8379;
+  --rule: #33343b;
+  --accent: #ef8a6f;
+  --accent-2: #f2bd62;
+  --accent-text: #ef8a6f;
+  --accent-ink: #1a1410;
+  --link: #f3a48d;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -55,7 +56,7 @@ main, .masthead, .site-footer {
 }
 
 a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-text); }
 
 .preview-banner {
   background: var(--accent-2);
@@ -89,6 +90,30 @@ a:hover { color: var(--accent); }
   background: linear-gradient(180deg, var(--accent-2), var(--accent));
   box-shadow: 0 0.16rem 0 -0.06rem var(--ink-faint);
 }
+.masthead-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.theme-toggle {
+  appearance: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--accent-text); border-color: var(--accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.theme-toggle svg { width: 1.1rem; height: 1.1rem; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 .masthead-link {
   font: 500 0.85rem/1 var(--sans);
   color: var(--ink-soft);
@@ -135,7 +160,7 @@ a:hover { color: var(--accent); }
   font: 600 0.72rem/1.4 var(--sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 .idea-title {
   font: 600 1.35rem/1.3 var(--display);
@@ -158,7 +183,7 @@ a:hover { color: var(--accent); }
 .essay strong { font-weight: 600; }
 .essay ul, .essay ol { padding-left: 1.3rem; margin: 0 0 1.3em; }
 .essay li { margin-bottom: 0.55em; }
-.essay li::marker { color: var(--accent); }
+.essay li::marker { color: var(--accent-text); }
 .essay blockquote {
   margin: 1.5rem 0;
   padding-left: 1.1rem;
@@ -211,15 +236,15 @@ a:hover { color: var(--accent); }
   margin-bottom: 0.25rem;
 }
 .post-nav .newer { text-align: right; grid-column: 2; }
-.post-nav a:hover { color: var(--accent); }
+.post-nav a:hover { color: var(--accent-text); }
 
 /* ---------- index ---------- */
 .hero { padding: 1.5rem 0 1rem; }
 .hero-title a { color: inherit; text-decoration: none; }
-.hero-title a:hover { color: var(--accent); }
+.hero-title a:hover { color: var(--accent-text); }
 .hero-idea {
   font: 600 0.9rem/1.4 var(--sans);
-  color: var(--accent);
+  color: var(--accent-text);
   margin: -0.75rem 0 1rem;
 }
 .hero-excerpt { color: var(--ink-soft); margin: 0 0 1.5rem; }
@@ -262,7 +287,7 @@ a:hover { color: var(--accent); }
 }
 .archive-title { font: 600 1.1rem/1.35 var(--display); }
 .archive-idea { font: 0.85rem/1.4 var(--sans); color: var(--ink-soft); }
-.archive-list a:hover .archive-title { color: var(--accent); }
+.archive-list a:hover .archive-title { color: var(--accent-text); }
 
 .index-credit {
   margin: 2rem 0 0;
