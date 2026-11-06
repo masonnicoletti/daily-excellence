@@ -46,6 +46,7 @@ Data flows in one direction, and each stage is one module in `src/daily_excellen
    - The output records the prompt version, models, variation, research notes, and per-call token usage and estimated cost.
 4. **`render.py`**: renders Jinja templates in `templates/` (`base`/`post`/`index`/`archive`, plus `style.css`, which is copied as-is) into `site/`. The home page shows only the latest essay; the full list is on `archive.html`.
    - The essay's Markdown has `<` escaped before conversion, so model output can't inject HTML.
+   - Favorites are client-side only. `templates/favorites.js` (copied as-is) stores slugs in `localStorage` (`de-favorites`), per browser. The home page embeds every post's `card` as JSON (`#posts-data`), so the Favorites section can list any essay. Home shows Favorites, then the 5 most recent essays.
 5. **`pipeline.py`**: the daily entry point. It uses the US Eastern date (`config.TIMEZONE`). If a post for that date already exists, it skips generation and only re-renders.
    - Posts are stored at `data/posts/<YYYY-MM-DD>[-N].json`. The date is the post's `date` field, falling back to the filename stem.
 

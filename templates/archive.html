@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_post_list.html" import post_list %}
 {% block title %}Archive · {{ site_title }}{% endblock %}
 {% block description %}Every Daily Excellence essay so far, newest first.{% endblock %}
 {# On the archive itself, the header button goes back to today's essay instead. #}
@@ -8,17 +9,7 @@
   <p class="eyebrow">All essays</p>
   <h1 id="archive-h" class="archive-heading">Archive <span class="count">{{ posts | length }} essay{{ "s" if posts | length != 1 }}</span></h1>
   {% if posts %}
-  <ul class="archive-list">
-    {% for p in posts %}
-    <li>
-      <a href="{{ root }}posts/{{ p.slug }}.html">
-        <time datetime="{{ p.date }}">{{ p.date_short }}</time>
-        <span class="archive-title">{{ p.title }}</span>
-        <span class="archive-idea">{{ p.item.title }}</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+  {{ post_list(posts, root) }}
   {% else %}
   <p>The first essay arrives tomorrow morning.</p>
   {% endif %}

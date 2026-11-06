@@ -1,0 +1,15 @@
+{# One row per essay. A filled star appears when the essay is in this browser's favorites. #}
+{% macro post_list(posts, root, id=None) -%}
+<ul class="archive-list"{% if id %} id="{{ id }}"{% endif %}>
+  {%- for p in posts %}
+  <li>
+    <a href="{{ root }}posts/{{ p.slug }}.html">
+      <time datetime="{{ p.date }}">{{ p.date_short }}</time>
+      <span class="archive-title">{{ p.title }}</span>
+      <span class="archive-idea">{{ p.item.title }}</span>
+      <span class="fav-indicator" data-slug="{{ p.slug }}" title="Favorite">{% include "_star.svg" %}</span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endmacro %}

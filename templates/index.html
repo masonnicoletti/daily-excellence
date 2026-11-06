@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_post_list.html" import post_list %}
 {# The home page has the large Archive button, so the header button is left out. #}
 {% block masthead_button %}{% endblock %}
 {% block content %}
@@ -17,10 +18,26 @@
   </div>
 </section>
 
+{# Filled in by favorites.js from this browser's saved favorites. #}
+<section class="home-section favorites" aria-labelledby="favorites-h">
+  <h2 id="favorites-h" class="section-heading">Favorites</h2>
+  <ul class="archive-list" id="favorites-list"></ul>
+  <p class="section-hint" id="favorites-empty">Tap the ☆ at the top of any essay to keep it here.</p>
+</section>
+
+<section class="home-section" aria-labelledby="recent-h">
+  <h2 id="recent-h" class="section-heading">Recent</h2>
+  {{ post_list(posts[:5], "") }}
+  {% if posts | length > 5 %}<a class="section-more" href="archive.html">All {{ posts | length }} essays in the archive →</a>{% endif %}
+</section>
+
 <p class="index-credit">
   Daily ideas are drawn from free articles by <a href="https://personalexcellence.co/">Personal Excellence</a>;
   each essay links to the article it comes from.
 </p>
+
+{# Every essay's link details, so favorites can be listed here whenever they were published. #}
+<script type="application/json" id="posts-data">{{ posts | map(attribute="card") | list | tojson }}</script>
 {% else %}
 <section class="hero"><h1 class="hero-title">The first essay arrives tomorrow morning.</h1></section>
 {% endif %}

@@ -10,9 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <script>
     /* Apply a saved dark-mode choice before the page paints (light is the default). */
+    document.documentElement.classList.add("js");  /* favorite stars only appear when scripts run */
     try { if (localStorage.getItem("de-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
   </script>
   <link rel="stylesheet" href="{{ root }}style.css">
+  <script src="{{ root }}favorites.js" defer></script>
 </head>
 <body>
   {% if preview %}<div class="preview-banner">Local preview of draft essays. Not published.</div>{% endif %}

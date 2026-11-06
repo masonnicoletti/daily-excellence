@@ -20,7 +20,7 @@ import markdown as md
 from . import config
 
 TEMPLATES_DIR = config.ROOT / "templates"
-STATIC = ["style.css"]
+STATIC = ["style.css", "favorites.js"]
 SITE_TITLE = "Daily Excellence"
 DISCLAIMER = ("Daily Excellence is an independent project, not affiliated with or endorsed by Personal "
               "Excellence. Essays are AI-generated (see the colophon on each post) and are for "
@@ -46,6 +46,9 @@ def load_posts(src: Path, drafts: bool = False) -> list[dict]:
         p["reading_minutes"] = max(1, round(p["word_count"] / 220))
         first_para = next((b for b in p["essay_markdown"].split("\n\n") if b and not b.startswith("#")), "")
         p["excerpt"] = md.markdown(first_para.replace("<", "&lt;")).replace("<p>", "").replace("</p>", "")
+        # The few fields favorites.js needs to list an essay (embedded as JSON on the home page).
+        p["card"] = {"slug": p["slug"], "title": p["title"], "idea": p["item"]["title"],
+                     "date": p["date"], "date_short": p["date_short"]}
         posts.append(p)
     posts.sort(key=lambda p: (p["date"], p.get("generated_at", "")), reverse=True)  # newest first
     return posts
