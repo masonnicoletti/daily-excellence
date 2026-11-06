@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% from "_post_list.html" import post_list %}
-{# The home page has the large Archive button, so the header button is left out. #}
-{% block masthead_button %}{% endblock %}
 {% block content %}
 {% if posts %}
 {% set today = posts[0] %}
@@ -12,9 +10,6 @@
   <p class="hero-excerpt">{{ today.excerpt | safe }}</p>
   <div class="hero-actions">
     <a class="button" href="posts/{{ today.slug }}.html">Read today's essay <span aria-hidden="true">→</span></a>
-    <a class="button button-secondary" href="archive.html">
-      Archive <span class="button-meta">{{ posts | length }} essay{{ "s" if posts | length != 1 }}</span>
-    </a>
   </div>
 </section>
 

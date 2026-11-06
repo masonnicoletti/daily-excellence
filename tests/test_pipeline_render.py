@@ -80,4 +80,5 @@ def test_archive_page_and_star_button(tmp_path):
     assert 'class="fav-button" type="button" data-slug="2026-11-03"' in post      # star at the top
     assert post.index("fav-button") < post.index("post-title")
     assert 'class="masthead-button" href="../archive.html"' in post                # header button on posts
-    assert 'class="masthead-button"' not in index
+    assert 'class="masthead-button" href="archive.html"' in index                 # same header button on home
+    assert "button-secondary" not in index                                         # big Archive button removed

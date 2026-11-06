@@ -277,13 +277,6 @@ a:hover { color: var(--accent-text); }
 }
 .button:hover { color: var(--accent-ink); filter: brightness(1.06); }
 .button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.button-secondary {
-  background: var(--surface);
-  border-color: var(--rule);
-  color: var(--ink);
-}
-.button-secondary:hover { color: var(--accent-text); border-color: var(--accent); filter: none; }
-.button-meta { font-weight: 400; color: var(--ink-faint); font-size: 0.9rem; }
 
 .archive { margin-top: 0.5rem; }
 .archive-heading {
