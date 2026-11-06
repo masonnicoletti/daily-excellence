@@ -13,9 +13,9 @@
   --accent-text: #b3472d;     /* deeper coral for small text and hovers on beige */
   --accent-ink: #2b1a12;      /* text on a coral fill */
   --link: #a8432b;
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --display: "Fraunces", Georgia, serif;
-  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --serif: "Figtree", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;   /* body text */
+  --display: "Figtree", ui-sans-serif, -apple-system, "Segoe UI", sans-serif; /* headings */
+  --sans: "Figtree", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;    /* labels, UI */
   --measure: 38rem;
   color-scheme: light;
 }
@@ -44,8 +44,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.2rem;
-  line-height: 1.65;
+  font-size: 1.125rem;
+  line-height: 1.75;
   text-rendering: optimizeLegibility;
 }
 
@@ -80,7 +80,7 @@ a:hover { color: var(--accent-text); }
   gap: 0.6rem;
   color: var(--ink);
   text-decoration: none;
-  font: 650 1.1rem/1 var(--display);
+  font: 600 1.1rem/1 var(--display);
   letter-spacing: 0.01em;
 }
 .brand-mark {
@@ -114,11 +114,20 @@ a:hover { color: var(--accent-text); }
 .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-.masthead-link {
-  font: 500 0.85rem/1 var(--sans);
-  color: var(--ink-soft);
+.masthead-button {
+  display: inline-flex;
+  align-items: center;
+  height: 2.25rem;                 /* same height as the theme toggle */
+  padding: 0 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 0.85rem/1 var(--sans);
   text-decoration: none;
 }
+.masthead-button:hover { color: var(--accent-text); border-color: var(--accent); }
+.masthead-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* ---------- shared ---------- */
 .eyebrow {
@@ -132,7 +141,7 @@ a:hover { color: var(--accent-text); }
 /* ---------- post ---------- */
 .post-title, .hero-title {
   font-family: var(--display);
-  font-weight: 650;
+  font-weight: 600;
   font-size: clamp(2.1rem, 7vw, 3.1rem);
   line-height: 1.08;
   letter-spacing: -0.015em;
@@ -174,10 +183,10 @@ a:hover { color: var(--accent-text); }
   color: var(--ink-faint);
 }
 
-.essay > p:first-child { font-size: 1.32rem; line-height: 1.55; }
+.essay > p:first-child { font-size: 1.25rem; line-height: 1.6; }
 .essay p { margin: 0 0 1.2em; }
 .essay h2 {
-  font: 650 1.45rem/1.25 var(--display);
+  font: 600 1.45rem/1.25 var(--display);
   margin: 2.2rem 0 0.75rem;
 }
 .essay strong { font-weight: 600; }
@@ -248,26 +257,43 @@ a:hover { color: var(--accent-text); }
   margin: -0.75rem 0 1rem;
 }
 .hero-excerpt { color: var(--ink-soft); margin: 0 0 1.5rem; }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
 .button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.55rem;
   background: var(--accent);
+  border: 1px solid var(--accent);
   color: var(--accent-ink);
-  font: 600 0.95rem/1 var(--sans);
-  padding: 0.85rem 1.25rem;
+  font: 600 1.05rem/1 var(--sans);
+  padding: 1.05rem 1.6rem;
   border-radius: 999px;
   text-decoration: none;
 }
 .button:hover { color: var(--accent-ink); filter: brightness(1.06); }
+.button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.button-secondary {
+  background: var(--surface);
+  border-color: var(--rule);
+  color: var(--ink);
+}
+.button-secondary:hover { color: var(--accent-text); border-color: var(--accent); filter: none; }
+.button-meta { font-weight: 400; color: var(--ink-faint); font-size: 0.9rem; }
 
-.archive { margin-top: 3.5rem; }
-.archive h2 {
+.archive { margin-top: 0.5rem; }
+.archive-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  font: 650 1.5rem/1.2 var(--display);
-  margin: 0 0 0.5rem;
+  gap: 1rem;
+  font: 600 clamp(2.1rem, 7vw, 2.8rem)/1.1 var(--display);
+  letter-spacing: -0.015em;
+  margin: 0 0 1rem;
 }
 .archive .count { font: 500 0.8rem/1 var(--sans); color: var(--ink-faint); }
 .archive-list { list-style: none; margin: 0; padding: 0; }
@@ -307,6 +333,7 @@ a:hover { color: var(--accent-text); }
 
 @media (max-width: 30rem) {
   body { font-size: 1.12rem; }
+  .hero-actions .button { flex: 1 1 100%; }
   .archive-list a { grid-template-columns: 1fr; }
   .archive-list time { grid-row: auto; line-height: 1.4; }
 }

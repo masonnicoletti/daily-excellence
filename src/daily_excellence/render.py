@@ -71,9 +71,10 @@ def build(src: Path, out: Path, drafts: bool = False) -> list[Path]:
         path.write_text(post_tpl.render(post=p, newer=newer, older=older, root="../"), encoding="utf-8")
         written.append(path)
 
-    index = out / "index.html"
-    index.write_text(env.get_template("index.html").render(posts=posts, root=""), encoding="utf-8")
-    written.append(index)
+    for name in ("index.html", "archive.html"):
+        page = out / name
+        page.write_text(env.get_template(name).render(posts=posts, root=""), encoding="utf-8")
+        written.append(page)
     return written
 
 
@@ -84,7 +85,7 @@ def main(argv: list[str] | None = None) -> int:
     src = config.ROOT / "data" / ("drafts" if args.drafts else "posts")
     out = config.ROOT / ("site_preview" if args.drafts else "site")
     written = build(src, out, args.drafts)
-    print(f"Rendered {len(written) - 1} posts + index -> {out}/index.html")
+    print(f"Rendered {len(written) - 2} posts + index + archive -> {out}/index.html")
     return 0
 
 

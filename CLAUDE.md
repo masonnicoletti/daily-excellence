@@ -44,7 +44,7 @@ Data flows in one direction, and each stage is one module in `src/daily_excellen
    - `variation.json` is sampled randomly on each run (length, sections, tone, opening, closing) so essays don't share one structure.
    - Validation: source URLs must appear in the actual search results (`parse_notes` / `clean_essay`). Blocked domains are stripped. Word count and title are checked, with one retry.
    - The output records the prompt version, models, variation, research notes, and per-call token usage and estimated cost.
-4. **`render.py`**: renders Jinja templates in `templates/` (`base`/`post`/`index`, plus `style.css`, which is copied as-is) into `site/`.
+4. **`render.py`**: renders Jinja templates in `templates/` (`base`/`post`/`index`/`archive`, plus `style.css`, which is copied as-is) into `site/`. The home page shows only the latest essay; the full list is on `archive.html`.
    - The essay's Markdown has `<` escaped before conversion, so model output can't inject HTML.
 5. **`pipeline.py`**: the daily entry point. It uses the US Eastern date (`config.TIMEZONE`). If a post for that date already exists, it skips generation and only re-renders.
    - Posts are stored at `data/posts/<YYYY-MM-DD>[-N].json`. The date is the post's `date` field, falling back to the filename stem.

@@ -37,7 +37,8 @@ def test_rendered_pages_meet_attribution_rules(tmp_path, monkeypatch):
     pipeline.run("2026-11-05", **kw)
     post = (tmp_path / "site" / "posts" / "2026-11-05.html").read_text()
     index = (tmp_path / "site" / "index.html").read_text()
-    for page in (post, index):
+    archive = (tmp_path / "site" / "archive.html").read_text()
+    for page in (post, index, archive):
         assert 'href="https://personalexcellence.co/' in page
         assert "not affiliated with or endorsed by Personal Excellence" in page
         assert "nofollow" not in page
@@ -45,3 +46,15 @@ def test_rendered_pages_meet_attribution_rules(tmp_path, monkeypatch):
     assert "<script>x</script>" not in post             # model output can't inject HTML
     assert "&lt;script&gt;x" in post                    # ...it is shown as text instead
     assert (tmp_path / "site" / ".nojekyll").exists()
+
+
+def test_archive_has_its_own_page(tmp_path, monkeypatch):
+    kw = _setup(tmp_path, monkeypatch)
+    pipeline.run("2026-11-05", **kw)
+    site = tmp_path / "site"
+    index, archive = (site / "index.html").read_text(), (site / "archive.html").read_text()
+    post = (site / "posts" / "2026-11-05.html").read_text()
+    assert 'class="archive-list"' not in index and 'href="archive.html"' in index   # big button, no list
+    assert 'class="archive-list"' in archive and 'href="posts/2026-11-05.html"' in archive
+    assert 'class="masthead-button" href="../archive.html"' in post                 # header button on posts
+    assert 'class="masthead-button"' not in index
