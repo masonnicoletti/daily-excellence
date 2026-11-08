@@ -1,0 +1,79 @@
+{
+  "title": "What Do You Do Without Even Trying?",
+  "essay_markdown": "What do people thank you for that felt, to you, like nothing? Start there. It's often where your strengths are hiding.\n\n## Strengths that look like quirks\n\nMaggie Romanovich, a Training and Development professional, describes her own case this way on the Happen to Your Career podcast: \"I have strengths that I've always viewed as, like, weird quirks, but they work really well in the job I'm at.\" Her former team leader had a name for them: \"Maggie magic.\"\n\nRomanovich moved into Training and Development to support sales teams, then rose through higher Training, Learning, and Development leadership roles. The host counts four promotions, including the career change, all in work that draws on her strengths. The traits she once dismissed as oddities turned out to be the engine of her career.\n\nActor Kim Jae-won gave a different kind of answer. Asked by Sports Kyunghyang about his strengths, he said: \"I do not do anything half-heartedly.\" He calls it passion, and says it drives both his work as MC of KBS2's *Music Bank* and his attempts to play characters he hasn't shown before. He named a second strength too, one that came from experience: \"Perhaps because I have worked with adults and been part of society since I was young, I am somewhat perceptive. I know how to grasp the subtext when they say something.\"\n\nNotice that neither strength is a technical credential. One is a way of showing up. The other is a skill his circumstances trained into him.\n\n## Know it, then build on it\n\nThe idea is simple: find out what you're good at, then put more of your effort there, not less. A strength can be a single sharp skill, or it can be a combination. Perceptiveness plus full commitment is a different asset than either alone. Plenty of people aren't the best in the room at any one thing, yet nobody else has their particular mix.\n\nBuilding on a strength means treating it as something that compounds. If you're good at explaining things, you can get better at it, and then take on work where explaining is the whole point. Effort spent sharpening what already works usually pays back faster than effort spent patching what doesn't.\n\nThe catch is that strengths are hard to see from the inside. What comes easily to you feels ordinary, so you assume it's ordinary to everyone. Romanovich called hers quirks for exactly that reason.\n\n## Try this today\n\nLook for evidence instead of guessing:\n\n- **Check the pattern.** Think of the last few times someone asked for your help, or praised something you barely noticed doing. What did those moments share?\n- **Name the stack.** Write down two or three things you do well, then ask what happens when they combine. Careful plus friendly. Quick with numbers plus good at calming people down.\n- **Aim it.** Pick one task this week where that combination could matter, and deliberately lean on it instead of doing the task the way you think you're supposed to.\n\nThen, if you want to keep going, ask: how could I do more of this?\n\n## One small thing for today\n\nText one colleague or friend and ask: \"What's something you'd come to me for?\" Write down the answer, even if it surprises you. It may be your own version of Maggie magic.",
+  "sources": [
+    {
+      "title": "Kim Jae-won \"Strength as an actor? Passion that does not do things half-heartedly\"",
+      "url": "https://sports.khan.co.kr/en/article/202611031507007"
+    },
+    {
+      "title": "Stop Forcing the Fit: How to Find Work That Aligns with Your Natural Strengths",
+      "url": "https://happentoyourcareer.com/podcast-archive/how-to-use-your-signature-strengths-to-get-hired/"
+    }
+  ],
+  "word_count": 531,
+  "item": {
+    "number": 54,
+    "title": "Build on your strengths",
+    "body": "Know your strengths. What are you good at? How can you build on them to become even better at what you do? How can you leverage on your strengths to perform at work and in life? Your strength can be in a specific skill or the result of having a unique stack of skills.",
+    "subitems": [],
+    "related_read": "How To Build an Edge: Develop Your Talent Stack",
+    "id": "101-ways-to-live-your-life-to-the-fullest-054",
+    "source_title": "101 Ways To Live Your Life To The Fullest",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/",
+    "attribution": "Adapted from 101 Ways To Live Your Life To The Fullest by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Kim Jae-won \"Strength as an actor? Passion that does not do things half-heartedly\" | https://sports.khan.co.kr/en/article/202611031507007\n- Interview with Sports Kyunghyang at Samcheong-dong, Jongno-gu, Seoul, on the afternoon of the 3rd. Asked about his strengths as an actor, he said: \"I do not do anything half-heartedly.\" In an interview with Sports Kyunghyang held on the afternoon of the 3rd in Samcheong-dong, Jongno-gu, Seoul, when asked about his strengths as an actor, he said, \"I do not do anything half-heartedly.\n- He calls that trait passion. He is also MC of KBS2's *Music Bank*, and he says the passion drives both that role and his attempts to play characters he hasn't shown before. People call that 'passion'.\" He, who is also the MC of KBS2 'Music Bank', explained, \"Both taking on the MC role for 'Music Bank' and trying to present characters in my works that I have not shown before come from that passion.\n- Second strength, built from experience: Perhaps because I have worked with adults and been part of society since I was young, I am somewhat perceptive. I know how to grasp the subtext when they say something.\n\n## Stop Forcing the Fit: How to Find Work That Aligns with Your Natural Strengths | https://happentoyourcareer.com/podcast-archive/how-to-use-your-signature-strengths-to-get-hired/\n- Coach-hosted podcast episode 543, built around client stories. Maggie Romanovich moved into Training and Development to support sales teams, then rose through higher Training, Learning, and Development leadership ranks. Well, she initially went into Training and Development to support sales teams, then was promoted to higher and higher ranks of Training, Learning, and Development leadership.\n- Her own description: \"I have strengths that I've always viewed as, like, weird quirks, but they work really well in the job I'm at. \"You know, my former team leader called it Maggie magic.\"\n- Host's count of her progression: She gets promoted, you know, four times counting the career change where she has been working in areas of her strengths.",
+  "variation": {
+    "length": 600,
+    "sections": [
+      "a real person's story or testimony (sourced)",
+      "overview of the idea",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a question to the reader",
+    "tone": "practical and direct",
+    "closing": "one small action to take today"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011Cgr2fukj4wo2kXVS6Un7R"
+        ],
+        "input_tokens": 36205,
+        "output_tokens": 1784,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0245
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011Cgr2gfQnd7i8skZc9voDG"
+        ],
+        "input_tokens": 1719,
+        "output_tokens": 1141,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0148
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0393
+  },
+  "generated_at": "2026-11-08T19:41:15+00:00",
+  "date": "2026-11-08"
+}
