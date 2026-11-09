@@ -1,0 +1,80 @@
+{
+  "title": "The Letter from Future You",
+  "essay_markdown": "Picture a woman on a Sunday evening, phone in hand, scrolling through photos from ten years ago. She laughs at the haircut. She winces at the job she thought was permanent. Then a quieter thought arrives: someone ten years from now is looking back at *this* Sunday, and has opinions.\n\nThat's the whole idea today. Imagine you're ten years older. What would you tell the person reading this on their phone right now?\n\n## The advice you already have\n\nYou probably give good advice to other people all the time. Ask a friend what they'd tell a nervous coworker, and out comes something wise and kind. The trick is turning that voice on yourself.\n\nTry it on small things. Older you might say: *Please stop rereading that email six times.* Or: *Call your sister back. The dishes can wait.* Or: *That thing you keep postponing is much smaller than you think.* Notice that future you rarely says, \"Work harder at being impressive.\"\n\n## Your future self is a stranger (a fun one)\n\nHere's the reframe: you aren't predicting the future, you're interviewing someone who has already lived it. And it helps to remember that this person won't be quite who you expect. Psychologist Daniel Gilbert and colleagues found that people underestimate how much they'll change. In their study, participants were willing to pay 61% more, on average, for a future concert by their current favorite band than people ten years older would pay to see their favorite band from 2002. Gilbert's point, as reported by Science: \"Any kind of lifetime commitment is based on your belief that you know the person you're going to be in 10 years.\"\n\nSo hold your plans lightly, and let the older you have a say. They've changed their mind about a few things, and they'd like to tell you which ones.\n\n## What a real letter sounds like\n\nKobe Bryant tried this in The Players' Tribune, writing as his older self to his 17-year-old self. He warned that when his Lakers dream came true, he'd need to figure out how to invest in the future of his family and friends. His central instruction: \"Invest in their future, don't just give.\" The older Kobe had come to see that taking care of people because it made *you* feel good was selfish, and that handing over material things had subtracted the most precious gifts of all: independence and growth. His practical advice was to make sure your parents remain PARENTS and not managers.\n\nNotice how specific that is. It isn't a slogan, it's a correction only hindsight could offer.\n\n## Try it before breakfast\n\nGrab your notes app and write three lines that start with \"Ten years from now, I'll wish I had...\" Don't edit. Then pick the smallest one and do it today: send the message, book the appointment, forgive the thing.\n\nFuture you is already grateful. Give them something to be grateful for.",
+  "sources": [
+    {
+      "title": "Letter to My Younger Self",
+      "url": "https://www.theplayerstribune.com/articles/kobe-bryant-letter-to-my-younger-self"
+    },
+    {
+      "title": "Your Elusive Future Self",
+      "url": "https://www.science.org/content/article/your-elusive-future-self"
+    }
+  ],
+  "word_count": 461,
+  "item": {
+    "number": 19,
+    "title": "Imagine you are 10 years older",
+    "body": "What advice would you give to your present self?",
+    "subitems": [],
+    "id": "101-questions-to-ask-yourself-in-life-019",
+    "source_title": "101 Questions To Ask Yourself in Life",
+    "source_url": "https://personalexcellence.co/blog/101-questions/",
+    "attribution": "Adapted from 101 Questions To Ask Yourself in Life by Personal Excellence (https://personalexcellence.co/blog/101-questions/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Letter to My Younger Self | https://www.theplayerstribune.com/articles/kobe-bryant-letter-to-my-younger-self\n- Kobe Bryant wrote as his older self to his 17-year-old self, saying that when his Laker dream comes true, he needs to figure out how to invest in the future of his family and friends.\n- His central instruction: \"Invest in their future, don't just give.\"\n- He says the older Kobe came to see that taking care of them because it made YOU feel good was selfish, and that giving material things had subtracted the most precious gifts of all: independence and growth.\n- Practical advice: make sure your parents remain PARENTS and not managers.\n\n## Your Elusive Future Self | https://www.science.org/content/article/your-elusive-future-self\n- A study by Gilbert and colleagues found people underestimate how much they'll change in the future.\n- Participants were willing to pay 61% more, on average, for the future concert with their current favorite band than people 10 years older paid for their favorite band from 2002.\n- Gilbert's point: \"Any kind of lifetime commitment is based on your belief that you know the person you're going to be in 10 years.\"",
+  "variation": {
+    "length": 400,
+    "sections": [
+      "overview of the idea",
+      "concrete examples from everyday life",
+      "a mental framework or reframe",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a short scene or moment from a real person's life",
+    "tone": "playful and light",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011CgsZbToWt8xdRpxeSJZPE"
+        ],
+        "input_tokens": 35269,
+        "output_tokens": 1250,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0242
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011CgsZc21GHqDX1U1FuQNCW"
+        ],
+        "input_tokens": 1349,
+        "output_tokens": 974,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0124
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0366
+  },
+  "generated_at": "2026-11-09T15:07:17+00:00",
+  "date": "2026-11-09"
+}
