@@ -46,8 +46,8 @@
       window.DE_UNRELEASED = hidden;
     })();
   </script>
-  <link rel="stylesheet" href="{{ root }}style.css">
-  <script src="{{ root }}favorites.js" defer></script>
+  <link rel="stylesheet" href="{{ root }}style.css?v={{ asset_version["style.css"] }}">
+  <script src="{{ root }}favorites.js?v={{ asset_version["favorites.js"] }}" defer></script>
 </head>
 <body>
   {% if preview %}<div class="preview-banner">Local preview of draft essays. Not published.</div>{% endif %}

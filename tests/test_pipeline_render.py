@@ -149,3 +149,13 @@ def test_follow_up_questions_read_on_their_own_in_lists(tmp_path):
     assert 'archive-title">Is there a grudge you are holding on to? …Is it time to let it go?' in archive
     page = (tmp_path / "site" / "posts" / "2026-11-05.html").read_text()
     assert ">…Is it time to let it go?</h1>" in page and 'class="idea-context"' in page
+
+
+def test_asset_links_carry_a_content_version(tmp_path):
+    import hashlib
+    site = _seven_posts(tmp_path)
+    css = hashlib.sha256((render.TEMPLATES_DIR / "style.css").read_bytes()).hexdigest()[:10]
+    for page in [site / "index.html", site / "archive.html", site / "posts" / "2026-11-03.html"]:
+        html = page.read_text()
+        assert f'style.css?v={css}"' in html          # changes whenever style.css changes
+        assert "favorites.js?v=" in html

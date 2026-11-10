@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -26,6 +27,12 @@ SITE_TITLE = "Daily Excellence"
 DISCLAIMER = ("Daily Excellence is an independent project, not affiliated with or endorsed by Personal "
               "Excellence. Essays are AI-generated (see the colophon on each post) and are for "
               "inspiration only, not professional advice.")
+
+
+def asset_versions() -> dict[str, str]:
+    """Short content hash per static file, used as ?v= in links so browsers fetch changed
+    files right away instead of reusing a cached copy (GitHub Pages allows 10-minute caching)."""
+    return {name: hashlib.sha256((TEMPLATES_DIR / name).read_bytes()).hexdigest()[:10] for name in STATIC}
 
 
 def essay_html(markdown_text: str) -> str:
@@ -66,7 +73,8 @@ def build(src: Path, out: Path, drafts: bool = False) -> list[Path]:
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATES_DIR),
                              autoescape=jinja2.select_autoescape(["html"]))
     env.globals.update(site_title=SITE_TITLE, disclaimer=DISCLAIMER, preview=drafts,
-                       release_hour=config.RELEASE_HOUR, timezone=config.TIMEZONE)
+                       release_hour=config.RELEASE_HOUR, timezone=config.TIMEZONE,
+                       asset_version=asset_versions())
     posts = load_posts(src, drafts)
 
     (out / "posts").mkdir(parents=True, exist_ok=True)
