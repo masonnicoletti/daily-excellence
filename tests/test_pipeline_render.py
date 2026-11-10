@@ -71,7 +71,7 @@ def test_home_shows_favorites_and_five_recent(tmp_path):
     assert 'data-total="7" data-dates="2026-11-07 2026-11-06">7</span> essays in the archive' in recent
     assert index.index('id="favorites-h"') < index.index('id="recent-h"')    # Favorites above Recent
     cards = json.loads(index.split('id="posts-data">')[1].split("</script>")[0])
-    assert len(cards) == 7 and set(cards[0]) == {"slug", "title", "idea", "date", "date_short"}
+    assert len(cards) == 7 and set(cards[0]) == {"slug", "title", "subtitle", "date", "date_short"}
     assert (site / "favorites.js").exists()
 
 
@@ -122,3 +122,30 @@ def test_icons_are_linked_and_published(tmp_path):
         assert (site / icon["src"]).exists()
     for name in ["favicon.svg", "favicon-32.png", "apple-touch-icon.png"]:
         assert (site / "icons" / name).exists()
+
+
+def test_item_is_the_headline_and_essay_title_is_secondary(tmp_path):
+    site = _seven_posts(tmp_path)          # item "Be Bold"; essay titles "Essay 1".."Essay 7"
+    post = (site / "posts" / "2026-11-03.html").read_text()
+    h1 = post.split("<h1")[1].split("</h1>")[0]
+    assert "Be Bold" in h1 and "Essay 3" not in h1
+    assert '<h2 class="essay-title">Essay 3</h2>' in post
+    assert post.index("<h1") < post.index('class="essay-title"') < post.index('class="essay"')
+    assert "<title>Be Bold · Daily Excellence</title>" in post
+    index = (site / "index.html").read_text()
+    assert '<p class="hero-subtitle">Essay 7</p>' in index
+    row = index.split('id="recent-h"')[1].split("</li>")[0]
+    assert row.index('archive-title">Be Bold') < row.index('archive-idea">Essay 7')
+
+
+def test_follow_up_questions_read_on_their_own_in_lists(tmp_path):
+    posts = tmp_path / "posts"; posts.mkdir()
+    item = {"number": 48, "title": "…Is it time to let it go?", "body": "", "subitems": [], "source_title": "Q",
+            "source_url": URL, "context": ["Is there a grudge you are holding on to?", "…Why are you holding on to it?"]}
+    post = fake_generate(item); post["date"] = "2026-11-05"
+    (posts / "2026-11-05.json").write_text(json.dumps(post))
+    render.build(posts, tmp_path / "site")
+    archive = (tmp_path / "site" / "archive.html").read_text()
+    assert 'archive-title">Is there a grudge you are holding on to? …Is it time to let it go?' in archive
+    page = (tmp_path / "site" / "posts" / "2026-11-05.html").read_text()
+    assert ">…Is it time to let it go?</h1>" in page and 'class="idea-context"' in page

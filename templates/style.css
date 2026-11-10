@@ -149,38 +149,33 @@ a:hover { color: var(--accent-text); }
   text-wrap: balance;
 }
 
-.idea {
-  position: relative;
-  background: var(--surface);
-  border-radius: 0.9rem;
-  padding: 1.25rem 1.35rem 1.1rem;
-  margin: 0 0 2.25rem;
-  overflow: hidden;
+/* The Personal Excellence item is the headline (h1); the essay title follows, smaller. */
+.post-head {
+  margin: 0 0 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
 }
-.idea::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 0.3rem;
-  background: linear-gradient(180deg, var(--accent-2), var(--accent));
-}
-.idea p { margin: 0; }
+.post-head .post-title { margin-bottom: 0.75rem; }
+.post-title-long { font-size: clamp(1.7rem, 5.5vw, 2.3rem); line-height: 1.15; }
 .idea-label {
+  margin: 0 0 0.6rem;
   font: 600 0.72rem/1.4 var(--sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-text);
 }
-.idea-title {
-  font: 600 1.35rem/1.3 var(--display);
-  margin: 0.35rem 0 0.4rem !important;
-}
-.idea-body { color: var(--ink-soft); font-size: 1.05rem; }
-.idea-context { color: var(--ink-faint); font-size: 1rem; font-style: italic; margin-top: 0.35rem !important; }
+.idea-context { margin: -0.2rem 0 0.4rem; color: var(--ink-faint); font-size: 1rem; font-style: italic; }
+.post-dek { margin: 0 0 0.9rem; color: var(--ink-soft); font-size: 1.15rem; line-height: 1.6; }
 .idea-credit {
-  margin-top: 0.75rem !important;
+  margin: 0;
   font: 0.8rem/1.4 var(--sans);
   color: var(--ink-faint);
+}
+.essay-title {
+  margin: 0 0 1.1rem;
+  font: 600 1.45rem/1.3 var(--display);
+  color: var(--ink);
+  text-wrap: balance;
 }
 
 .essay > p:first-child { font-size: 1.25rem; line-height: 1.6; }
@@ -252,9 +247,17 @@ a:hover { color: var(--accent-text); }
 .hero-title a { color: inherit; text-decoration: none; }
 .hero-title a:hover { color: var(--accent-text); }
 .hero-idea {
-  font: 600 0.9rem/1.4 var(--sans);
+  margin: 0 0 0.6rem;
+  font: 600 0.78rem/1.4 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--accent-text);
-  margin: -0.75rem 0 1rem;
+}
+.hero .hero-title { margin-bottom: 0.6rem; }
+.hero-subtitle {
+  margin: 0 0 1.1rem;
+  font: 600 1.2rem/1.35 var(--display);
+  color: var(--ink-soft);
 }
 .hero-excerpt { color: var(--ink-soft); margin: 0 0 1.5rem; }
 .hero-actions {

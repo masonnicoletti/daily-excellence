@@ -177,3 +177,12 @@ def test_pick_is_idempotent_per_date(tmp_path):
     assert a["id"] == b["id"]
     assert len(json.loads(hist.read_text())) == 1
     assert a["source_url"] == URL
+
+
+def test_split_title_abbreviation_and_one_word_question():
+    assert ingest.split_title("Focus on WHAT vs. How. Focus on WHAT you want first.") == (
+        "Focus on WHAT vs. How", "Focus on WHAT you want first.")
+    assert ingest.split_title("Why? How can you spend more time with them?") == (
+        "Why? How can you spend more time with them?", "")
+    assert ingest.split_title("Who are you? How would you describe yourself?") == (
+        "Who are you?", "How would you describe yourself?")

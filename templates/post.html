@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}{{ post.title }} · {{ site_title }}{% endblock %}
-{% block description %}{{ post.item.title }}: a Daily Excellence essay for {{ post.date_long }}.{% endblock %}
+{% block title %}{{ post.list_title }} · {{ site_title }}{% endblock %}
+{% block description %}{{ post.title }}: a Daily Excellence essay for {{ post.date_long }}.{% endblock %}
 {% block content %}
 <article class="post">
   <div class="post-topline">
@@ -9,19 +9,20 @@
       {% include "_star.svg" %}<span class="fav-label">Favorite</span>
     </button>
   </div>
-  <h1 class="post-title">{{ post.title }}</h1>
 
-  <aside class="idea" aria-label="Today's idea">
-    <p class="idea-label">Today's idea · #{{ post.item.number }}</p>
+  {# The Personal Excellence item is the headline; Claude's essay title follows as a secondary heading. #}
+  <header class="post-head">
+    <p class="idea-label">Idea #{{ post.item.number }} · {{ post.item.source_title }}</p>
     {% if post.item.context %}<p class="idea-context">{{ post.item.context | join(" ") }}</p>{% endif %}
-    <p class="idea-title">{{ post.item.title }}</p>
-    {% if post.item.body %}<p class="idea-body">{% if post.item.joiner and post.item.body[:1].islower() %}{{ post.item.title }} {% endif %}{{ post.item.body }}</p>{% endif %}
+    <h1 class="post-title{% if post.headline_long %} post-title-long{% endif %}">{{ post.headline }}</h1>
+    {% if post.item.body %}<p class="post-dek">{% if post.item.joiner and post.item.body[:1].islower() %}{{ post.item.title }} {% endif %}{{ post.item.body }}</p>{% endif %}
     <p class="idea-credit">
       From <a href="{{ post.item.source_url }}">{{ post.item.source_title }}</a>
       by <a href="https://personalexcellence.co/">Personal Excellence</a>
     </p>
-  </aside>
+  </header>
 
+  <h2 class="essay-title">{{ post.title }}</h2>
   <div class="essay">
     {{ post.html | safe }}
   </div>
@@ -45,7 +46,7 @@
 </article>
 
 <nav class="post-nav" aria-label="More essays">
-  {% if older %}<a class="older" href="{{ older.slug }}.html"><span>Previous</span>{{ older.title }}</a>{% else %}<span></span>{% endif %}
-  {% if newer %}<a class="newer" data-release="{{ newer.date }}" href="{{ newer.slug }}.html"><span>Next</span>{{ newer.title }}</a>{% endif %}
+  {% if older %}<a class="older" href="{{ older.slug }}.html"><span>Previous</span>{{ older.list_title }}</a>{% else %}<span></span>{% endif %}
+  {% if newer %}<a class="newer" data-release="{{ newer.date }}" href="{{ newer.slug }}.html"><span>Next</span>{{ newer.list_title }}</a>{% endif %}
 </nav>
 {% endblock %}

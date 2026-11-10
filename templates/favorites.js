@@ -71,7 +71,7 @@
       var title = document.createElement("span");
       title.className = "archive-title"; title.textContent = c.title;
       var idea = document.createElement("span");
-      idea.className = "archive-idea"; idea.textContent = c.idea;
+      idea.className = "archive-idea"; idea.textContent = c.subtitle;
       var ind = document.createElement("span");
       ind.className = "fav-indicator is-fav"; ind.title = "Favorite";
       ind.setAttribute("data-slug", c.slug);  /* so markRows() keeps it filled */

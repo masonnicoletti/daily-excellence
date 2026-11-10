@@ -5,8 +5,10 @@
 {% for today in posts[:2] %}
 <section class="hero{% if not loop.first %} hero-fallback{% endif %}" data-release="{{ today.date }}">
   <p class="eyebrow">Today · <time datetime="{{ today.date }}">{{ today.date_long }}</time></p>
-  <h1 class="hero-title"><a href="posts/{{ today.slug }}.html">{{ today.title }}</a></h1>
-  <p class="hero-idea">#{{ today.item.number }} · {{ today.item.title }}</p>
+  <p class="hero-idea">Idea #{{ today.item.number }} · {{ today.item.source_title }}</p>
+  {% if today.item.context %}<p class="idea-context">{{ today.item.context | join(" ") }}</p>{% endif %}
+  <h1 class="hero-title{% if today.headline_long %} post-title-long{% endif %}"><a href="posts/{{ today.slug }}.html">{{ today.headline }}</a></h1>
+  <p class="hero-subtitle">{{ today.title }}</p>
   <p class="hero-excerpt">{{ today.excerpt | safe }}</p>
   <div class="hero-actions">
     <a class="button" href="posts/{{ today.slug }}.html">Read today's essay <span aria-hidden="true">→</span></a>

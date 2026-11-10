@@ -41,6 +41,7 @@ FOLLOW_RE = re.compile(r"^\s*\+\s+(.*)$")  # follow-up question: own item, earli
 NOTE_RE = re.compile(r"\s*\[\[note:\s*(.+?)\]\]\s*$")  # trailing writer's note; prompts only, never shown
 # First sentence end: . ? or ! (optionally inside a closing quote) followed by space/end, not an ellipsis.
 TITLE_END_RE = re.compile(r"(?<!\.)([.?!])([\"”’]?)(?=\s|$)")
+ABBREV_RE = re.compile(r"\b(?:vs|e\.g|i\.e|Mr|Mrs|Ms|Dr|St)$", re.I)  # "." here is not a sentence end
 LEADING_NUM_RE = re.compile(r"^\d{1,3}[.)]\s+")  # a stray "1. " that survived the paste
 TERM_RE = re.compile(r"^([^:]{1,40}):\s+(\S.*)$")
 # Trailing "(Read: X)" or "Read: X". The wrapped form is tried first so a title
@@ -53,17 +54,23 @@ def slugify(text: str) -> str:
 
 
 def split_title(line: str) -> tuple[str, str]:
-    """Split "Be Bold. Life is an adventure." into ("Be Bold", "Life is an adventure.")."""
-    m = TITLE_END_RE.search(line)
-    if not m:
-        return line.strip(), ""
-    punct, quote = m.group(1), m.group(2)
-    title = line[: m.start()].strip()
-    if quote:                       # 'think “next time.”' keeps its closing quote
-        title += punct + quote
-    elif punct in "?!":
-        title += punct
-    return title, line[m.end():].strip()
+    """Split "Be Bold. Life is an adventure." into ("Be Bold", "Life is an adventure.").
+
+    A period after an abbreviation ("Focus on WHAT vs. How.") doesn't end the title, and
+    a one-word question ("Why? How can you...?") keeps the question that follows it.
+    """
+    for m in TITLE_END_RE.finditer(line):
+        punct, quote = m.group(1), m.group(2)
+        head = line[: m.start()].strip()
+        if punct == "." and not quote and ABBREV_RE.search(head):
+            continue
+        title = head + (punct + quote if quote else punct if punct in "?!" else "")
+        if punct == "?" and len(title.split()) == 1 and line[m.end():].strip():
+            nxt = TITLE_END_RE.search(line, m.end())
+            if nxt and nxt.group(1) == "?":
+                return line[: nxt.end()].strip(), line[nxt.end():].strip()
+        return title, line[m.end():].strip()
+    return line.strip(), ""
 
 
 def split_related(body: str) -> tuple[str, str | None]:
