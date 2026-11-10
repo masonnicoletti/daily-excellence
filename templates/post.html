@@ -4,7 +4,7 @@
 {% block content %}
 <article class="post">
   <div class="post-topline">
-    <p class="eyebrow"><time datetime="{{ post.date }}">{{ post.date_long }}</time> · {{ post.reading_minutes }} min read</p>
+    <p class="eyebrow"><time datetime="{{ post.date }}">{{ post.date_long }}</time></p>
     <button class="fav-button" type="button" data-slug="{{ post.slug }}" aria-pressed="false">
       {% include "_star.svg" %}<span class="fav-label">Favorite</span>
     </button>
