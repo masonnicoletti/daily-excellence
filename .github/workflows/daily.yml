@@ -2,11 +2,18 @@ name: Daily Excellence
 
 on:
   schedule:
-    # GitHub cron is UTC and often starts late, so run early.
-    # 08:30 UTC = 3:30 AM EST / 4:30 AM EDT. The 09:30 run is a backup
-    # (it does nothing if today's post already exists).
-    - cron: "30 8 * * *"
-    - cron: "30 9 * * *"
+    # GitHub's cron is UTC and best-effort: runs have started 6-10 hours late.
+    # So the essay is prepared the evening before. From 5 PM Eastern a run writes
+    # tomorrow's essay (pipeline.edition_date); the site reveals it at 5 AM Eastern.
+    # Only the first run that starts does any work; later ones find the post and skip.
+    # Off-peak minute (:47). Eastern times are EST / EDT.
+    - cron: "47 22 * * *"   #  5:47 PM /  6:47 PM  (prepares tomorrow)
+    - cron: "47 0 * * *"    #  7:47 PM /  8:47 PM
+    - cron: "47 2 * * *"    #  9:47 PM / 10:47 PM
+    - cron: "47 4 * * *"    # 11:47 PM / 12:47 AM
+    - cron: "47 6 * * *"    #  1:47 AM /  2:47 AM
+    - cron: "47 8 * * *"    #  3:47 AM /  4:47 AM
+    - cron: "47 11 * * *"   #  6:47 AM /  7:47 AM  (catch-up: today's essay if all else missed)
   workflow_dispatch:        # "Run workflow" button for manual runs
   push:                     # redeploy (no new essay) when code or templates change
     branches: [main]
@@ -59,7 +66,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No new post to commit."
           else
-            git commit -m "Daily Excellence: $(TZ=America/New_York date +%F)"
+            post=$(git diff --cached --name-only --diff-filter=A -- data/posts | head -n 1)
+            git commit -m "Daily Excellence: $(basename "${post:-new-post.json}" .json)"
             git pull --rebase
             git push
           fi

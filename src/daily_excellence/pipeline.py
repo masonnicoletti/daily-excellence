@@ -20,8 +20,17 @@ POSTS_DIR = config.POSTS_DATA_DIR
 SITE_DIR = config.ROOT / "site"
 
 
-def today() -> str:
-    return dt.datetime.now(ZoneInfo(config.TIMEZONE)).date().isoformat()
+def edition_date(now: dt.datetime | None = None) -> str:
+    """The date of the essay a run should create (US Eastern).
+
+    GitHub's cron can start hours late, so runs begin the evening before:
+    from PREPARE_AFTER_HOUR (5 PM) on, a run prepares tomorrow's essay. Earlier
+    runs make today's essay, as a catch-up if every evening run was missed.
+    The site keeps a post hidden until RELEASE_HOUR (5 AM) on its date.
+    """
+    now = (now or dt.datetime.now(dt.timezone.utc)).astimezone(ZoneInfo(config.TIMEZONE))
+    day = now.date() + dt.timedelta(days=1 if now.hour >= config.PREPARE_AFTER_HOUR else 0)
+    return day.isoformat()
 
 
 def post_exists(date: str, posts_dir: Path = POSTS_DIR) -> bool:
@@ -34,7 +43,7 @@ def run(date: str | None = None, *, posts_dir: Path = POSTS_DIR, site_dir: Path 
     """Create the post for `date` if missing, then render. Returns the new post path, or None if skipped."""
     from .generate import generate  # imported lazily so --render-only needs no API setup
 
-    date = date or today()
+    date = date or edition_date()
     created = None
     if post_exists(date, posts_dir):
         print(f"Post for {date} already exists; skipping generation.")
@@ -56,7 +65,7 @@ def run(date: str | None = None, *, posts_dir: Path = POSTS_DIR, site_dir: Path 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--date", help="YYYY-MM-DD (default: today in US Eastern)")
+    ap.add_argument("--date", help="YYYY-MM-DD (default: edition_date(), i.e. tomorrow after 5 PM Eastern)")
     ap.add_argument("--render-only", action="store_true")
     args = ap.parse_args(argv)
     if args.render_only:

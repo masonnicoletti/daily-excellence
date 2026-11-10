@@ -309,6 +309,9 @@ a:hover { color: var(--accent-text); }
 .archive-idea { grid-column: 2; font: 0.85rem/1.4 var(--sans); color: var(--ink-soft); }
 .archive-list a:hover .archive-title { color: var(--accent-text); }
 
+/* ---------- release (see base.html): shown only while a newer essay is still hidden ---------- */
+.hero-fallback, .recent-extra { display: none; }
+
 /* ---------- favorites ---------- */
 .fav-indicator {
   grid-column: 3;

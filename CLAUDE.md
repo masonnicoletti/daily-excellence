@@ -47,14 +47,15 @@ Data flows in one direction, and each stage is one module in `src/daily_excellen
 4. **`render.py`**: renders Jinja templates in `templates/` (`base`/`post`/`index`/`archive`, plus `style.css`, which is copied as-is) into `site/`. The home page shows only the latest essay; the full list is on `archive.html`.
    - The essay's Markdown has `<` escaped before conversion, so model output can't inject HTML.
    - Favorites are client-side only. `templates/favorites.js` (copied as-is) stores slugs in `localStorage` (`de-favorites`), per browser. The home page embeds every post's `card` as JSON (`#posts-data`), so the Favorites section can list any essay. Home shows Favorites, then the 5 most recent essays.
-5. **`pipeline.py`**: the daily entry point. It uses the US Eastern date (`config.TIMEZONE`). If a post for that date already exists, it skips generation and only re-renders.
+5. **`pipeline.py`**: the daily entry point. `edition_date()` picks the post date in US Eastern (`config.TIMEZONE`): runs from `PREPARE_AFTER_HOUR` (5 PM) on prepare **tomorrow's** essay, and earlier runs make today's. If a post for that date already exists, it skips generation and only re-renders.
+   - The site hides a post until `RELEASE_HOUR` (5 AM Eastern) on its date. An inline script in `base.html` hides elements with `data-release="YYYY-MM-DD"`, and `.hero-fallback` / `.recent-extra` fill the gap. Hiding is visual only.
    - Posts are stored at `data/posts/<YYYY-MM-DD>[-N].json`. The date is the post's `date` field, falling back to the filename stem.
 
 All tunable settings are in `config.py`: `ACTIVE_PROMPT`, models, effort levels, `MAX_SEARCHES`, pricing table, `COST_TARGET_USD`, and `BLOCKED_DOMAINS`. Only Opus and Sonnet get the dynamic `web_search_20260209` tool and the server-side refusal fallback (`DYNAMIC_SEARCH_MODELS`, `FALLBACK_MODELS`). Haiku uses the basic `web_search_20250305` and no fallback. The `anthropic` SDK is pinned to `<1` (the 0.x API).
 
 ## Deployment
 
-`.github/workflows/daily.yml` runs on cron at 08:30 UTC, with a backup run at 09:30 that does nothing if the post exists, and on manual dispatch. It runs tests, then the pipeline, commits `data/posts` and `data/history.json` as a bot, and deploys `site/` to Pages.
+`.github/workflows/daily.yml` runs on seven cron times from about 6 PM to 4 AM Eastern plus a 6:47 AM catch-up, and on manual dispatch. GitHub's schedule has started runs 6–10 hours late, which is why essays are prepared the night before. Only the first run each night generates; the rest skip. It runs tests, then the pipeline, commits `data/posts` and `data/history.json` as a bot, and deploys `site/` to Pages.
 - A push to `main` only re-renders and redeploys; no essay is generated.
 - `site/` is built in CI and is **not committed**.
 - The bot commits to `main` daily, so run `git pull --rebase` before pushing.

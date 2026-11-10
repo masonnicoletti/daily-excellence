@@ -2,8 +2,8 @@
 {% from "_post_list.html" import post_list %}
 {% block content %}
 {% if posts %}
-{% set today = posts[0] %}
-<section class="hero">
+{% for today in posts[:2] %}
+<section class="hero{% if not loop.first %} hero-fallback{% endif %}" data-release="{{ today.date }}">
   <p class="eyebrow">Today · <time datetime="{{ today.date }}">{{ today.date_long }}</time></p>
   <h1 class="hero-title"><a href="posts/{{ today.slug }}.html">{{ today.title }}</a></h1>
   <p class="hero-idea">#{{ today.item.number }} · {{ today.item.title }}</p>
@@ -12,6 +12,7 @@
     <a class="button" href="posts/{{ today.slug }}.html">Read today's essay <span aria-hidden="true">→</span></a>
   </div>
 </section>
+{% endfor %}
 
 {# Filled in by favorites.js from this browser's saved favorites. #}
 <section class="home-section favorites" aria-labelledby="favorites-h">
@@ -22,8 +23,8 @@
 
 <section class="home-section" aria-labelledby="recent-h">
   <h2 id="recent-h" class="section-heading">Recent</h2>
-  {{ post_list(posts[:5], "") }}
-  {% if posts | length > 5 %}<a class="section-more" href="archive.html">All {{ posts | length }} essays in the archive →</a>{% endif %}
+  {{ post_list(posts[:6], "", extra_after=5) }}
+  {% if posts | length > 5 %}<a class="section-more" href="archive.html">All <span class="js-count" data-total="{{ posts | length }}" data-dates="{{ posts[:2] | map(attribute="date") | join(" ") }}">{{ posts | length }}</span> essays in the archive →</a>{% endif %}
 </section>
 
 <p class="index-credit">

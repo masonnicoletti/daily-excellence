@@ -34,6 +34,8 @@ PRICING = {
 }
 WEB_SEARCH_USD = 0.01
 TIMEZONE = "America/New_York"
+PREPARE_AFTER_HOUR = 17     # runs from 5 PM Eastern on prepare the next day's essay
+RELEASE_HOUR = 5            # the site shows a post from 5 AM Eastern on its date (keep in sync with base.html)
 BLOCKED_DOMAINS = ["personalexcellence.co"]  # ToS: no automated access (subdomains covered)
 WORD_RANGE = (200, 1100)
 

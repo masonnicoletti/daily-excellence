@@ -13,6 +13,32 @@
     document.documentElement.classList.add("js");  /* favorite stars only appear when scripts run */
     try { if (localStorage.getItem("de-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
   </script>
+  <script>
+    /* Essays are prepared the evening before. Hide any essay whose release time
+       ({{ release_hour }}:00 {{ timezone }} on its date) hasn't come yet, before the page paints.
+       Elements carry data-release="YYYY-MM-DD"; window.DE_UNRELEASED lists hidden dates. */
+    (function () {
+      var hidden = [];
+      try {
+        var parts = new Intl.DateTimeFormat("en-CA", { timeZone: "{{ timezone }}", year: "numeric",
+              month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" }).formatToParts(new Date()),
+            o = {};
+        parts.forEach(function (x) { o[x.type] = x.value; });
+        var today = o.year + "-" + o.month + "-" + o.day;
+        var plus = function (n) { var d = new Date(today + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+        hidden = [plus(1), plus(2)];
+        if (Number(o.hour) < {{ release_hour }}) hidden.unshift(today);
+        var css = hidden.map(function (d) {
+          var sel = '[data-release="' + d + '"]';
+          return sel + "{display:none!important}" + sel + "~.hero-fallback," + sel + "~.recent-extra{display:block}";
+        }).join("");
+        var style = document.createElement("style");
+        style.textContent = css;
+        document.head.appendChild(style);
+      } catch (e) {}
+      window.DE_UNRELEASED = hidden;
+    })();
+  </script>
   <link rel="stylesheet" href="{{ root }}style.css">
   <script src="{{ root }}favorites.js" defer></script>
 </head>

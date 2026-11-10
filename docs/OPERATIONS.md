@@ -2,9 +2,15 @@
 
 ## Normal schedule
 
-`.github/workflows/daily.yml` runs at 08:30 UTC (3:30 AM EST / 4:30 AM EDT). A backup run at 09:30 UTC does nothing if the day's post already exists. Each run tests, generates the US Eastern day's essay, commits `data/posts/` and `data/history.json`, and deploys the site to https://masonnicoletti.github.io/daily-excellence/.
+GitHub's scheduled runs are best-effort. In November 2026 they started 6–10 hours late, and some were dropped, so essays are **prepared the evening before and revealed at 5 AM Eastern**.
 
-- **Run now:** go to Actions, then Daily Excellence, then Run workflow. If today's post already exists, this only rebuilds and deploys, so it's free.
+- `.github/workflows/daily.yml` has seven cron times, from about 6 PM to 4 AM Eastern plus a 6:47 AM catch-up run, all at :47 (off-peak).
+- **Which essay a run writes** (`pipeline.edition_date`): from 5 PM Eastern on, tomorrow's; before 5 PM, today's (a catch-up if the evening runs never came). Only the first run that starts does any work. Later runs find the post, skip generation, and only redeploy.
+- **The reveal:** a script in every page's `<head>` (`templates/base.html`) hides any essay whose date hasn't reached 5 AM Eastern: the home page's top essay, Recent, the archive, Favorites, and an essay page's "Next" link. Until then the previous essay stays on top. The hiding is visual only: an unreleased essay's page exists at its URL, but nothing links to it.
+- Each run tests, runs the pipeline, commits `data/posts/` and `data/history.json`, and deploys to https://masonnicoletti.github.io/daily-excellence/.
+
+- **Run now:** go to Actions, then Daily Excellence, then Run workflow. After 5 PM Eastern this prepares tomorrow's essay. Before 5 PM it creates today's if it's missing. If that post already exists, it only rebuilds and deploys, so it's free.
+- **Checking the schedule:** the run history (Actions tab, or `https://api.github.com/repos/masonnicoletti/daily-excellence/actions/runs`) shows each run's trigger (`schedule`, `workflow_dispatch`, `push`) and start time.
 - **Pushing code or templates** redeploys without writing an essay.
 - **Failures** email you when GitHub's Actions notifications are on (GitHub, then Settings, then Notifications).
 

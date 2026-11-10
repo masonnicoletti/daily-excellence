@@ -1,8 +1,8 @@
 {# One row per essay. A filled star appears when the essay is in this browser's favorites. #}
-{% macro post_list(posts, root, id=None) -%}
+{% macro post_list(posts, root, id=None, extra_after=None) -%}
 <ul class="archive-list"{% if id %} id="{{ id }}"{% endif %}>
   {%- for p in posts %}
-  <li>
+  <li data-release="{{ p.date }}"{% if extra_after and loop.index > extra_after %} class="recent-extra"{% endif %}>
     <a href="{{ root }}posts/{{ p.slug }}.html">
       <time datetime="{{ p.date }}">{{ p.date_short }}</time>
       <span class="archive-title">{{ p.title }}</span>

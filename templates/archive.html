@@ -2,12 +2,12 @@
 {% from "_post_list.html" import post_list %}
 {% block title %}Archive · {{ site_title }}{% endblock %}
 {% block description %}Every Daily Excellence essay so far, newest first.{% endblock %}
-{# On the archive itself, the header button goes back to today's essay instead. #}
-{% block masthead_button %}{% if posts %}<a class="masthead-button" href="{{ root }}posts/{{ posts[0].slug }}.html">Today</a>{% endif %}{% endblock %}
+{# On the archive itself, the header button goes back home, which always shows the current essay. #}
+{% block masthead_button %}<a class="masthead-button" href="{{ root }}index.html">Today</a>{% endblock %}
 {% block content %}
 <section class="archive" aria-labelledby="archive-h">
   <p class="eyebrow">All essays</p>
-  <h1 id="archive-h" class="archive-heading">Archive <span class="count">{{ posts | length }} essay{{ "s" if posts | length != 1 }}</span></h1>
+  <h1 id="archive-h" class="archive-heading">Archive <span class="count"><span class="js-count" data-total="{{ posts | length }}" data-dates="{{ posts[:2] | map(attribute="date") | join(" ") }}">{{ posts | length }}</span> essays</span></h1>
   {% if posts %}
   {{ post_list(posts, root) }}
   {% else %}

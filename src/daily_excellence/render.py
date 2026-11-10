@@ -57,7 +57,8 @@ def load_posts(src: Path, drafts: bool = False) -> list[dict]:
 def build(src: Path, out: Path, drafts: bool = False) -> list[Path]:
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATES_DIR),
                              autoescape=jinja2.select_autoescape(["html"]))
-    env.globals.update(site_title=SITE_TITLE, disclaimer=DISCLAIMER, preview=drafts)
+    env.globals.update(site_title=SITE_TITLE, disclaimer=DISCLAIMER, preview=drafts,
+                       release_hour=config.RELEASE_HOUR, timezone=config.TIMEZONE)
     posts = load_posts(src, drafts)
 
     (out / "posts").mkdir(parents=True, exist_ok=True)

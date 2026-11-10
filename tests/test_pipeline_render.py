@@ -64,8 +64,11 @@ def test_home_shows_favorites_and_five_recent(tmp_path):
     site = _seven_posts(tmp_path)
     index = (site / "index.html").read_text()
     recent = index.split('id="recent-h"')[1].split("</section>")[0]
-    assert recent.count("<li>") == 5 and "Essay 7" in recent and "Essay 2" not in recent
-    assert "All 7 essays in the archive" in recent
+    # 6 rows are rendered; the 6th only shows while the newest essay is unreleased.
+    assert recent.count("<li ") == 6 and recent.count("recent-extra") == 1
+    assert "Essay 7" in recent and "Essay 1" not in recent
+    assert '<li data-release="2026-11-02" class="recent-extra">' in recent
+    assert 'data-total="7" data-dates="2026-11-07 2026-11-06">7</span> essays in the archive' in recent
     assert index.index('id="favorites-h"') < index.index('id="recent-h"')    # Favorites above Recent
     cards = json.loads(index.split('id="posts-data">')[1].split("</script>")[0])
     assert len(cards) == 7 and set(cards[0]) == {"slug", "title", "idea", "date", "date_short"}
@@ -76,9 +79,32 @@ def test_archive_page_and_star_button(tmp_path):
     site = _seven_posts(tmp_path)
     index, archive = (site / "index.html").read_text(), (site / "archive.html").read_text()
     post = (site / "posts" / "2026-11-03.html").read_text()
-    assert archive.count("<li>") == 7 and 'href="archive.html"' in index
+    assert archive.count("<li ") == 7 and 'href="archive.html"' in index
     assert 'class="fav-button" type="button" data-slug="2026-11-03"' in post      # star at the top
     assert post.index("fav-button") < post.index("post-title")
     assert 'class="masthead-button" href="../archive.html"' in post                # header button on posts
     assert 'class="masthead-button" href="archive.html"' in index                 # same header button on home
     assert "button-secondary" not in index                                         # big Archive button removed
+
+
+def test_newest_essay_can_be_hidden_until_release(tmp_path):
+    site = _seven_posts(tmp_path)
+    index = (site / "index.html").read_text()
+    assert '<section class="hero" data-release="2026-11-07">' in index
+    assert '<section class="hero hero-fallback" data-release="2026-11-06">' in index   # shown while 11-07 is hidden
+    assert "window.DE_UNRELEASED" in index and "hourCycle" in index
+    post = (site / "posts" / "2026-11-06.html").read_text()
+    assert 'class="newer" data-release="2026-11-07"' in post                         # "Next" hides too
+
+
+def test_edition_date_prepares_tomorrow_in_the_evening():
+    import datetime as dt
+    from zoneinfo import ZoneInfo
+    et = ZoneInfo("America/New_York")
+    at = lambda *a: dt.datetime(*a, tzinfo=et)
+    assert pipeline.edition_date(at(2026, 11, 10, 16, 59)) == "2026-11-10"   # afternoon: today (catch-up)
+    assert pipeline.edition_date(at(2026, 11, 10, 17, 0)) == "2026-11-11"    # from 5 PM: tomorrow
+    assert pipeline.edition_date(at(2026, 11, 10, 23, 47)) == "2026-11-11"
+    assert pipeline.edition_date(at(2026, 11, 11, 3, 47)) == "2026-11-11"    # overnight: the same morning
+    # A UTC time converts correctly: 22:47 UTC in November is 5:47 PM EST.
+    assert pipeline.edition_date(dt.datetime(2026, 11, 10, 22, 47, tzinfo=dt.timezone.utc)) == "2026-11-11"

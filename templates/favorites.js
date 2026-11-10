@@ -14,6 +14,10 @@
   function save(list) {
     try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
   }
+  /* Dates whose essays are not released yet (set in base.html before the page paints). */
+  function released(date) {
+    return (window.DE_UNRELEASED || []).indexOf(date) === -1;
+  }
   function has(list, slug) {
     return list.some(function (f) { return f.slug === slug; });
   }
@@ -59,7 +63,7 @@
     ul.textContent = "";
     load().forEach(function (f) {
       var c = cards[f.slug];
-      if (!c) return;                         /* an essay that no longer exists */
+      if (!c || !released(c.date)) return;  /* gone, or not released yet */
       var li = document.createElement("li"), a = document.createElement("a");
       a.href = "posts/" + c.slug + ".html";
       var time = document.createElement("time");
@@ -80,7 +84,16 @@
     if (empty) empty.hidden = ul.children.length > 0;
   }
 
+  /* "N essays" counts exclude essays that are still hidden. */
+  function adjustCounts() {
+    document.querySelectorAll(".js-count").forEach(function (el) {
+      var hiddenNow = (el.getAttribute("data-dates") || "").split(" ").filter(function (d) { return d && !released(d); });
+      el.textContent = String(Number(el.getAttribute("data-total")) - hiddenNow.length);
+    });
+  }
+
   function init() {
+    adjustCounts();
     initButton();
     renderFavorites();
     markRows();

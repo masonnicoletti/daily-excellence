@@ -46,6 +46,6 @@
 
 <nav class="post-nav" aria-label="More essays">
   {% if older %}<a class="older" href="{{ older.slug }}.html"><span>Previous</span>{{ older.title }}</a>{% else %}<span></span>{% endif %}
-  {% if newer %}<a class="newer" href="{{ newer.slug }}.html"><span>Next</span>{{ newer.title }}</a>{% endif %}
+  {% if newer %}<a class="newer" data-release="{{ newer.date }}" href="{{ newer.slug }}.html"><span>Next</span>{{ newer.title }}</a>{% endif %}
 </nav>
 {% endblock %}
