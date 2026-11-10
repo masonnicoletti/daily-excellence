@@ -1,0 +1,78 @@
+{
+  "title": "Decide First, Figure It Out Later",
+  "essay_markdown": "Most goals die in the \"how\" meeting, the one you hold with yourself before you've even said what you want.\n\nPsychologists have a version of this idea worth knowing. Researchers from Peking University HSBC Business School, Korea University Business School, and the University of Iowa, publishing in *Psychological Science*, studied forward versus backward planning. For simple goals, the direction made no difference. But for complex tasks, such as preparing for a comprehensive exam, students who planned backward, starting from the finish line, anticipated the necessary steps more clearly and stuck to their original plan. They also reported higher expectations of reaching their goals and felt less pressed for time. In other words, the clearer the destination, the better the route reveals itself. The bigger and messier the goal, the more this matters.\n\nThe most famous example is also the most extreme. On May 25, 1961, President Kennedy addressed a joint session of Congress and said the nation should commit to \"landing a man on the moon and returning him safely to the earth.\" The technology to do that did not yet exist. He started with the what. Eight years later, Neil Armstrong and Buzz Aldrin landed on the moon. Had Kennedy waited until the how was settled, the speech would never have been given.\n\nYou are not launching a rocket, but the pattern holds. Say you want to write a book, change careers, or run a half marathon, and your mind immediately objects: *When would I find the time? What if I'm not qualified?* Those are how questions, and they arrive too early. They can only be answered with a clear what in hand, and right now they're acting as vetoes.\n\nSo set the how aside, on purpose, and get clear on the what. Write it down in a few plain bullets: what it looks like when it's done, what you'd be doing differently, and why it matters to you. Be specific enough that a stranger could picture it. \"Be healthier\" is a wish. \"Run a 10K in October without stopping\" is a target.\n\nThen, and only then, work backward. If that's the finish line, what has to be true a month before? Three months before? Each answer is a smaller what that leads to a concrete next step. The how stops being a wall and becomes a sequence.\n\n**Today's small action:** Take five minutes and write down one thing you want, in three bullets, with no mention of how. Don't solve anything. Just let it be clear.",
+  "sources": [
+    {
+      "title": "The First Question Successful People Ask about Their Goals",
+      "url": "https://fullfocus.co/the-first-question-successful-people-ask-about-their-goals/"
+    },
+    {
+      "title": "Trying to Get Ahead? Plan in Reverse, Study Suggests",
+      "url": "https://www.psychologicalscience.org/news/minds-business/trying-to-get-ahead-plan-in-reverse-study-suggests.html"
+    }
+  ],
+  "word_count": 418,
+  "item": {
+    "number": 6,
+    "title": "Focus on WHAT vs",
+    "body": "How. Focus on WHAT you want first, then HOW to do it. Anything is possible if you set your mind, heart, and soul to it.",
+    "subitems": [],
+    "id": "101-ways-to-live-your-life-to-the-fullest-006",
+    "source_title": "101 Ways To Live Your Life To The Fullest",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/",
+    "attribution": "Adapted from 101 Ways To Live Your Life To The Fullest by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## The First Question Successful People Ask about Their Goals | https://fullfocus.co/the-first-question-successful-people-ask-about-their-goals/\n- The page says NASA would not have put a man on the moon if President Kennedy had begun with how. He made the case in a May 25, 1961 speech to a joint session of Congress.\n- Kennedy's words, quoted on the page, include \"landing a man on the moon and returning him safely to the earth.\"\n- The page states that the technology did not yet exist, and that Neil Armstrong and Buzz Aldrin landed on the moon eight years later.\n- The author's advice is to set aside the how, decide deliberately to get clear on what you want, and write the vision down in bullets.\n\n## Trying to Get Ahead? Plan in Reverse, Study Suggests | https://www.psychologicalscience.org/news/minds-business/trying-to-get-ahead-plan-in-reverse-study-suggests.html\n- Researchers from Peking University HSBC Business School, Korea University Business School, and the University of Iowa published in *Psychological Science*.\n- For simple goals, forward and backward planning made no difference. For complex tasks, such as preparing for a comprehensive exam, students who planned backward more clearly anticipated the necessary steps and stuck to their original plan.\n- Those students also reported higher expectations of reaching their goals and felt less pressed for time.",
+  "variation": {
+    "length": 400,
+    "sections": [
+      "what the research says (sourced)",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": false,
+    "opening": "a bold one-sentence claim",
+    "tone": "practical and direct",
+    "closing": "one small action to take today"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011CguZ7xZsDczs8rF7dpsxM"
+        ],
+        "input_tokens": 27182,
+        "output_tokens": 1657,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0235
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011CguZ8g5hQ7HS6tDkt51BN"
+        ],
+        "input_tokens": 1436,
+        "output_tokens": 893,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0118
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0353
+  },
+  "generated_at": "2026-11-10T16:22:16+00:00",
+  "date": "2026-11-10"
+}
