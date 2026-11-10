@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Daily Excellence rising sun (same shape and colors as the header logo). -->
+  <style>
+    .bg { fill: #f3ebdd; } .horizon { fill: #73685b; } .top { stop-color: #e9a23b; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17181c; } .horizon { fill: #8b8379; } .top { stop-color: #f2bd62; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" class="top"/><stop offset="1" stop-color="#ef8a6f"/>
+    </linearGradient>
+  </defs>
+  <rect class="bg" width="64" height="64" rx="14"/>
+  <path d="M10 41 A22 22 0 0 1 54 41 Z" fill="url(#sun)"/>
+  <rect class="horizon" x="11.9" y="41" width="40.2" height="3.1"/>
+</svg>

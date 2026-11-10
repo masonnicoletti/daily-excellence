@@ -20,7 +20,8 @@ import markdown as md
 from . import config
 
 TEMPLATES_DIR = config.ROOT / "templates"
-STATIC = ["style.css", "favorites.js"]
+STATIC = ["style.css", "favorites.js", "site.webmanifest"]
+STATIC_DIRS = ["icons"]  # favicons and home-screen icons (PNGs built by tools/make_icons.sh)
 SITE_TITLE = "Daily Excellence"
 DISCLAIMER = ("Daily Excellence is an independent project, not affiliated with or endorsed by Personal "
               "Excellence. Essays are AI-generated (see the colophon on each post) and are for "
@@ -64,6 +65,8 @@ def build(src: Path, out: Path, drafts: bool = False) -> list[Path]:
     (out / "posts").mkdir(parents=True, exist_ok=True)
     for name in STATIC:
         shutil.copy(TEMPLATES_DIR / name, out / name)
+    for name in STATIC_DIRS:
+        shutil.copytree(TEMPLATES_DIR / name, out / name, dirs_exist_ok=True)
     (out / ".nojekyll").write_text("")
 
     written = []

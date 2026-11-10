@@ -108,3 +108,17 @@ def test_edition_date_prepares_tomorrow_in_the_evening():
     assert pipeline.edition_date(at(2026, 11, 11, 3, 47)) == "2026-11-11"    # overnight: the same morning
     # A UTC time converts correctly: 22:47 UTC in November is 5:47 PM EST.
     assert pipeline.edition_date(dt.datetime(2026, 11, 10, 22, 47, tzinfo=dt.timezone.utc)) == "2026-11-11"
+
+
+def test_icons_are_linked_and_published(tmp_path):
+    site = _seven_posts(tmp_path)
+    for page, root in [(site / "index.html", ""), (site / "posts" / "2026-11-03.html", "../")]:
+        html = page.read_text()
+        assert f'rel="apple-touch-icon" href="{root}icons/apple-touch-icon.png"' in html
+        assert f'rel="icon" href="{root}icons/favicon.svg"' in html
+        assert f'rel="manifest" href="{root}site.webmanifest"' in html
+    manifest = json.loads((site / "site.webmanifest").read_text())
+    for icon in manifest["icons"]:
+        assert (site / icon["src"]).exists()
+    for name in ["favicon.svg", "favicon-32.png", "apple-touch-icon.png"]:
+        assert (site / "icons" / name).exists()

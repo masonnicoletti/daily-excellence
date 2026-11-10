@@ -21,6 +21,7 @@ export PYTHONPATH=src
 .venv/bin/python -m daily_excellence.render --drafts                # drafts -> site_preview/ (local only)
 .venv/bin/python -m daily_excellence.pipeline [--date YYYY-MM-DD]   # PAID real daily run -> data/posts/ + site/
 .venv/bin/python -m daily_excellence.pipeline --render-only         # rebuild site/ from data/posts/
+tools/make_icons.sh                                               # rebuild icon PNGs from templates/icons/app-icon.svg (headless Chrome)
 ```
 
 The API key comes from `.env` (`ANTHROPIC_API_KEY`) through `config.load_dotenv()`. There is no linter configured.
@@ -46,6 +47,7 @@ Data flows in one direction, and each stage is one module in `src/daily_excellen
    - The output records the prompt version, models, variation, research notes, and per-call token usage and estimated cost.
 4. **`render.py`**: renders Jinja templates in `templates/` (`base`/`post`/`index`/`archive`, plus `style.css`, which is copied as-is) into `site/`. The home page shows only the latest essay; the full list is on `archive.html`.
    - The essay's Markdown has `<` escaped before conversion, so model output can't inject HTML.
+   - Icons live in `templates/icons/` and are copied as a folder: `favicon.svg` follows dark mode, the PNGs are committed, and `site.webmanifest` lists the 192/512 icons. The header logo (`.brand-mark` in CSS) and the icons share the same shape and colors.
    - Favorites are client-side only. `templates/favorites.js` (copied as-is) stores slugs in `localStorage` (`de-favorites`), per browser. The home page embeds every post's `card` as JSON (`#posts-data`), so the Favorites section can list any essay. Home shows Favorites, then the 5 most recent essays.
 5. **`pipeline.py`**: the daily entry point. `edition_date()` picks the post date in US Eastern (`config.TIMEZONE`): runs from `PREPARE_AFTER_HOUR` (5 PM) on prepare **tomorrow's** essay, and earlier runs make today's. If a post for that date already exists, it skips generation and only re-renders.
    - The site hides a post until `RELEASE_HOUR` (5 AM Eastern) on its date. An inline script in `base.html` hides elements with `data-release="YYYY-MM-DD"`, and `.hero-fallback` / `.recent-extra` fill the gap. Hiding is visual only.
