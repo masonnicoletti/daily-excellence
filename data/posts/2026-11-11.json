@@ -1,0 +1,79 @@
+{
+  "title": "The Quiet Kind of Good",
+  "essay_markdown": "## Seven Times\n\nHarry Houdini, the most famous magician alive, once asked a young Canadian named Dai Vernon to perform a single card trick again. Then again. According to the account, he watched it seven times (some versions say five), until his wife and Vernon's friends finally told him, \"Face it, Houdini, you're fooled.\"\n\nVernon never had to announce that he was brilliant. The trick did it for him.\n\n## Let the Work Speak\n\nThat is the heart of today's idea: humility earns more respect than arrogance ever will. You don't need to show off. If you are truly good at what you do, it shows through what you accomplish.\n\nVernon's career bears this out. His sleight of hand and his knowledge of close-up magic won him the respect of fellow magicians, and he mentored many of them. He was also famously under-credited for much of the work published in Jean Hugard and Frederick Braue's *Expert Card Technique*, though a later edition added a chapter acknowledging his contributions. Recognition came late, and he was essentially a gifted amateur until his 40s. Still, the people who understood the craft knew exactly who he was.\n\nA modern echo comes from a leadership profile on Matt Norman's site. A leader named Steve never takes credit for his firm's accomplishments. He says \"we\" and \"us\" when sharing them. His COO, Jana Cinnamon, said, \"He doesn't give me compliments about things I've done.\" Instead, she said, he talks about who she is as a person and what she brings to the firm.\n\n## Try This Today\n\nPick one moment where you'd normally mention your own win, and let it pass. Or swap one \"I\" for a \"we\" when you describe something that went well. Then put your energy into the work itself, and into noticing what someone else did well.\n\nYou may feel a small itch to be seen. That's fine. Let the work do the talking, and trust that people who matter will hear it.\n\nSo here is a question to carry with you today: if no one were keeping score, what would you still be proud to have done well?",
+  "sources": [
+    {
+      "title": "Dai Vernon",
+      "url": "https://en.wikipedia.org/wiki/Dai_Vernon"
+    },
+    {
+      "title": "Lead by Example: Humble Leadership Profile #2 - Matt Norman",
+      "url": "https://www.mattnorman.com/leadership-profile-lead-by-example/"
+    }
+  ],
+  "word_count": 345,
+  "item": {
+    "number": 46,
+    "title": "Humility",
+    "body": "will earn you more respect, acknowledgment and recognition than arrogance ever will. There’s no need to be a show off. If you are really good at what you do, it will automatically show through your accomplishments.",
+    "subitems": [],
+    "joiner": ": ",
+    "id": "101-life-principles-to-live-by-daily-046",
+    "source_title": "101 Life Principles To Live By Daily",
+    "source_url": "https://personalexcellence.co/blog/life-principles/",
+    "attribution": "Adapted from 101 Life Principles To Live By Daily by Personal Excellence (https://personalexcellence.co/blog/life-principles/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Dai Vernon | https://en.wikipedia.org/wiki/Dai_Vernon\n- Born David Frederick Wingfield Verner in Ottawa on June 11, 1894, Vernon became a magician known as \"The Professor\" and died August 21, 1992, in Ramona, California.\n- Houdini repeatedly asked Vernon to perform one trick again; the account says he watched it seven times (some versions say five), until his wife and Vernon's friends told him, \"Face it, Houdini, you're fooled.\" (Houdini watched Vernon do the trick seven times (some versions of the story say five times), each time insisting that Vernon \"do it again.\" Finally, Houdini's wife and Vernon's friends said, \"Face it, Houdini, you're fooled.\")\n- His skill won respect from peers, not publicity: his sleight of hand technique and knowledge, particularly with card tricks and close-up magic, garnered him respect among fellow magicians, and he was a mentor to them.\n- He was modest about credit: he was famously under-credited for much of the work published in Jean Hugard and Frederick Braue's Expert Card Technique, though a later edition included an extra chapter that acknowledges Vernon's contributions.\n- Recognition arrived late. Though respected by professional magicians nationwide due in part to publicity via the magazine The Sphinx, Vernon was essentially a gifted amateur until his 40s.\n\n## Lead by Example: Humble Leadership Profile #2 - Matt Norman | https://www.mattnorman.com/leadership-profile-lead-by-example/\n- The profile centers on Steve, a leader at a firm; his colleague Don Kreye nominated him for a humble leader project.\n- Don describes Steve as someone who arrives early, stays late, and always demonstrates the highest integrity and character — and he expects no less from everyone else.\n- Credit goes to the team: Steve never takes credit for the firm's accomplishments; instead he uses \"we\" and \"us\" statements when sharing these accomplishments with others.\n- Jana Cinnamon, the firm's COO, said: \"He doesn't give me compliments about things I've done.\" She said he instead talks about who I am as a person and what I bring to the firm.",
+  "variation": {
+    "length": 300,
+    "sections": [
+      "overview of the idea",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a short scene or moment from a real person's life",
+    "tone": "calm and reflective",
+    "closing": "a question to carry through the day"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011CgvLbLtXiiztBQgDE7YGp"
+        ],
+        "input_tokens": 29585,
+        "output_tokens": 2100,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.024
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011CgvLc7tECDn5F42ivzTZX"
+        ],
+        "input_tokens": 1728,
+        "output_tokens": 753,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.011
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.035
+  },
+  "generated_at": "2026-11-11T02:18:35+00:00",
+  "date": "2026-11-11"
+}
