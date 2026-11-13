@@ -1,0 +1,80 @@
+{
+  "title": "The Week You'd Spend Differently",
+  "essay_markdown": "People who are actually dying tend to sound happier than the rest of us expect. A study published in *Psychological Science* found that blog posts written by patients with cancer and ALS grew more positive as death drew near. The same study looked at the last words of death-row inmates and found them more positive and less negative than the poems those same inmates had written earlier.\n\nThat's a strange, useful finding. It suggests that when we imagine our final week, we picture something bleaker than the real thing. The authors frame it as a gap between people imagining death and people actually facing it. So the question \"What would you do with one week left?\" isn't morbid. It's a clean, clarifying lens, and a less frightening one than you'd guess.\n\n## What Your Answer Looks Like on a Tuesday\n\nBe honest about what you'd do. You probably wouldn't answer another forty emails. You might call your sister and stay on the line past the point of small talk. You might eat dinner at the table with the phone in another room, finally write the apology you've been drafting in your head, or walk somewhere just to see it.\n\nNotice how ordinary these are. Almost nothing on that list requires a bucket-list budget. It requires attention and a decision.\n\n## \"But I Am Alive Today\"\n\nAyşe Arman, reporting from Istanbul for the Hürriyet Daily News, spoke with Ann, a mother with terminal ovarian cancer. Surgery, chemotherapy and medicine had not been enough; the disease was diagnosed too late. Ann put it plainly: \"Maybe I won't be alive in a couple of weeks. Actually, there is no maybe: I just won't be alive. But I am alive today.\"\n\nRead that last sentence again. She isn't pretending. She looks straight at the facts and then turns toward the one thing she still has. Her husband, Özgür, said the family wants to spend the remaining time as well as possible.\n\n## The Obstacle: \"I Have Time\"\n\nThe biggest barrier is the quiet assumption that there's always more. It makes the important things feel optional and the urgent things feel mandatory. You can't fully dissolve that assumption, but you can puncture it on purpose.\n\nTry this: pick one thing from your imaginary final-week list and do a small version of it today. Not the grand version, which can wait for a better season. Just a ten-minute version. Send the message. Take the walk. Say the sentence.\n\n## Do It Before Breakfast Is Over\n\nRight now, before the day takes over, ask yourself who you'd want to spend this week with, and what you'd want them to hear from you. Then pick one person and one action, and make it happen by tonight.\n\nYou don't need a diagnosis to live like today counts. It does.",
+  "sources": [
+    {
+      "title": "Ann, Istanbul: \"I will die in a few weeks, but life is still beautiful\"",
+      "url": "https://www.hurriyetdailynews.com/i-will-die-in-a-few-weeks-but-life-is-still-beautiful-70348"
+    },
+    {
+      "title": "When death is near, blog posts and last words grow more positive",
+      "url": "https://static1.squarespace.com/static/5e57f82eb306fc38c7637f33/t/5ed5259d1e5f1e27d76835ff/1591027103875/dying-is-unexpectedly-positive.pdf"
+    }
+  ],
+  "word_count": 442,
+  "item": {
+    "number": 14,
+    "title": "If you only have a week left to live, what would you do?",
+    "body": "",
+    "subitems": [],
+    "id": "101-questions-to-ask-yourself-in-life-014",
+    "source_title": "101 Questions To Ask Yourself in Life",
+    "source_url": "https://personalexcellence.co/blog/101-questions/",
+    "attribution": "Adapted from 101 Questions To Ask Yourself in Life by Personal Excellence (https://personalexcellence.co/blog/101-questions/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Ann, Istanbul: \"I will die in a few weeks, but life is still beautiful\" | https://www.hurriyetdailynews.com/i-will-die-in-a-few-weeks-but-life-is-still-beautiful-70348\n- Ayşe Arman reported from Istanbul on Ann, a mother with terminal ovarian cancer. Despite surgery, chemotherapy and medicine, there is nothing more that can be done as it was diagnosed too late.\n- Ann describes her situation plainly: \"Maybe I won't be alive in a couple of weeks. Actually, there is no maybe: I just won't be alive. But I am alive today.\"\n- Her husband, Özgür, says that with a few weeks left, the family wants to make the remaining time count (\"we want to spend the time as well as possible.\")\n\n## When death is near, blog posts and last words grow more positive | https://static1.squarespace.com/static/5e57f82eb306fc38c7637f33/t/5ed5259d1e5f1e27d76835ff/1591027103875/dying-is-unexpectedly-positive.pdf\n- Published in *Psychological Science* (doi 10.1177/0956797617701186). Study 1 found blog posts of near-death patients with cancer and amyotrophic lateral sclerosis were more positive as death neared.\n- Study 2 found the last words of death-row inmates were more positive and less negative than poems those inmates wrote.\n- The authors' framing is that people imagining their own death overestimate its negativity compared with people who actually face it (the paper's wording on forecasters was truncated in the source, so check the full text before quoting).",
+  "variation": {
+    "length": 500,
+    "sections": [
+      "what the research says (sourced)",
+      "concrete examples from everyday life",
+      "a real person's story or testimony (sourced)",
+      "a common obstacle and how to get past it",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a surprising fact or research finding",
+    "tone": "energetic and rallying",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011CgzBFKRderjGcNXtSY3sP"
+        ],
+        "input_tokens": 22938,
+        "output_tokens": 1778,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0232
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011CgzBG3tGiL9SP1CBjxgUf"
+        ],
+        "input_tokens": 1504,
+        "output_tokens": 1059,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0136
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0368
+  },
+  "generated_at": "2026-11-13T02:58:27+00:00",
+  "date": "2026-11-13"
+}
