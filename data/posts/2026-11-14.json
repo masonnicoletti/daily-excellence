@@ -1,0 +1,79 @@
+{
+  "title": "The Happiest People Aren't Passionate About Everything",
+  "essay_markdown": "Here's a finding that might change how you look at your to-do list: according to PsyPost's report on a study in *Motivation and Emotion*, led by Robert Vallerand, a professor at the University of Quebec at Montreal, the happiest people are not simply passionate about everything. They apply their passion selectively, pouring it into activities they truly enjoy.\n\nRead that again, because it's freeing. Happiness isn't about manufacturing enthusiasm for every task on your plate. The study found that harmonious passion for enjoyable activities positively predicted positive emotions, and those positive emotions were in turn associated with higher psychological well-being. Choose the right things to love, and the good feelings follow.\n\nThe same study adds a wrinkle worth respecting: the happiest people still approach less enjoyable tasks, like chores, with a sense of autonomy and self-motivation. They don't abandon the dishes. They own them. They decide to do them rather than feeling dragged.\n\nNow, what does it look like when someone takes this seriously at full scale? Ashley J. Hobbs, 32, of Washington, D.C., offers one answer. As she told Essence, she left her job after about a year and a half in a marketing communication role for local government. She had begun to think intentionally about what success and happiness looked like for her, and she realized she was doing a disservice to her dreams by keeping up a happy face. Her reasoning was simple and brave: \"Although I was nervous, I decided to just bet on myself.\" Looking back, she wrote that quitting was absolutely worth it, citing the peace and clarity she was gaining about her purpose. Her side business, three years of photography, was already waiting for more of her attention.\n\nNotice what she didn't do. She didn't wait until she felt fearless. She was nervous and moved anyway.\n\nWhich brings us to today's idea: do the things you love, because life is too precious to be doing anything else. If you don't enjoy something, don't do it. Spend your time and energy on what brings you fulfillment and happiness.\n\nYou don't have to resign from anything to live this. Hobbs's story is the dramatic end of a spectrum, and most of your wins will come at the small end. The research suggests the aim isn't to eliminate everything unpleasant. It's to stop pouring your best energy into things that give nothing back, and to be deliberate about the things that do.\n\nSo here's how to use this today.\n\nFirst, find one thing you're doing out of pure habit or obligation that you truly don't enjoy, and that nobody is actually depending on you for. A standing meeting you attend by default. A commitment you said yes to out of politeness. A hobby you keep up because you once told people you did it. Drop it, or at least start the conversation about dropping it.\n\nSecond, give that reclaimed time to something that lights you up, even for twenty minutes. Pick up the camera, the guitar, the sketchbook, the running shoes. Don't wait for a free weekend.\n\nThird, for the tasks you can't escape, borrow the happiest people's trick: choose them. Say, \"I'm doing this because I want a clean kitchen to wake up to,\" and notice how the weight shifts.\n\nThis is not selfishness. It's stewardship of the one limited resource you can't earn back. Every hour spent on something you love is an hour well spent, and every hour you reclaim from something hollow is a gift to your future self.\n\nSo go be selective today. Don't try to be passionate about everything. Be passionate about the right things, and meet the rest with a steady, self-chosen shrug. That's what the happiest people do.",
+  "sources": [
+    {
+      "title": "Psypost: \"Could this be the key to happiness? New research suggests so\"",
+      "url": "https://www.psypost.org/could-this-be-the-key-to-happiness-new-research-suggests-so/"
+    },
+    {
+      "title": "Essence: \"7 Women Share Why They Quit Their Jobs To Find Happiness\"",
+      "url": "https://www.essence.com/news/money-career/black-women-quit-jobs-find-happiness/"
+    }
+  ],
+  "word_count": 621,
+  "item": {
+    "number": 23,
+    "title": "Do the things you love because life is too precious to be doing anything else",
+    "body": "If you don’t enjoy something, then don’t do it. Spend your time and energy on things that bring you fulfillment and happiness.",
+    "subitems": [],
+    "id": "101-ways-to-live-your-life-to-the-fullest-023",
+    "source_title": "101 Ways To Live Your Life To The Fullest",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/",
+    "attribution": "Adapted from 101 Ways To Live Your Life To The Fullest by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Essence: \"7 Women Share Why They Quit Their Jobs To Find Happiness\" | https://www.essence.com/news/money-career/black-women-quit-jobs-find-happiness/\n- Ashley J. Hobbs, 32, of Washington, D.C., left her job after about a year and a half in a marketing communication role for local government. She began to think intentionally about what success and happiness looked like for her, and felt she was doing a disservice to her dreams by keeping up a happy face.\n- Her reasoning: \"Although I was nervous, I decided to just bet on myself.\"\n- Looking back, she wrote that quitting her job was absolutely worth it, citing the peace and clarity she was gaining about her purpose. Her side business was three years of photography.\n\n## \"I quit a great job because happiness is more important than commitment\" | https://qz.com/426201/i-quit-a-great-job-because-happiness-is-more-important-than-commitment\n- The author (name not shown in the retrieved text) describes their last day as a senior editor at a major publishing company, a little over five years after starting in this particular job and 15 years into a career.\n- They said they quit because they felt trapped.\n- Their stated goal: \"I just wanted to be happier.\"\n\n## Psypost: \"Could this be the key to happiness? New research suggests so\" | https://www.psypost.org/could-this-be-the-key-to-happiness-new-research-suggests-so/\n- Reporting on a study in *Motivation and Emotion* led by Robert Vallerand, a professor at the University of Quebec at Montreal, the happiest people are not simply passionate about everything; they selectively apply passion to enjoyable activities.\n- The same study found that the happiest people still approach less enjoyable tasks, like chores, with a sense of autonomy and self-motivation.\n- Harmonious passion for enjoyable tasks positively predicted positive emotions, which in turn were associated with higher psychological well-being.",
+  "variation": {
+    "length": 600,
+    "sections": [
+      "what the research says (sourced)",
+      "a real person's story or testimony (sourced)",
+      "overview of the idea",
+      "how to apply it today"
+    ],
+    "use_headings": false,
+    "opening": "a surprising fact or research finding",
+    "tone": "energetic and rallying",
+    "closing": "a callback to the opening"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011Ch23urFvdH1NwW7Tj5Hpp"
+        ],
+        "input_tokens": 25019,
+        "output_tokens": 2425,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0237
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011Ch23vkHXNMbJn1MKyPfDj"
+        ],
+        "input_tokens": 1630,
+        "output_tokens": 1300,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0163
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.04
+  },
+  "generated_at": "2026-11-14T02:43:30+00:00",
+  "date": "2026-11-14"
+}
