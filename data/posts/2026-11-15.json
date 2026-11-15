@@ -1,0 +1,80 @@
+{
+  "title": "Love Is Built on the Way",
+  "essay_markdown": "**The love you're looking for is probably not at the end of a search; it's waiting somewhere along the road you're already walking.**\n\n## Stop treating love like a destination\n\nMost of us picture love as something to be found, like a lost set of keys. We scan rooms, refresh apps, and measure every new person against a checklist. The trouble is that this turns your life into a waiting room, as though the real story begins once someone shows up.\n\nTry a gentler frame. Your life is already underway, and love is something that can join it. Your job isn't to hunt. It's to live in a way that makes you good company for yourself, and then to stay open to who appears beside you.\n\n## What the research suggests\n\nAdam Galovan, a family scientist at the University of Alberta, co-authored a research report that challenges the myth of a single \"one and only\" love. He argues that the idea of finding \"the one\" actually makes the quest more unrealistic. His core finding, in his words: \"(This research) shows that soulmates are not found; they are made.\"\n\nHe also suggests a softer mindset: rather than finding \"the\" one, find \"a\" one, since there are lots of options out there.\n\nNotice what this does to the pressure. If a soulmate must be discovered, you can fail by missing them. If a soulmate is made, through attention, effort, and growth, then much of the outcome is in your hands. You can't control who walks into the room, but you can shape the person you become and the relationship you build.\n\n## A story from a Walmart pharmacy\n\nSusie, now 67, told the Becoming The One blog how she met her husband, Fred. In her mid-20s she had just transferred to Texas from Virginia and worked for an airline. Fred was the pharmacist at a new Walmart north of Dallas. She went in as a customer with a friend, and, as she put it, \"I thought he was so cute.\"\n\nShe wasn't swept away by certainty. \"I didn't know at first, but I was really attracted to his maturity.\" Notice what she noticed: not a grand gesture, but character.\n\nShe also speaks honestly about the waiting. \"I had some lonely years, but I know the Lord was working on both of us and preparing us for one another. I was ready to find Fred way before I did, but it was the Lord's timing.\" You don't have to share her faith to hear the broader point: the lonely years weren't wasted, and the meeting happened in an ordinary place, in the middle of ordinary life.\n\n## What to do with this today\n\n- **Invest in your own path.** Pick one thing today that moves your work, health, or curiosity forward. A life you love is the best place to meet someone.\n- **Work on being the right person.** Ask what kind of partner you'd want to be: patient, honest, steady. Practice one of those qualities today.\n- **Pay attention to character.** When you meet people, notice maturity and kindness, as Susie did, rather than ticking off a list.\n- **Say yes to ordinary places.** The errand, the class, the friend's gathering. Be present in them, phone down.\n- **If you're already with someone,** remember that love is made. Do one small thing today to build it.\n\nBe patient with the lonely stretches. They can be part of the preparation.\n\nLive well, grow steadily, and let love find you mid-stride.",
+  "sources": [
+    {
+      "title": "Finding Love in Unexpected Places: An Interview with Susie — Becoming The One",
+      "url": "https://btomovement.org/becoming-the-one-blog/finding-love-in-unexpected-places-an-interview-with-susie"
+    },
+    {
+      "title": "Editorial/Research: Want to find lifelong love? Stop looking for your soulmate",
+      "url": "https://www.ualberta.ca/en/folio/2024/02/want-to-find-lifelong-love-stop-looking-for-your-soulmate.html"
+    }
+  ],
+  "word_count": 556,
+  "item": {
+    "number": 60,
+    "title": "Love",
+    "body": "isn’t something you deliberately seek out. It’s something that happens when you follow your life path, become the right person, and meet that right person along your life’s journey.",
+    "subitems": [],
+    "joiner": ": ",
+    "id": "101-life-principles-to-live-by-daily-060",
+    "source_title": "101 Life Principles To Live By Daily",
+    "source_url": "https://personalexcellence.co/blog/life-principles/",
+    "attribution": "Adapted from 101 Life Principles To Live By Daily by Personal Excellence (https://personalexcellence.co/blog/life-principles/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Finding Love in Unexpected Places: An Interview with Susie — Becoming The One | https://btomovement.org/becoming-the-one-blog/finding-love-in-unexpected-places-an-interview-with-susie\n- Susie, 67, met her husband Fred at a Walmart in Texas. In the following interview, Susie (67) talks about meeting her husband at a Walmart in Texas.\n- She was in her mid-20s and working for an airline, while Fred was the pharmacist at a new Walmart north of Dallas. \"We were in our mid20s. I worked for an airline, and he was the pharmacist at the new Walmart north of Dallas.\"\n- She had moved to Texas from Virginia and was a customer at the pharmacy when she first noticed him. \"I had just transferred to Texas from Virginia, and I was a customer in the pharmacy. My friend and I went in and we saw him, and I thought he was so cute.\"\n- She admits she was not sure at first but was drawn to his maturity. \"I didn't know at first, but I was really attracted to his maturity.\"\n- On timing, she recalls lonely years and says she was ready before Fred was: \"I had some lonely years, but I know the Lord was working on both of us and preparing us for one another. I was ready to find Fred way before I did, but it was the Lord's timing\"\n\n## Editorial/Research: Want to find lifelong love? Stop looking for your soulmate | https://www.ualberta.ca/en/folio/2024/02/want-to-find-lifelong-love-stop-looking-for-your-soulmate.html\n- University of Alberta family scientist Adam Galovan co-authored a research report challenging the idea of a single \"one and only\" love. The idea of finding \"the one\" actually makes that quest more unrealistic, says Adam Galovan, a family scientist in the Faculty of Agricultural, Life & Environmental Sciences and co-author of a new research report that challenges the myth of having a one and only love.\n- His core finding, in his words: \"(This research) shows that soulmates are not found; they are made.\n- He suggests a shift in mindset: \"Rather than finding 'the' one, find 'a' one, he suggests, noting that there are lots of options out there.\n- Galovan's research was supported by the Social Sciences and Humanities Research Council of Canada. Galovan's research was supported by the Social Sciences and Humanities Research Council of Canada.",
+  "variation": {
+    "length": 600,
+    "sections": [
+      "a mental framework or reframe",
+      "what the research says (sourced)",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a bold one-sentence claim",
+    "tone": "warm and gentle",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011Ch3uHTVX2pMrtyLhTMtjN"
+        ],
+        "input_tokens": 28880,
+        "output_tokens": 2067,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0239
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011Ch3uJLUt4B9dJtwgWmR1X"
+        ],
+        "input_tokens": 1777,
+        "output_tokens": 1202,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0156
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0395
+  },
+  "generated_at": "2026-11-15T02:11:32+00:00",
+  "date": "2026-11-15"
+}
