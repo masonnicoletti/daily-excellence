@@ -1,0 +1,83 @@
+{
+  "title": "Ten Minutes of Belly Laughter",
+  "essay_markdown": "\"I made the joyous discovery that ten minutes of genuine belly laughter had an anesthetic effect and would give me at least two hours of pain-free sleep.\" That is how Norman Cousins described what he found, and he wasn't a comedian or a wellness guru when he said it. He was a patient with a lot of reasons not to laugh.\n\n## The man who prescribed himself the Marx Brothers\n\nIn 1964, Cousins was diagnosed with a painful and debilitating disorder. Conventional medicine had little to offer, so he designed his own treatment: vitamin C and comedy. He watched Marx Brothers films and reruns of Candid Camera, among other movies and shows. His doctors were skeptical. According to UCLA's alumni magazine, the patient laughed his way to a successful recovery. He later wrote about it in his 1979 book, *Anatomy of an Illness as Perceived by the Patient*.\n\nYou don't need to treat this as a medical plan, and Cousins's story doesn't promise that laughter cures everything. What it shows is simpler and still remarkable: when things were at their grimmest, he chose to go looking for laughter on purpose. He treated it as something worth scheduling.\n\n## Where the laughs are hiding\n\nMost of us wait for humor to arrive. It rarely does on a busy morning. But it's lying around everywhere:\n\n- The group chat where someone always sends the perfect GIF.\n- The dog who is deeply offended by the vacuum cleaner.\n- The coworker whose terrible puns you've been pretending to resist.\n- The kitchen-table story your family tells every year, which gets funnier each time.\n\nAfter Favinn Maynard died suddenly, a columnist in the Virgin Islands Daily News remembered that her smile and laugh were what came to mind first for people who knew her. She was quick to smile, laughed with abandon and never passed up a chance to have fun. She even took pleasure in finding fun in the most dreary of tasks. Think about that last part. She didn't wait for good material. She brought the fun with her to the dishes, the paperwork, the chores.\n\n## The simple idea\n\nLaugh more. That's the whole instruction, and it comes with a gentle poke: are you reading this with a straight face? Smile. Have fun.\n\nLaughter isn't a reward for finishing your responsibilities. It's something you can build into the day, the way you build in coffee or a walk. And if you're someone who takes life seriously, good. You can keep taking it seriously and still let it be funny.\n\n## Try this today\n\n1. **Start with a smile.** Before you leave your bed, do it on purpose. It's silly, which is the point.\n2. **Queue up something funny.** Pick a clip, a show, or a comedian for your lunch break. Cousins had his Marx Brothers; find yours.\n3. **Make one dull task a game.** Narrate your commute like a nature documentary. Race the dishes. Channel Favinn.\n4. **Share a laugh.** Send the funniest thing you see today to someone who'd enjoy it.\n\nTen minutes of real belly laughter is a modest ask. Cousins found it was worth hours. So go find your Marx Brothers today, and laugh like you mean it.",
+  "sources": [
+    {
+      "title": "Laughing All the Way",
+      "url": "https://newsroom.ucla.edu/magazine/norman-cousins-humor-health-mind-body"
+    },
+    {
+      "title": "Norman Cousins",
+      "url": "https://en.wikipedia.org/wiki/Norman_Cousins"
+    },
+    {
+      "title": "Requiem for Favinn, who lived joyfully",
+      "url": "https://www.virginislandsdailynews.com/opinion/requiem-for-favinn-who-lived-joyfully/article_b480b1ed-67bb-5d86-946f-de7ee93b40f1.html"
+    }
+  ],
+  "word_count": 513,
+  "item": {
+    "number": 92,
+    "title": "Laugh more",
+    "body": ":D Are you reading this with a straight face? Smile and have fun. :D",
+    "subitems": [],
+    "id": "101-ways-to-live-your-life-to-the-fullest-092",
+    "source_title": "101 Ways To Live Your Life To The Fullest",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/",
+    "attribution": "Adapted from 101 Ways To Live Your Life To The Fullest by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Laughing All the Way | https://newsroom.ucla.edu/magazine/norman-cousins-humor-health-mind-body\n- In 1964, Norman Cousins received a painful diagnosis, and doctors had few options to offer, so he designed his own treatment built on vitamin C and comedy films. In 1964, Cousins was diagnosed with a painful and debilitating disorder. Conventional medicine had little to offer, so he prescribed his own therapy.\n- His favorites included Marx Brothers films and reruns of Candid Camera. For the latter, Cousins relied on Marx Brothers films and reruns of TV's Candid Camera, among other movies and shows.\n- His doctors were skeptical, but the patient laughed his way to a successful recovery.\n\n## Norman Cousins | https://en.wikipedia.org/wiki/Norman_Cousins\n- Cousins described the payoff in his own words: \"I made the joyous discovery that ten minutes of genuine belly laughter had an anesthetic effect and would give me at least two hours of pain-free sleep,\" he reported.\n- He wrote about the experience in his 1979 book, *Anatomy of an Illness as Perceived by the Patient*.\n\n## Requiem for Favinn, who lived joyfully | https://www.virginislandsdailynews.com/opinion/requiem-for-favinn-who-lived-joyfully/article_b480b1ed-67bb-5d86-946f-de7ee93b40f1.html\n- Columnist Sarah (former teacher; name not given in excerpt) remembers Favinn Maynard, who died suddenly, as someone whose smile and laugh came to mind first for those who knew her.\n- Favinn was quick to smile, laughed with abandon and never passed up a chance to have fun.\n- She took pleasure in finding fun in even the most dreary of tasks.",
+  "variation": {
+    "length": 500,
+    "sections": [
+      "a real person's story or testimony (sourced)",
+      "concrete examples from everyday life",
+      "overview of the idea",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a well-sourced quote",
+    "tone": "energetic and rallying",
+    "closing": "a callback to the opening"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011Ch5p9xNoUmkjwcvbaUbMr"
+        ],
+        "input_tokens": 36651,
+        "output_tokens": 1946,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0246
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011Ch5pAjxCwhqQF51LMrBWu"
+        ],
+        "input_tokens": 1584,
+        "output_tokens": 1248,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0156
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0402
+  },
+  "generated_at": "2026-11-16T02:25:26+00:00",
+  "date": "2026-11-16"
+}
