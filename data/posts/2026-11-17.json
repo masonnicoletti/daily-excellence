@@ -1,0 +1,75 @@
+{
+  "title": "What Did You Mean When You Said That?",
+  "essay_markdown": "Think back over yesterday. How many things did you say that you didn't quite mean? Maybe you told a coworker \"Love that idea!\" while privately feeling unsure. Maybe you said \"We should get dinner soon!\" to someone you had no plans to call. Or you answered \"I'm fine\" when you weren't, because the truth felt like too much for a Tuesday.\n\nNone of these are crimes. Most of them are small social lubricants. But they add up, and a day full of them can leave you feeling slightly absent from your own life.\n\n## Saying only what you mean\n\nThe idea for today is simple: be sincere. Speak from the heart, and don't say something unless you mean it. Authenticity, in this sense, isn't about blurting out every opinion or being harsh and calling it honesty. It's a quiet filter. Before you speak, you check whether the words match what you actually think or feel.\n\nYou can still be kind, brief, or private. Sincerity doesn't require you to share everything. It only asks that what you do share is true. \"I can't make it, but I'm thinking of you\" is sincere. So is \"I'm having a hard day.\" So is saying nothing at all when you have nothing honest to add.\n\n## Telling the truth of your own story\n\nThe singer MAYA, who grew up in Brooklyn as a mixed-race child, offers a good picture of this in an interview with Guitar Thrills Magazine. Early in her music career, she gave a speech to industry executives about how her music could touch people's hearts. She later realized their main goal was making money, and that she had come unprepared by assuming they shared her goal.\n\nRather than lecture the room, she changed course and told her own story of escaping a secretly abusive relationship. She hoped listeners would see themselves in it. Afterward, an event curator whispered to her that she had been in the same situation and had never told anyone. MAYA says her openness gave that woman the courage to share.\n\nNotice what happened there. She didn't win the room with polish or persuasion. She told something true, and the truth did work that a performance couldn't.\n\n## Try it today\n\nYou don't need a dramatic confession. Start small:\n\n- **Pause before the automatic phrase.** When you feel \"Sounds great!\" or \"No worries!\" rising, ask whether it's true.\n- **Find the honest version that's still gentle.** \"I'm not sure yet, can I think about it?\" is often kinder than a false yes.\n- **Give one real compliment.** Skip the generic \"nice job\" and say something specific you actually noticed.\n- **Let one true thing show.** If someone asks how you are, answer a little more honestly than usual.\n\nYou may feel a flicker of vulnerability. That's normal. It tends to be followed by something steadier: the relief of not having to keep track of what you pretended.\n\nSo, back to the question we began with: what did you mean when you said that? Today, let the answer be \"exactly what I said.\"",
+  "sources": [
+    {
+      "title": "Focus on your sincerity, and what makes you genuine. A character trait that is of more value than the finest gold.",
+      "url": "https://www.guitarthrills.com/focus-on-your-sincerity-and-what-makes-you-genuine-a-character-trait-that-is-of-more-value-than-the-finest-gold/"
+    }
+  ],
+  "word_count": 492,
+  "item": {
+    "number": 89,
+    "title": "Be Sincere / Genuine",
+    "body": "Speak from the heart, always. Don’t say something unless you mean it. One of my core values is authenticity — I only say things that I mean, and never say things if I don’t believe in them.",
+    "subitems": [],
+    "id": "101-ways-to-be-a-better-person-089",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Focus on your sincerity, and what makes you genuine. A character trait that is of more value than the finest gold. | https://www.guitarthrills.com/focus-on-your-sincerity-and-what-makes-you-genuine-a-character-trait-that-is-of-more-value-than-the-finest-gold/\n- Interview with Guitar Thrills Magazine featuring the singer MAYA, who grew up in Brooklyn as a mixed-race child. Her name appears only as given in the interview.\n- Early in her music career she met industry executives and gave a speech about how her music could touch people's hearts. She later realized their main goal was making money, and she had come unprepared by assuming they shared her goal.\n- Instead of lecturing the room, she told her own story of escaping a secretly abusive relationship. She hoped listeners would see themselves in it.\n- After her talk, an event curator whispered that she had been in the same situation and had never told anyone. MAYA says her openness gave that woman the courage to share.\n\n## The Man Who Wouldn't Lie | https://www.psychologytoday.com/us/articles/202101/the-man-who-wouldnt-lie\n- First-person essay by Michael Leviton, whose subtitle says he diverged from his family's extreme view of dishonesty.\n- As a child, he compulsively called out lies and asked people to stop deceiving him. Others refused to admit they had been dishonest, which he describes as a frustrating pattern.\n- His mother, raised to people-please, encouraged him to measure his worth by liking himself rather than by others' approval. She wanted him to show his truest self.",
+  "variation": {
+    "length": 500,
+    "sections": [
+      "concrete examples from everyday life",
+      "overview of the idea",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a question to the reader",
+    "tone": "warm and gentle",
+    "closing": "a callback to the opening"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011Ch7txp1nfUeoRz3FzL2TV"
+        ],
+        "input_tokens": 28221,
+        "output_tokens": 1564,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0236
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011Ch7tyUvNAzF7rFjrsE8nM"
+        ],
+        "input_tokens": 1526,
+        "output_tokens": 1045,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0135
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0371
+  },
+  "generated_at": "2026-11-17T04:49:38+00:00",
+  "date": "2026-11-17"
+}
