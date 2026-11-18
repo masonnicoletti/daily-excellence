@@ -1,0 +1,80 @@
+{
+  "title": "Let the Work Do the Talking",
+  "essay_markdown": "\"How the hell can I ask the people who work for me to travel cheaply,\" Ingvar Kamprad reportedly said, before asking whether he should be traveling in luxury himself.\n\n## The billionaire in economy class\n\nKamprad founded IKEA. He was born on a Swedish farm to a poor family, and he went on to build one of the best-known companies in the world. Yet he lived frugally, in a modest house, and flew economy class. He had every reason to announce his success, and he simply didn't. His life made the point for him.\n\nBarry Sanders offers a second picture. The football star is remembered as someone who never showboated and never talked trash. He ran circles around defenders, and he retired early rather than chase the all-time rushing record, walking away as if it were no big deal. (Details vary by account, so treat the story as a sketch rather than a full biography.)\n\n## Why quiet beats loud\n\nHere is the idea at its simplest: you don't need to keep telling people how good you are. Constant self-promotion often grows out of a quiet doubt, a need to be reassured that you matter. Humility is what it looks like when you no longer need that reassurance. When your work is good, it speaks for itself, and it speaks more convincingly than you could.\n\nOne exception: on a resume or in an interview, showcasing your accomplishments is the job. Do it plainly and with confidence. The point isn't to hide what you've done. It's to stop *performing* it.\n\n## Where this shows up\n\nYou've seen it at the dinner table, when someone steers every story back to their own win. You've seen it in the meeting where one person lists their contributions before anyone has asked. You've also met the opposite: the colleague who fixes things quietly, and whose reputation grows because people keep noticing.\n\n## Try it today\n\n- **Notice the urge.** When you feel the pull to mention an achievement, pause and ask who it's for. If it helps the other person, share it. If it only feeds your ego, let it go.\n- **Ask a question instead.** Swap your story for curiosity about someone else's. People remember who listened.\n- **Credit others out loud.** Name the teammate who helped. It costs you nothing and builds trust.\n- **Do the work well and move on.** Finish something today without announcing it.\n\nKamprad didn't need the front of the plane to prove anything. You don't need the spotlight either.\n\nBe so good that you never have to say it.",
+  "sources": [
+    {
+      "title": "Ingvar Kamprad, IKEA founder",
+      "url": "https://medium.com/@sunoceangems/on-being-humble-10-most-famous-and-super-rich-but-simple-human-beings-702a2de02e64"
+    },
+    {
+      "title": "The 15 Most Humble Superstars in Sports History",
+      "url": "https://thequickreport.com/entertainment/sports/most-humble-sports-superstars/"
+    }
+  ],
+  "word_count": 407,
+  "item": {
+    "number": 55,
+    "title": "Be Humble",
+    "body": "Arrogant people suffer from an inferiority complex, which is why they feel the need to parade their accomplishments. Learn to be humble. There’s no need to repeatedly talk about what you’ve achieved just to assert your ability — when your work is good, the results will speak for themselves. (The exception is in professional contexts like on your resume or in interviews, where you are supposed to showcase your accomplishments.)",
+    "subitems": [],
+    "related_read": "How To Keep Yourself Humble While Recognizing Your Worth",
+    "id": "101-ways-to-be-a-better-person-055",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Ingvar Kamprad, IKEA founder | https://medium.com/@sunoceangems/on-being-humble-10-most-famous-and-super-rich-but-simple-human-beings-702a2de02e64\n- Ingvar Kamprad was a Swedish business magnate best known for founding IKEA, and he was born on a Swedish farm to a poor family.\n- Despite his success, he lived a frugal lifestyle and in a modest house, flew economy class.\n- Quote, as reported on the page: \"how the hell can I ask the people who work for me to travel cheaply\", followed by a question about traveling in luxury himself.\n- Source caveat: this is a Medium post, not a primary interview, so verify the quote against an original source before publishing.\n\n## The 15 Most Humble Superstars in Sports History | https://thequickreport.com/entertainment/sports/most-humble-sports-superstars/\n- Barry Sanders (ranked #2): he literally retired early rather than chase the all-time rushing record.\n- He never showboated, never talked trash—just ran circles around defenders and quietly walked away like it was no big deal.\n- Source caveat: this is a listicle with no named interview or dates; use it as a lead and confirm the retirement details in a reputable sports outlet.",
+  "variation": {
+    "length": 400,
+    "sections": [
+      "a real person's story or testimony (sourced)",
+      "overview of the idea",
+      "concrete examples from everyday life",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a well-sourced quote",
+    "tone": "energetic and rallying",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011Ch9icB5aBL366HpLAuhpv"
+        ],
+        "input_tokens": 30822,
+        "output_tokens": 1525,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0238
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011Ch9ickjPJdbd8JLcki5eC"
+        ],
+        "input_tokens": 1488,
+        "output_tokens": 911,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0121
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0359
+  },
+  "generated_at": "2026-11-18T03:54:59+00:00",
+  "date": "2026-11-18"
+}
