@@ -1,0 +1,80 @@
+{
+  "title": "The Pig in the Truck",
+  "essay_markdown": "\"I sat in my car and cried, then I drove home and told my family about my decision.\" That is how Irish actor and advocate Rachel Carson Pilkington described the moment she changed how she ate, in an interview with the Vegan Society of Ireland. She had been driving when she passed a pig in a transport truck, probably headed for slaughter.\n\n## Doing right, gently\n\nToday's idea is simple to state: be moral. Choose what's right over what's wrong. What counts as \"right\" is shaped partly by how you were raised, but some values travel well across cultures: that all humans are equal, that women and men deserve the same standing, that people should be free to speak and to choose. The idea adds one more invitation: look at how you live and ask whether you could cause less pain to other living beings.\n\nThat last part is not an accusation. It is a question, and you get to answer it at your own pace.\n\n## Think of it as noticing\n\nMorality can feel like a courtroom, where you are constantly being judged. A kinder frame is attention. Most of the harm we cause is not chosen; it is simply unseen. We eat, shop, and scroll on autopilot.\n\nSo instead of asking \"Am I a good person?\", which tends to produce defensiveness, ask \"What am I not looking at?\" Then look, briefly and honestly. You don't have to fix everything at once. Seeing clearly is the first moral act.\n\n## What the research suggests\n\nMoral change is rarely all-or-nothing. A 2014 study conducted at seven vegan supermarkets in Germany interviewed 329 vegan consumers face to face. The authors estimated that about one third of them might accept animal farming that meets welfare standards above current practice. Even among people who had made a firm ethical choice, many were open to improvement rather than purity. (This comes from a partial extract of the paper, so treat the figure as a rough guide.) The takeaway is encouraging: you can care deeply and still be practical about progress.\n\n## A turning point, and what followed\n\nPilkington's story shows how a single moment of noticing can grow. She stopped eating meat in February 2009, gave up fish a few months later, and then went vegan after learning about suffering in egg and dairy production. She says she has never had \"any change of heart since that moment.\" Her advocacy has since included opposing fur farming, fox hunting, and live animal exports.\n\nNotice the shape of it: a feeling, a conversation at home, then steady steps as she learned more. She didn't wait to become perfect before acting.\n\n## One small thing for today\n\nYou don't need a dramatic moment. Pick one everyday choice, such as a meal, a product, or the way you speak to someone who disagrees with you, and ask, \"Could this cause a little less harm?\" If the answer is yes, make that one change today. Then let tomorrow's version of you take the next step.",
+  "sources": [
+    {
+      "title": "Rachel Carson Pilkington: Acting with Compassion for Animals, People and the Planet",
+      "url": "https://vegansociety.ie/interview-with-rachel-carson-pilkington/"
+    },
+    {
+      "title": "The Impact of Veganism/Vegetarianism on Animal Welfare Policy",
+      "url": "https://www.researchgate.net/publication/345783755_The_Impact_of_VeganismVegetarianism_on_Animal_Welfare_Policy"
+    }
+  ],
+  "word_count": 478,
+  "item": {
+    "number": 68,
+    "title": "Be Moral",
+    "body": "Do what’s right over what’s wrong. The question of “what’s right” can be subjective depending on your upbringing, but universal values include equality of humans, gender equality, freedom of speech, and freedom of choice. Think about how you can follow a lifestyle that inflicts less pain on other living beings.",
+    "subitems": [],
+    "id": "101-ways-to-be-a-better-person-068",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Rachel Carson Pilkington: Acting with Compassion for Animals, People and the Planet | https://vegansociety.ie/interview-with-rachel-carson-pilkington/\n- Irish actor and advocate Rachel Carson Pilkington stopped eating meat in February 2009, dropped fish a few months later, and then went vegan after learning about suffering in egg and dairy production.\n- Her turning point came while driving, when she passed a pig in a transport truck, likely headed to slaughter. In her words: \"I sat in my car and cried, then I drove home and told my family about my decision.\"\n- She describes never having had \"any change of heart since that moment.\"\n- Her campaigns include opposition to fur farming, fox hunting, and live animal exports.\n\n## The Impact of Veganism/Vegetarianism on Animal Welfare Policy | https://www.researchgate.net/publication/345783755_The_Impact_of_VeganismVegetarianism_on_Animal_Welfare_Policy\n- A 2014 study at seven vegan supermarkets in Germany used face-to-face interviews with 329 vegan consumers.\n- The authors estimated that about one third of these vegan consumers might accept animal farming that meets welfare standards above current practice.\n- The page is a fragmented PDF extract, so confirm the exact figures and authorship in the full paper before citing.",
+  "variation": {
+    "length": 500,
+    "sections": [
+      "overview of the idea",
+      "a mental framework or reframe",
+      "what the research says (sourced)",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a well-sourced quote",
+    "tone": "warm and gentle",
+    "closing": "one small action to take today"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChBcHaXFVz45hrivPByiZ"
+        ],
+        "input_tokens": 33850,
+        "output_tokens": 1658,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0242
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChBcJDtJSWGybBVxvBC6K"
+        ],
+        "input_tokens": 1489,
+        "output_tokens": 1064,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0136
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0378
+  },
+  "generated_at": "2026-11-19T03:53:18+00:00",
+  "date": "2026-11-19"
+}
