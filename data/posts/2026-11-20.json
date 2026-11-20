@@ -1,0 +1,80 @@
+{
+  "title": "The Gift Wrapped in a Sting",
+  "essay_markdown": "Here is something surprising: the people who grow fastest often aren't the most talented. They're the ones who stopped flinching. Dr. Laura Lowery, a scientist, writes that learning to take criticism without flinching was central to her early success, and that it took her a while to see she needed to embrace it. Her conclusion: \"There is almost nothing that will help you grow more than working on your ability to embrace criticism.\"\n\n## Feedback as information\n\nClaribel Solis, a technical sales lead at Acuity, describes a similar turn. She first took feedback personally and had to stop getting defensive. Then she changed the question. \"I treated it as data/information,\" she says. She asks what content and context the comment carries, takes what works, and disregards what does not serve her.\n\nNotice how gentle that is. She isn't forced to agree with everything, and she doesn't have to pretend it doesn't sting. She simply gets curious before she gets protective.\n\n## What it looks like on an ordinary day\n\nYour manager says your report buried the main point. A friend mentions you interrupt when you're excited. Someone tells you the soup needed salt.\n\nEach of these hurts for a second, and each hands you something specific to improve. The sting is just your pride noticing it has been asked to move over.\n\n## Try this today\n\nWhen criticism arrives, do three small things:\n\n1. **Pause.** Take one slow breath before you answer.\n2. **Ask.** \"Can you tell me more about what you noticed?\" turns a jab into a conversation.\n3. **Sort.** Keep what's useful, and let the rest go without a fight.\n\nThen, if you can, say thank you. Celebrating criticism doesn't mean enjoying the sting. It means recognizing that someone just showed you something you couldn't see on your own.\n\nBe the person who says \"tell me more.\"",
+  "sources": [
+    {
+      "title": "The Importance of Embracing Criticism",
+      "url": "https://drlauraloweryblog.com/2022/09/27/the-importance-of-embracing-criticism/"
+    },
+    {
+      "title": "How She Learned to Navigate Criticism │ Influential Women",
+      "url": "https://influentialwomen.com/how-she-did-it/how-she-learned-to-navigate-criticism"
+    }
+  ],
+  "word_count": 293,
+  "item": {
+    "number": 23,
+    "title": "Criticism",
+    "body": "helps you to become better. Rather than reject it, celebrate it.",
+    "subitems": [],
+    "joiner": ": ",
+    "related_read": "How To Give Constructive Criticism: 6 Helpful Tips",
+    "id": "101-life-principles-to-live-by-daily-023",
+    "source_title": "101 Life Principles To Live By Daily",
+    "source_url": "https://personalexcellence.co/blog/life-principles/",
+    "attribution": "Adapted from 101 Life Principles To Live By Daily by Personal Excellence (https://personalexcellence.co/blog/life-principles/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## The Importance of Embracing Criticism | https://drlauraloweryblog.com/2022/09/27/the-importance-of-embracing-criticism/\n- Dr Laura Lowery, a scientist, writes that learning to take criticism without flinching was central to her early success. She says it took her a while to see that she needed to embrace criticism.\n- Her quote: \"There is almost nothing that will help you grow more than working on your ability to embrace criticism.\" (Self-published blog, 2022.)\n\n## How She Learned to Navigate Criticism │ Influential Women | https://influentialwomen.com/how-she-did-it/how-she-learned-to-navigate-criticism\n- Claribel Solis, Acuity Technical Sales Lead, says she first took feedback personally and had to stop getting defensive. She now treats it as data and asks what content and context it carries.\n- Solis's words: \"I treated it as data/information.\" Her approach was to take what works and disregard what does not serve her.\n\n## You Handle Criticism Is a Test of Your Humility | https://www.epm.org/resources/2026/Oct/7/handle-criticism-test-humility/\n- The author (name not shown in the retrieved text) says that as a young pastor he was devastated and often defensive when criticized.\n- After stepping down as a pastor and publishing books and articles, he learned to welcome criticism. He says a book or article will be \"far better\" if he listens to and accepts critics' points.",
+  "variation": {
+    "length": 300,
+    "sections": [
+      "a real person's story or testimony (sourced)",
+      "concrete examples from everyday life",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a surprising fact or research finding",
+    "tone": "warm and gentle",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChDVVMNFLTmEiiGan7zxb"
+        ],
+        "input_tokens": 37978,
+        "output_tokens": 1173,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0244
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChDVVr8PXJ4P1FXfxvZK6"
+        ],
+        "input_tokens": 1426,
+        "output_tokens": 712,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.01
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0344
+  },
+  "generated_at": "2026-11-20T03:45:17+00:00",
+  "date": "2026-11-20"
+}
