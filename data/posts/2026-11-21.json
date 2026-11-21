@@ -1,0 +1,75 @@
+{
+  "title": "The Prototype Made From Pantyhose",
+  "essay_markdown": "Persistence is less about grit than about refusing to let one \"no\" be the final word.\n\nConsider Sara Blakely. She was working as a salesperson for an office equipment company when she came up with the idea for Spanx. She pitched it to her employer, who turned it down. So she started her own business. She had no background in fashion or business. She spent $5,000 of her savings on a prototype, made by cutting the feet off a pair of pantyhose. She taught herself how patenting and manufacturing worked. Then came the rejections, many of them, before a meeting with Neiman Marcus became her first major retail win. Later, Oprah Winfrey named Spanx one of her \"Favorite Things,\" and the product became a household name.\n\nNotice what that story doesn't contain: a straight line. It holds a rejection from her own employer, a stack of other rejections, and a lot of unglamorous learning. Persistence rarely looks like confidence. More often it looks like getting back to work the morning after a disappointment.\n\nYou can see the same pattern in smaller places. The person learning to cook who burns the rice for the third time and tries again on Thursday. The runner who can only manage a slow ten minutes and goes out again anyway. The writer whose manuscript comes back with a polite refusal and who changes a few pages before sending it off once more. None of them are doing anything dramatic. They're simply declining to treat a setback as a verdict.\n\nIt's also worth remembering that quitting isn't always failure. If your priorities have genuinely changed, and the goal you've been chasing no longer matches what you want, letting go is wise, not weak. The question to ask isn't \"Is this hard?\" because nearly everything worth doing is. Ask instead: \"Do I still want this?\" If the answer is yes, difficulty is just part of the terrain.\n\nSo here is how to carry this into today.\n\nPick one thing you've been tempted to abandon. Maybe it's a project, a habit, or a conversation you keep putting off. Ask yourself honestly whether you still want it. If you don't, give yourself permission to put it down without guilt. If you do, shrink the next step until it's almost embarrassingly small: send one email, write one paragraph, make one phone call. Blakely's first step was a pair of pantyhose and a pair of scissors, which is not exactly a grand plan.\n\nThen expect a \"no\" somewhere along the way, and decide now that it will be information rather than a stop sign. What did it teach you? What can you adjust? Who else could you ask?\n\nYou don't need to be fearless, only willing to take the next small step again tomorrow.\n\nKeep going, one small step at a time.",
+  "sources": [
+    {
+      "title": "From Rejection to Success: 19 Employees Who Turned Their Ideas into Billion-Dollar Businesses",
+      "url": "https://www.bensteenstra.com/post/19-creative-entrepreneurs-who-proved-their-bosses-wrong-and-built-billion-dollar-empires"
+    }
+  ],
+  "word_count": 472,
+  "item": {
+    "number": 76,
+    "title": "Be Persistent",
+    "body": "No matter what you do, never give up. You will achieve whatever you set out to do, as long as you have the will to do it. My story of how I pursued my passion and turned it into a successful business is an example of that. The only time when giving up is the way to go is when your priorities change and you realize the goal you were pursuing isn’t what you want anymore.",
+    "subitems": [],
+    "related_read": "Quitting to Win",
+    "id": "101-ways-to-be-a-better-person-076",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## From Rejection to Success: 19 Employees Who Turned Their Ideas into Billion-Dollar Businesses | https://www.bensteenstra.com/post/19-creative-entrepreneurs-who-proved-their-bosses-wrong-and-built-billion-dollar-empires\n- Sara Blakely worked as a salesperson for an office equipment company when she came up with Spanx. Her employer turned down her pitch, so she launched her own business.\n- Blakely spent $5,000 of her savings on a prototype, made by cutting the feet off a pair of pantyhose.\n- She taught herself patenting and manufacturing, despite having no fashion or business background.\n- After many rejections, a meeting with Neiman Marcus became her first major retail win.\n- Oprah Winfrey later named Spanx one of her \"Favorite Things,\" which helped make it a household name.\n\n## Persevere: From Failure to Success: The Perseverance Stories of Entrepreneurs | https://fastercapital.com/content/Persevere--From-Failure-to-Success--The-Perseverance-Stories-of-Entrepreneurs.html\n- Blakely's $5,000 investment grew into a billion-dollar business, according to this page. This is a secondary summary, so verify the figures against a primary interview before use.\nNote: The sources are secondary blogs, not interviews or biographies. Confirm the details against a reputable news article or Blakely's own interviews before publishing.",
+  "variation": {
+    "length": 500,
+    "sections": [
+      "a real person's story or testimony (sourced)",
+      "concrete examples from everyday life",
+      "how to apply it today"
+    ],
+    "use_headings": false,
+    "opening": "a bold one-sentence claim",
+    "tone": "warm and gentle",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChFNLmW1pM5JqSwFoNSGQ"
+        ],
+        "input_tokens": 26913,
+        "output_tokens": 1151,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 1,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0133
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChFNMHeEWTrXoM9BYrmJH"
+        ],
+        "input_tokens": 1514,
+        "output_tokens": 964,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0127
+      }
+    ],
+    "web_searches": 1,
+    "estimated_cost_usd": 0.026
+  },
+  "generated_at": "2026-11-21T03:32:47+00:00",
+  "date": "2026-11-21"
+}
