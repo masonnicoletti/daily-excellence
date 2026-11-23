@@ -1,0 +1,79 @@
+{
+  "title": "Borrow a Blueprint",
+  "essay_markdown": "You're scrolling past a stranger's success story at 7 a.m., and a small, sour voice says, \"Must be nice.\" Or you feel a quiet tug of admiration, then shrug it off: people like that are built differently, and it has nothing to do with you.\n\nThat shrug is the common obstacle. We tend to treat admiration as something to enjoy from a distance, or we think a role model has to be flawless, famous, and a perfect match for our lives. Nobody is, so we never choose anyone. The way past it is to stop looking for a whole person to copy and start looking for specific qualities worth borrowing. You're not signing up to become someone else. You're collecting evidence of what's possible.\n\nConsider how Chadwick Boseman handled his own heroes. At an AFI Life Achievement Award event in 2019 honoring Denzel Washington, he said: \"There is no Black Panther without Denzel Washington.\" He added that his cast's generation \"stands on your shoulders.\" Notice what that shows. Even someone who became a role model for millions was openly tracing his work back to a person who went first. Boseman didn't pretend he'd built himself from scratch. He named his blueprint out loud.\n\nThen there's the origin of John Christopher, the master herbalist. At sixteen, he watched a visiting iridologist and herbalist treat his sick mother, and he told her that was the kind of doctor he would become. His mother later died from diabetes and Bright's disease, after herbs and better food had come too late to restore her health. A single person's example, seen at the right moment, pointed him toward his life's work.\n\nHere's the reframe: a role model is a direction, not a destination. You don't have to match their whole life. You only need to ask, \"What is one thing they do that I want more of in myself?\" Their courage, their patience, their generosity, the way they treat people who can't do anything for them. Pick the quality, not the package.\n\nSo today, try this. Write down one person you admire, then one sentence beginning \"I admire how they...\" Then choose a single small action that practices that quality before tonight. If it's honesty, say the true thing in one conversation. If it's discipline, finish one task before checking your phone.\n\nAdmiration is only useful when it moves your feet.",
+  "sources": [
+    {
+      "title": "Chadwick Boseman In His Own Words",
+      "url": "https://www.npr.org/2020/08/30/907482202/chadwick-boseman-in-his-own-words"
+    },
+    {
+      "title": "Dr. John Christopher's Biography",
+      "url": "https://olanaturalhealing.com/dr-john-christopher/"
+    }
+  ],
+  "word_count": 397,
+  "item": {
+    "number": 4,
+    "title": "Find a role model",
+    "body": "Having a role model inspires us and gives us an image of who we can be. People I’m inspired by include Oprah Winfrey, who has done so much in the area of self-help; Chadwick Boseman, who tirelessly spoke up for the black community even leading up to his death; and John Christopher, a master herbalist who healed people using natural remedies and inspired and educated a new generation of herbalists. Who is/are your role model(s), and what do you like about them?",
+    "subitems": [],
+    "id": "101-ways-to-be-a-better-person-004",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## In 'Chadwick Boseman In His Own Words' | https://www.npr.org/2020/08/30/907482202/chadwick-boseman-in-his-own-words\n- At an AFI Life Achievement Award event in 2019 honoring Denzel Washington, Boseman said: \"There is no Black Panther without Denzel Washington.\"\n- He added that his cast's generation \"stands on your shoulders.\"\n- At his 2018 Howard University commencement, he told graduates: \"the struggles along the way are only meant to shape you for your purpose.\"\n\n## Dr. John Christopher's Biography | https://olanaturalhealing.com/dr-john-christopher/\n- At sixteen, Christopher watched a visiting iridologist and herbalist treat his sick mother, and he told her that was the kind of doctor he would become.\n- His mother later died from diabetes and Bright's disease, after herbs and better food had come too late to restore her health.",
+  "variation": {
+    "length": 400,
+    "sections": [
+      "a common obstacle and how to get past it",
+      "a real person's story or testimony (sourced)",
+      "a mental framework or reframe",
+      "how to apply it today"
+    ],
+    "use_headings": false,
+    "opening": "a vivid everyday situation the reader will recognize",
+    "tone": "practical and direct",
+    "closing": "a short, memorable line"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChLggTTEnqzXVtGNfxPQ3"
+        ],
+        "input_tokens": 36582,
+        "output_tokens": 2149,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0247
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChLghJ4DGAqRtmKVvbUvV"
+        ],
+        "input_tokens": 1394,
+        "output_tokens": 824,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.011
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0357
+  },
+  "generated_at": "2026-11-23T22:56:18+00:00",
+  "date": "2026-11-24"
+}
