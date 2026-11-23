@@ -1,0 +1,80 @@
+{
+  "title": "The Strength You Already Carry",
+  "essay_markdown": "**The strength you need is rarely something you have to find; it's something you have to start using.**\n\n## Where it shows up\n\nThink of the last time you almost quit something. Maybe it was a morning run in the cold, a hard email you kept postponing, or a skill that felt impossible in week three. You probably pushed through at least once without calling it strength. It was just the next small step, taken while you were uncomfortable.\n\n## What the research suggests\n\nA 2018 paper in Frontiers in Psychology, \"All That Glitters Is Not Grit,\" looked at grit in university students. In its second study, students with high grit scored 31.47 on resilience measures, compared with 22.75 for lower-grit peers. The authors also note a limit: the three studies examined university students specifically, so the results may not apply to everyone. Still, the pattern is encouraging. Persistence and resilience seem to travel together.\n\n## A story of pushing past fear\n\nJoel Williams was released in 2016 after twenty-eight years in prison. On his first day out, he and his wife went to Denny's, where he sat surrounded by people, staring at the knife and fork, feeling overwhelmed. He describes what came next: \"Every day I was out, I worked hard to push past the feelings of anxiety and fear that threatened to overwhelm me.\" With his wife Brenda, he started an antique business and went back to college.\n\nNotice that he didn't wait for the fear to disappear. He worked past it daily.\n\n## For today\n\nPick one obstacle that has been making you waver. Don't solve all of it. Choose the smallest action that moves you toward the goal, and do it before noon. Expect some discomfort, and treat it as a sign you're drawing on the strength, not as proof you lack it.\n\nWhat is one small thing you can do today that your future self will be glad you didn't put off?",
+  "sources": [
+    {
+      "title": "Joel Williams: Resilience Stories",
+      "url": "https://epicworkepiclife.com/resilience-stories/"
+    },
+    {
+      "title": "All That Glitters Is Not Grit: Three Studies of Grit in University Students",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01539/full"
+    }
+  ],
+  "word_count": 309,
+  "item": {
+    "number": 81,
+    "title": "Be Resilient / Be Strong",
+    "body": "Are you facing any obstacles that are making you waver in your goals? You have the strength inside you to do whatever you want — you just have to draw from it.",
+    "subitems": [],
+    "related_read": "How To Start When You Have Nothing",
+    "id": "101-ways-to-be-a-better-person-081",
+    "source_title": "101 Ways To Be a Better Person",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-be-a-better-person/",
+    "attribution": "Adapted from 101 Ways To Be a Better Person by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-be-a-better-person/)"
+  },
+  "prompt_version": "essay_v2",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Joel Williams: Resilience Stories | https://epicworkepiclife.com/resilience-stories/\n- Williams was released in 2016 after twenty-eight years in prison.\n- On his first day out, he and his wife went to Denny's, where he sat in the restaurant surrounded by all these people, staring at the knife and fork, feeling so overwhelmed.\n- Williams says he pushed through anxiety daily: \"Every day I was out, I worked hard to push past the feelings of anxiety and fear that threatened to overwhelm me.\"\n- With his wife Brenda, he started an antique business and went back to college. Re-entry carried no clear rules about what he was allowed to do, and he writes that a new life was later suddenly being snatched away.\n\n## All That Glitters Is Not Grit: Three Studies of Grit in University Students | https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01539/full\n- In Study 2, students with high grit scored higher on resilience measures, at 31.47 against 22.75 for lower-grit peers.\n- The same paper notes that the grit-resilience link has limits: its three studies examined university students specifically, so results may not generalize to everyone.",
+  "variation": {
+    "length": 300,
+    "sections": [
+      "concrete examples from everyday life",
+      "what the research says (sourced)",
+      "a real person's story or testimony (sourced)",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a bold one-sentence claim",
+    "tone": "calm and reflective",
+    "closing": "a question to carry through the day"
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChK8Qy5mZh6fA4A5DafKV"
+        ],
+        "input_tokens": 32132,
+        "output_tokens": 1358,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0239
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChK8RXAangapujPcpC8vw"
+        ],
+        "input_tokens": 1399,
+        "output_tokens": 708,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0099
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0338
+  },
+  "generated_at": "2026-11-23T03:12:28+00:00",
+  "date": "2026-11-23"
+}
