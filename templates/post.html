@@ -11,11 +11,11 @@
   </div>
 
   {# The Personal Excellence item is the headline; Claude's essay title follows as a secondary heading. #}
-  <header class="post-head">
-    <p class="idea-label">Idea #{{ post.item.number }} · {{ post.item.source_title }}</p>
+  <header class="post-head idea-card">
+    <p class="idea-label">{{ post.item.source_title }} · #{{ post.item.number }}</p>
     {% if post.item.context %}<p class="idea-context">{{ post.item.context | join(" ") }}</p>{% endif %}
     <h1 class="post-title{% if post.headline_long %} post-title-long{% endif %}">{{ post.headline }}</h1>
-    {% if post.item.body %}<p class="post-dek">{% if post.item.joiner and post.item.body[:1].islower() %}{{ post.item.title }} {% endif %}{{ post.item.body }}</p>{% endif %}
+    {% if post.item_text %}<p class="post-dek">{{ post.item_text }}</p>{% endif %}
     <p class="idea-credit">
       From <a href="{{ post.item.source_url }}">{{ post.item.source_title }}</a>
       by <a href="https://personalexcellence.co/">Personal Excellence</a>

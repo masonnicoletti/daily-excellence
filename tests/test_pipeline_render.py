@@ -1,5 +1,7 @@
 import json
 
+from markupsafe import escape
+
 from daily_excellence import ingest, pipeline, render
 
 URL = "https://personalexcellence.co/blog/sample/"
@@ -133,7 +135,7 @@ def test_item_is_the_headline_and_essay_title_is_secondary(tmp_path):
     assert post.index("<h1") < post.index('class="essay-title"') < post.index('class="essay"')
     assert "<title>Be Bold · Daily Excellence</title>" in post
     index = (site / "index.html").read_text()
-    assert '<p class="hero-subtitle">Essay 7</p>' in index
+    assert '<p class="hero-essay-title">Essay 7</p>' in index
     row = index.split('id="recent-h"')[1].split("</li>")[0]
     assert row.index('archive-title">Be Bold') < row.index('archive-idea">Essay 7')
 
@@ -149,6 +151,31 @@ def test_follow_up_questions_read_on_their_own_in_lists(tmp_path):
     assert 'archive-title">Is there a grudge you are holding on to? …Is it time to let it go?' in archive
     page = (tmp_path / "site" / "posts" / "2026-11-05.html").read_text()
     assert ">…Is it time to let it go?</h1>" in page and 'class="idea-context"' in page
+
+
+def test_home_card_shows_the_item_text_not_the_essay(tmp_path, monkeypatch):
+    kw = _setup(tmp_path, monkeypatch)
+    pipeline.run("2026-11-05", **kw)
+    hero = (tmp_path / "site" / "index.html").read_text().split('class="today-card idea-card"')[1].split("</section>")[0]
+    post = (tmp_path / "site" / "posts" / "2026-11-05.html").read_text()
+    item = json.loads(next((tmp_path / "posts").glob("*.json")).read_text())["item"]
+    body, title = escape(item["body"]), escape(item["title"])   # the item is picked at random
+    assert f'<p class="hero-idea-text">{body}</p>' in hero
+    assert "First paragraph" not in hero                    # no essay excerpt on the home card
+    assert hero.index(title) < hero.index('hero-essay-title">A Test Essay') < hero.index("Read today")
+    for page in (hero, post):                               # source first, then the item number
+        assert page.index("2 Ways To Test") < page.index(f'#{item["number"]}<') < page.index("<h1")
+
+
+def test_term_items_repeat_the_term_when_the_body_continues_it(tmp_path):
+    posts = tmp_path / "posts"; posts.mkdir()
+    item = {"number": 1, "title": "Ability", "body": "is more of a habit.", "joiner": ": ", "subitems": [],
+            "source_title": "Q", "source_url": URL}
+    post = fake_generate(item); post["date"] = "2026-11-05"
+    (posts / "2026-11-05.json").write_text(json.dumps(post))
+    render.build(posts, tmp_path / "site")
+    for page in ("index.html", "posts/2026-11-05.html"):
+        assert "Ability is more of a habit.</p>" in (tmp_path / "site" / page).read_text()
 
 
 def test_asset_links_carry_a_content_version(tmp_path):

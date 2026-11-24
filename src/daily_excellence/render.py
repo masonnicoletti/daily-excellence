@@ -52,8 +52,6 @@ def load_posts(src: Path, drafts: bool = False) -> list[dict]:
         p["date_short"] = f"{d:%b} {d.day}, {d.year}"
         p["html"] = essay_html(p["essay_markdown"])
         p["reading_minutes"] = max(1, round(p["word_count"] / 220))
-        first_para = next((b for b in p["essay_markdown"].split("\n\n") if b and not b.startswith("#")), "")
-        p["excerpt"] = md.markdown(first_para.replace("<", "&lt;")).replace("<p>", "").replace("</p>", "")
         # Display names: the Personal Excellence item is the headline; Claude's essay title
         # (p["title"]) is the subtitle. In lists, a follow-up question ("…Is it time to let
         # it go?") is prefixed with the question that opens its chain so it reads on its own.
@@ -61,6 +59,10 @@ def load_posts(src: Path, drafts: bool = False) -> list[dict]:
         p["headline"] = item["title"]
         p["headline_long"] = len(p["headline"]) > 60
         p["list_title"] = f"{item['context'][0]} {item['title']}" if item.get("context") else item["title"]
+        # The item's own text, shown under the headline. "Term: text" items whose body continues
+        # mid-sentence ("is more of…") repeat the term so the text reads on its own.
+        body = item.get("body") or ""
+        p["item_text"] = f"{item['title']} {body}" if body and item.get("joiner") and body[:1].islower() else body
         # The few fields favorites.js needs to list an essay (embedded as JSON on the home page).
         p["card"] = {"slug": p["slug"], "title": p["list_title"], "subtitle": p["title"],
                      "date": p["date"], "date_short": p["date_short"]}
