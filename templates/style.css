@@ -87,12 +87,22 @@ a:hover { color: var(--accent-text); }
   font: 600 1.1rem/1 var(--display);
   letter-spacing: 0.01em;
 }
-.brand-mark {
+.brand-mark {                      /* the rising sun on its horizon bar */
+  position: relative;
   width: 1.4rem;
   height: 0.7rem;
   border-radius: 1.4rem 1.4rem 0 0;
   background: linear-gradient(180deg, var(--accent-2), var(--accent));
-  box-shadow: 0 0.16rem 0 -0.06rem var(--ink-faint);
+}
+.brand-mark::after {               /* horizon bar: exactly as wide as the sun, square on top, rounded below */
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 0.1rem;
+  border-radius: 0 0 0.04rem 0.04rem;
+  background: var(--ink-faint);
 }
 .masthead-actions {
   display: flex;

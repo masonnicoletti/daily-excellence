@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Daily Excellence rising sun (same shape and colors as the header logo). -->
+  <!-- Daily Excellence rising sun (same shape and colors as the header logo):
+       the sun on a horizon bar as wide as the sun, rounded only at its bottom corners. -->
   <style>
     .bg { fill: #f3ebdd; } .horizon { fill: #73685b; } .top { stop-color: #e9a23b; }
     @media (prefers-color-scheme: dark) {
@@ -13,5 +14,5 @@
   </defs>
   <rect class="bg" width="64" height="64" rx="14"/>
   <path d="M10 41 A22 22 0 0 1 54 41 Z" fill="url(#sun)"/>
-  <rect class="horizon" x="11.9" y="41" width="40.2" height="3.1"/>
+  <path class="horizon" d="M10 41 H54 V43.3 A0.8 0.8 0 0 1 53.2 44.1 H10.8 A0.8 0.8 0 0 1 10 43.3 Z"/>
 </svg>
