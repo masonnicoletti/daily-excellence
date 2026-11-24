@@ -89,6 +89,30 @@ def test_v2_prompts_render():
     assert "NOTE-X" in generate.render_user_prompt(p["user_template"], ITEM, v, "NOTE-X")
 
 
+def test_v3_picks_one_angle_that_steers_both_stages():
+    p = generate.load_prompt("essay_v3")
+    assert p["research_system"]                                        # two-stage
+    spec = p["variation"]
+    item = {**ITEM, "note": "NOTE-ON-ITEM", "context": ["An earlier question?"]}
+    seen = set()
+    for seed in range(40):
+        v = generate.sample_variation(spec, random.Random(seed))
+        assert v["angle"] in spec["angles"] and v["length"] in (450, 550, 650)
+        assert v["sections"] == ["a real person's story (sourced)", v["angle"]["name"], "how to apply it today"]
+        seen.add(v["angle"]["name"])
+        research_user = generate.render(p["research_template"], item=item, v=v)
+        assert v["angle"]["research"] in research_user and "Smile" in research_user
+        writer_user = generate.render_user_prompt(p["user_template"], item, v, "NOTE-X")
+        assert v["angle"]["writer"] in writer_user and "NOTE-X" in writer_user
+        assert "NOTE-ON-ITEM" in writer_user and "An earlier question?" in writer_user
+    assert len(seen) == len(spec["angles"])                            # every angle gets used
+
+
+def test_v2_variation_has_no_angle():
+    v = generate.sample_variation(generate.load_prompt("essay_v2")["variation"], random.Random(5))
+    assert "angle" not in v and v["sections"][-1].startswith("how to apply")
+
+
 def test_search_tool_matches_model():
     assert generate.search_tool("claude-haiku-5-5")["type"] == "web_search_20250305"
     assert generate.search_tool("claude-sonnet-5-5")["type"] == "web_search_20260209"

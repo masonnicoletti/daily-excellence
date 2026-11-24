@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = ROOT / "prompts"
 POSTS_DATA_DIR = ROOT / "data" / "posts"
 
-ACTIVE_PROMPT = "essay_v2"
+ACTIVE_PROMPT = "essay_v3"
 
 # Writer: drafts the essay. In two-stage prompts (v2+) it never reads raw search results.
 MODEL = "claude-sonnet-5-5"

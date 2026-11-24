@@ -1,0 +1,33 @@
+Today's idea is #{{ item.number }} from the list "{{ item.source_title }}":
+
+<idea>
+{{ item.title }}{% if item.body %}{{ item.get("joiner", ". ") }}{{ item.body }}{% endif %}
+</idea>
+{% if item.get("note") %}
+Note on this idea: {{ item.note }}
+{% endif %}
+{% if item.get("context") %}
+This question follows on from the earlier one(s) in the list: "{{ item.context | join(" ") }}" Write about today's question; use the earlier one(s) only to make its meaning clear.
+{% endif %}
+{% if item.subitems %}
+It comes with these related practices, which you can draw on (you don't need to cover all of them):
+
+<practices>
+{% for s in item.subitems %}- {{ s.title }}{% if s.body %}. {{ s.body }}{% endif %}
+{% endfor %}</practices>
+{% endif %}
+Research notes (your only source of facts, quotes, and real-world examples):
+
+<notes>
+{{ notes if notes else "(No verified research found today. Write from the idea itself and practical advice, with no real-person stories, statistics, or quotes, and omit the Sources section.)" }}
+</notes>
+
+Today's plan:
+- Angle: {{ v.angle.writer }}. Your central insight should come from this angle.
+- Move from the story, to the angle, to what the reader can do today. The story may come back later to support the point.
+- Length: about {{ v.length }} words (excluding the Sources list).
+- {% if v.use_headings %}Use 2–3 `## ` headings of your own wording.{% else %}No section headings: write it as continuous prose.{% endif %}
+- Open with: {{ v.opening }}.
+- Tone: {{ v.tone }}.
+- Close with: {{ v.closing }}.
+- Don't name these parts or the angle in the text; the reader should only see the essay.

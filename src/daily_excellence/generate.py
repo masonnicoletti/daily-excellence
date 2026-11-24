@@ -48,16 +48,25 @@ def load_prompt(version: str = config.ACTIVE_PROMPT) -> dict:
 
 
 def sample_variation(spec: dict, rng: random.Random) -> dict:
-    """Randomly choose today's structure so essays don't share one skeleton."""
-    secs = spec["sections"]
-    lo, hi = secs["optional_count"]
-    optional = rng.sample(secs["optional"], rng.randint(lo, hi))
-    sections = optional + list(secs["required"])
-    rng.shuffle(sections)
-    # Keep "how to apply" late; it reads best near the end.
-    apply = [s for s in sections if s.startswith("how to apply")]
-    sections = [s for s in sections if s not in apply] + apply
-    return {
+    """Randomly choose today's structure so essays don't share one skeleton.
+
+    v3+ specs list "angles": each essay goes deep on one angle, whose "writer" and "research"
+    instructions steer both stages, in a fixed order (story, angle, application). v1/v2 specs
+    list "sections" instead, sampled and shuffled exactly as before."""
+    angle = None
+    if "angles" in spec:
+        angle = rng.choice(spec["angles"])
+        sections = ["a real person's story (sourced)", angle["name"], "how to apply it today"]
+    else:
+        secs = spec["sections"]
+        lo, hi = secs["optional_count"]
+        optional = rng.sample(secs["optional"], rng.randint(lo, hi))
+        sections = optional + list(secs["required"])
+        rng.shuffle(sections)
+        # Keep "how to apply" late; it reads best near the end.
+        apply = [s for s in sections if s.startswith("how to apply")]
+        sections = [s for s in sections if s not in apply] + apply
+    plan = {
         "length": rng.choice(spec["length"]),
         "sections": sections,
         "use_headings": rng.random() < spec["use_headings_probability"],
@@ -65,6 +74,9 @@ def sample_variation(spec: dict, rng: random.Random) -> dict:
         "tone": rng.choice(spec["tone"]),
         "closing": rng.choice(spec["closing"]),
     }
+    if angle:
+        plan["angle"] = angle
+    return plan
 
 
 def render(template: str, **ctx) -> str:

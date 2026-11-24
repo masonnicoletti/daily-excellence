@@ -1,0 +1,52 @@
+{
+  "length": [450, 550, 650],
+  "angles": [
+    {
+      "name": "why it works",
+      "writer": "explain the psychological or practical reason this idea pays off: what actually changes, in a person or between people, when someone lives it",
+      "research": "a study (its actual finding, who ran it, and who or how many it studied) or an expert's explanation of why this idea works"
+    },
+    {
+      "name": "a common misconception",
+      "writer": "name what people commonly get wrong about this idea, and show the truer version of it",
+      "research": "a story or an expert source that corrects a popular misunderstanding of this idea"
+    },
+    {
+      "name": "the cost or tension",
+      "writer": "be honest about what living this idea really costs, or what it competes with, and show why it is still worth it",
+      "research": "a story of a real person for whom living this idea had a real cost or meant a hard trade-off"
+    },
+    {
+      "name": "done well vs. done badly",
+      "writer": "show the difference between the real practice and its counterfeit (for example, empathy versus people-pleasing), so the reader can tell which one they are doing",
+      "research": "an example that shows where the line falls between doing this well and a look-alike that goes wrong"
+    },
+    {
+      "name": "where it comes from",
+      "writer": "trace the idea to its roots in a tradition, a thinker, or history, and show what that origin adds to how the reader can practice it today",
+      "research": "a credible source on the origin or history of this idea (a tradition, a thinker, or a historical moment)"
+    }
+  ],
+  "use_headings_probability": 0.5,
+  "opening": [
+    "a short scene or moment from a real person's life",
+    "a surprising fact or research finding",
+    "a question to the reader",
+    "a well-sourced quote",
+    "a vivid everyday situation the reader will recognize",
+    "a bold one-sentence claim"
+  ],
+  "tone": [
+    "warm and gentle",
+    "energetic and rallying",
+    "calm and reflective",
+    "practical and direct",
+    "playful and light"
+  ],
+  "closing": [
+    "one small action to take today",
+    "a question to carry through the day",
+    "a short, memorable line",
+    "a callback to the opening"
+  ]
+}

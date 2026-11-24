@@ -42,7 +42,7 @@ Data flows in one direction, and each stage is one module in `src/daily_excellen
    - Default path arguments are bound when the module is imported, so tests must pass `sources_dir` and `history_file` explicitly.
 3. **`generate.py`**: builds the essay.
    - A prompt version is a folder `prompts/essay_vN/`. The folder layout decides the mode: if it has `research_system.md`, it's **two-stage**. In that mode `RESEARCH_MODEL` (Haiku) runs web search and returns `## title | url` notes, and `MODEL` (Sonnet) writes from those notes with no tools. Otherwise one model searches and writes (`essay_v1`).
-   - `variation.json` is sampled randomly on each run (length, sections, tone, opening, closing) so essays don't share one structure.
+   - `variation.json` is sampled randomly on each run (length, tone, opening, closing, structure) so essays don't share one structure. In v3+ the structure is one "depth angle" from `angles` (e.g. "why it works", "the cost or tension"); its `research` and `writer` instructions steer both stages, and the essay follows a fixed order: story, then angle, then application. v1/v2 use shuffled `sections` instead.
    - Validation: source URLs must appear in the actual search results (`parse_notes` / `clean_essay`). Blocked domains are stripped. Word count and title are checked, with one retry.
    - The output records the prompt version, models, variation, research notes, and per-call token usage and estimated cost.
 4. **`render.py`**: renders Jinja templates in `templates/` (`base`/`post`/`index`/`archive`, plus `style.css`, which is copied as-is) into `site/`. The home page shows only the latest essay; the full list is on `archive.html`.
