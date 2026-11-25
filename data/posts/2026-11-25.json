@@ -1,0 +1,88 @@
+{
+  "title": "The Evidence Comes After You Start",
+  "essay_markdown": "Albert Bandura, the psychologist who named self-efficacy in 1977, argued that the most effective way to build belief in yourself is not a pep talk, a poster, or a good night's sleep. It's a mastery experience: a personal experience of success. Confidence, in other words, is mostly a receipt. You get it after you've paid.\n\nThat's a slightly rude thing to learn on a Tuesday morning, because most of us are waiting for the receipt first. We'd like to feel powerful, and then start.\n\nConsider Shelley Winner. After a long history of drug abuse, she was incarcerated, and she turned her life around in prison. She didn't wait to feel transformed. She took advantage of every class and programme available to her and surrounded herself with people committed to changing their own lives. Those are small, unglamorous moves, the kind you could describe as \"signing up for the thing.\"\n\nAfter her release she entered a halfway house in San Francisco with her sights set on a job in tech. She became a straight-A student in computer science and joined a job-readiness programme, where she connected with two women at Microsoft who advocated for her. That led to an offer at a Microsoft store. She had to fight for it, using San Francisco's Fair Chance Ordinance, and soon earned a promotion to a technical role. Even then, she said, a background check for a corporate role put another hurdle in her path.\n\nNotice the order of events. Each class she finished became proof, and the proof made the next, bigger step believable. The power wasn't a hidden reserve she found by staring inward. It showed up as she used it, one finished thing at a time, which is exactly what Bandura's theory predicts. Research on preservice teachers builds on his framework, treating mastery experiences as the first and strongest source of changes in self-efficacy.\n\nThe obvious objection is that this sounds like \"just do it\" for people with no obstacles. Winner's story says otherwise: hurdles kept arriving. But a hurdle is a different thing when you have a stack of completed work behind you. You're no longer asking whether you're the kind of person who can; you're checking your receipts.\n\nSo make a small purchase today. Before lunch, pick one thing you've been waiting to feel ready for, and shrink it until it can be finished in twenty minutes: send the one email, enroll in the class, do the first ten minutes of the workout. Then, tonight, write one line on a sticky note: \"Finished: ___.\" Stick it somewhere you'll see tomorrow. Do it again after that, and let the pile grow.\n\nYou may still wake up tomorrow feeling like someone who isn't ready. Fine. Bandura's point is that readiness is something you collect, not something you wait for.",
+  "sources": [
+    {
+      "title": "Shelley Winner's turnaround after prison",
+      "url": "https://knowledge.insead.edu/career/reinventing-yourself-after-setback"
+    },
+    {
+      "title": "Self-efficacy: Bandura's mastery experiences",
+      "url": "https://en.wikipedia.org/wiki/Self-efficacy"
+    },
+    {
+      "title": "Mastery experiences and teacher self-efficacy",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5070217/"
+    }
+  ],
+  "word_count": 468,
+  "item": {
+    "number": 78,
+    "title": "Power",
+    "body": "You have all the power in you to do everything you ever want, and more. So start doing what you want and let the power in you emerge.",
+    "subitems": [],
+    "joiner": ": ",
+    "id": "101-life-principles-to-live-by-daily-078",
+    "source_title": "101 Life Principles To Live By Daily",
+    "source_url": "https://personalexcellence.co/blog/life-principles/",
+    "attribution": "Adapted from 101 Life Principles To Live By Daily by Personal Excellence (https://personalexcellence.co/blog/life-principles/)"
+  },
+  "prompt_version": "essay_v3",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Shelley Winner's turnaround after prison | https://knowledge.insead.edu/career/reinventing-yourself-after-setback\n- Situation: After a long history of drug abuse, she was incarcerated. This was the situation for Shelley Winner, who turned her life around in prison after a long history of drug abuse.\n- Choice: While in prison, she took advantage of every class and programme available to her and surrounded herself with individuals who were committed to turning their lives around.\n- Next step: Upon her release, she entered a halfway house in San Francisco with a renewed determination and her sights set on a job in tech.\n- Progress: Winner became a straight-A student in computer science and joined a job-readiness programme for formerly incarcerated individuals. Here, she connected with two women at Microsoft who advocated for her employment, eventually leading to her being offered a position at a Microsoft store.\n- Cost and obstacles: She fought hard to land the job, seeking assistance from the Fair Chance Ordinance in San Francisco, and within a short period her dedication and skills earned her a promotion to a technical role. The next significant step in her career was transitioning to a corporate role, although she claimed she encountered another hurdle during a background check.\n- Gap: The page gives no dates, pay figures, or prison term length, so verify those elsewhere before using them.\n\n## Self-efficacy: Bandura's mastery experiences | https://en.wikipedia.org/wiki/Self-efficacy\n- Explanation of why acting works: Psychologist Albert Bandura defined self-efficacy as one's belief in one's ability to succeed in specific situations or accomplish a task.\n- Bandura's theory is that the most effective way to build self-efficacy is to engage in mastery experiences. These mastery experiences can be defined as a personal experience of success.\n- Bandura first proposed the concept in 1977.\n- Caveat: This is a summary of theory, not a single study with a sample.\n\n## Mastery experiences and teacher self-efficacy | https://pmc.ncbi.nlm.nih.gov/articles/PMC5070217/\n- This study tested whether Bandura's four sources predict changes in preservice teachers' self-efficacy, with mastery experiences included as the first predictor. Including mastery experiences as the first predictor is in line with Bandura's (1997) theory of the sources, whereby mastery experiences are assumed to exert the greatest influence over changes in self-efficacy.\n- The page excerpt does not report the study's sample size or its results, so the finding and number of participants need to be checked in the full article before the essay cites them.",
+  "variation": {
+    "length": 450,
+    "sections": [
+      "a real person's story (sourced)",
+      "why it works",
+      "how to apply it today"
+    ],
+    "use_headings": false,
+    "opening": "a surprising fact or research finding",
+    "tone": "playful and light",
+    "closing": "a callback to the opening",
+    "angle": {
+      "name": "why it works",
+      "writer": "explain the psychological or practical reason this idea pays off: what actually changes, in a person or between people, when someone lives it",
+      "research": "a study (its actual finding, who ran it, and who or how many it studied) or an expert's explanation of why this idea works"
+    }
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChP4YwtMk8F36NC97K89e"
+        ],
+        "input_tokens": 30663,
+        "output_tokens": 1666,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0239
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChP4ZYzEc8cq8NHWPXi8V"
+        ],
+        "input_tokens": 2379,
+        "output_tokens": 1029,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.015
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0389
+  },
+  "generated_at": "2026-11-25T05:04:16+00:00",
+  "date": "2026-11-25"
+}
