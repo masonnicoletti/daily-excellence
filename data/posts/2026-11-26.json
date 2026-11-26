@@ -1,0 +1,88 @@
+{
+  "title": "The Job He Left for Himself",
+  "essay_markdown": "In 2011, Richard Silver was a real estate broker at the Corcoran Group in New York City, earning six figures. He decided to quit and become a full-time travel photographer. Nobody was asking him to. No client needed it, and no one in his life gained from it. According to CNBC, he started by using the free time his brokerage work allowed to travel, build a portfolio, and test whether photographs could pay his bills.\n\n## What the idea gets wrong about itself\n\n\"Don't do things for others; do them for yourself\" sounds like permission to be cold. Most people hear it as: stop caring, stop helping, put yourself first and everyone else second.\n\nThat reading assumes that acting in your own interest means ignoring other people. A Psychology Today piece on motives takes that assumption apart. Self-interest becomes selfishness, the author writes, only when we disregard other people's legitimate interests in pursuing our own. Wanting to advance your career is self-interested, but it turns selfish only when you take advantage of others to do it. The same author adds that being a good person doesn't require eliminating self-interest or denying yourself the satisfaction you get from doing good.\n\nSo the truer version isn't \"ignore people.\" It's \"own your reasons.\" Help your sister move, cook for your team, stay late for a friend, but do it because you want to be someone who does that, not to collect thanks or avoid guilt. Actions done for approval depend on the audience. Actions done for your own reasons survive an empty room.\n\n## What it costs\n\nSilver's choice wasn't free. CNBC reports he estimates he took a pay cut of 80 to 90 percent on average, and he had to dip into his savings to cover his lifestyle. He also kept a safety net: his broker license stayed active through continuing education every two years.\n\nHis result is stated in his own terms: he says his happiness, lifestyle and health outweigh a large salary. His photography has reached galleries around the world, and as of the article he had visited 72 countries. Whether that trade suits you isn't the point. The point is that the ledger he used was his own. Someone else might have looked at the numbers and called it a mistake. He was measuring something they couldn't see.\n\nLiving for yourself still has company in it. A philosophy page from Lander University notes that it is in your self-interest for everyone to be happy. A life built on your own reasons tends to make room for other people, because you want them to do well too.\n\n## Try this today\n\nPick one thing you'll do for someone else today: a favor, a meeting you're attending, a task you're finishing for your boss. Before you start, write one sentence: \"I'm doing this because I want ___.\" If you can fill in the blank honestly (to keep a friendship strong, to do work I'm proud of), go ahead and do it wholeheartedly. If the only honest answer is \"so they'll approve of me\" or \"so I won't feel guilty,\" don't necessarily quit. Instead, ask whether you can renegotiate it, shrink it, or find a reason of your own to keep it.\n\nThen, tonight, pick one thing you've been postponing because no one is demanding it, and give it twenty minutes. Silver started with spare time and a portfolio, not a resignation letter.\n\nNobody was waiting for Silver's photographs when he left that desk in 2011. That was exactly why the choice told him something true. The question worth carrying into your morning is the one he must have answered: when no one is watching or asking, what do you want?",
+  "sources": [
+    {
+      "title": "How to quit your job to follow your passion",
+      "url": "https://www.cnbc.com/2018/05/02/how-to-quit-your-job-to-follow-your-passion.html"
+    },
+    {
+      "title": "You Don't Need \"Pure\" Motives to Be a Good Person",
+      "url": "https://www.psychologytoday.com/us/blog/life-well-lived/202611/you-dont-need-pure-motives-to-be-a-good-person"
+    },
+    {
+      "title": "Egoism (Philosophy course page, Lander University)",
+      "url": "https://philosophy.lander.edu/ethics/egoism.html"
+    }
+  ],
+  "word_count": 603,
+  "item": {
+    "number": 101,
+    "title": "Yourself",
+    "body": "Don’t do things for others; do them for yourself.",
+    "subitems": [],
+    "joiner": ": ",
+    "id": "101-life-principles-to-live-by-daily-101",
+    "source_title": "101 Life Principles To Live By Daily",
+    "source_url": "https://personalexcellence.co/blog/life-principles/",
+    "attribution": "Adapted from 101 Life Principles To Live By Daily by Personal Excellence (https://personalexcellence.co/blog/life-principles/)"
+  },
+  "prompt_version": "essay_v3",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Richard Silver, travel photographer | https://www.cnbc.com/2018/05/02/how-to-quit-your-job-to-follow-your-passion.html\n- Situation: Silver was making six figures as a real estate broker for the Corcoran Group in New York City in 2011 when he decided to quit and follow his passion as a travel photographer full-time.\n- Preparation: His job as a broker allowed him time to travel, so he began building a photography portfolio and gauging whether he could make a living off his photographs.\n- Cost: he estimates that he took a big pay cut when he left real estate for photography — earning on average 80 to 90 percent less. He had to dip into his savings to finance his lifestyle.\n- Safety net: keeping his broker license active by taking continuing education every two years.\n- Result: he says his happiness, lifestyle and health outweigh a large salary. He has been able to get his travel photography into galleries around the world, and he had visited 72 countries since then as of the article.\n\n## You Don't Need \"Pure\" Motives to Be a Good Person | https://www.psychologytoday.com/us/blog/life-well-lived/202611/you-dont-need-pure-motives-to-be-a-good-person\n- Misconception: that self-interest means ignoring others. The author notes this idea assumes that being self-interested means focusing on ourselves to the exclusion of others.\n- Distinction: Self-interest becomes selfishness when we disregard other people's legitimate interests in pursuing our own.\n- Example: wanting to advance your career is self-interested, yet it only becomes selfish when you take advantage of or disregard others to do so.\n- The author adds that being a good person does not require eliminating self-interest or denying yourself the satisfaction or benefit you get from doing good things.\n\n## Egoism (Philosophy course page, Lander University) | https://philosophy.lander.edu/ethics/egoism.html\n- Correction: Ethical egoism does not claim that all persons, in fact, seek their own self-interest; ethical egoism only claims that we should or ought seek our self-interest, even though all persons might not do so.\n- The page argues that the descriptive psychological law that all persons act from the motive of self-interest is false because there are many disconfirming instances.\n- It also states that it is in your self-interest for everyone to be happy.",
+  "variation": {
+    "length": 650,
+    "sections": [
+      "a real person's story (sourced)",
+      "a common misconception",
+      "how to apply it today"
+    ],
+    "use_headings": true,
+    "opening": "a short scene or moment from a real person's life",
+    "tone": "practical and direct",
+    "closing": "a callback to the opening",
+    "angle": {
+      "name": "a common misconception",
+      "writer": "name what people commonly get wrong about this idea, and show the truer version of it",
+      "research": "a story or an expert source that corrects a popular misunderstanding of this idea"
+    }
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChQumMq5JPUzBAdJewVEZ"
+        ],
+        "input_tokens": 31098,
+        "output_tokens": 2138,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0242
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChQun746PnFaHZs7kKAgU"
+        ],
+        "input_tokens": 2261,
+        "output_tokens": 1292,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0174
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0416
+  },
+  "generated_at": "2026-11-26T04:30:18+00:00",
+  "date": "2026-11-26"
+}
