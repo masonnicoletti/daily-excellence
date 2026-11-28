@@ -1,0 +1,87 @@
+{
+  "title": "The Value You Rank First",
+  "essay_markdown": "In a 2013 study led by J. David Creswell at Carnegie Mellon, eighty undergraduates were asked to rank eleven values, such as art, business, and friends and family, by personal importance. Then half of them spent a few minutes writing about their top-ranked value and why it mattered to them. The other half wrote about their ninth-ranked value. Afterward, everyone faced a problem-solving task. The students who reported high chronic stress and had written about their ninth value did worse. The ones who had written about their first value held up. Creswell described it as the first evidence that self-affirmation can protect against stress's damaging effects on problem-solving.\n\nNothing about their circumstances changed. What changed was what they were standing on. Remembering what mattered most seems to have given them a larger frame than the pressure of the moment.\n\nThat's the practical payoff of knowing your values: they work less like a rulebook and more like a floor. Under strain, a person without a floor negotiates every decision from scratch, and tired people negotiate badly.\n\nLane Rettig, a blockchain entrepreneur, describes living on a floor like this. In a Substack essay, he lists his values as curiosity, excellence, inclusiveness, privacy, truth, and equality of opportunity. By his own account, they were the reason he left the finance industry, went back to school, and became an entrepreneur. He is plain about the price: if his goal were to make as much money as possible, he writes, he would have been better off staying in traditional finance, and his biggest costs have been economic and reputational. Still, he says, \"I'm not interested in doing things that aren't aligned with my values.\" What he gained was work with values-aligned people on values-aligned projects. This is his own account, but it shows the mechanism. Values make some decisions cheap. When a choice clearly crosses a line, you don't deliberate; you decline.\n\nIt's worth being modest about what this proves. Creswell himself said researchers still don't understand why the effect is so wide-ranging. Writing about a value isn't a cure for stress, and a list on a page doesn't make you honest or compassionate. The values only count when they cost you something.\n\nSo do the Creswell exercise on purpose. Tonight, write down eight or ten things you care about, then rank them. Circle the top three to five. Tomorrow morning, before you open your email, spend five minutes writing a few sentences about your first-ranked value and why it matters to you.\n\nThen pick the hardest decision you expect this week, and ask which value it touches. Write that value at the top of whatever you're working from, whether a calendar entry, a draft, or a note on your phone.\n\nStress will arrive on schedule. Decide ahead of time what you'll stand on.",
+  "sources": [
+    {
+      "title": "Self-Affirmation Improves Problem-Solving under Stress",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0062593"
+    },
+    {
+      "title": "Boost your capacity to cope",
+      "url": "https://edition.cnn.com/2013/05/24/health/self-affirmation-stress-enayati/"
+    },
+    {
+      "title": "Lane Rettig, \"The Value of Values\" (Three Things, Substack)",
+      "url": "https://rettig.substack.com/p/the-value-of-values"
+    }
+  ],
+  "word_count": 469,
+  "item": {
+    "number": 14,
+    "title": "Discover your values",
+    "body": "Values are the qualities that are the most important to you. For example: Integrity, Responsibility, Honesty, Compassion, Excellence. Identify your 3-5 core values and live true to them every day.",
+    "subitems": [],
+    "id": "101-ways-to-live-your-life-to-the-fullest-014",
+    "source_title": "101 Ways To Live Your Life To The Fullest",
+    "source_url": "https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/",
+    "attribution": "Adapted from 101 Ways To Live Your Life To The Fullest by Personal Excellence (https://personalexcellence.co/blog/101-ways-to-live-your-life-to-the-fullest/)"
+  },
+  "prompt_version": "essay_v3",
+  "model": "claude-sonnet-5-5",
+  "research_model": "claude-haiku-5-5",
+  "research_notes": "## Self-Affirmation Improves Problem-Solving under Stress | https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0062593\n- Study by J. David Creswell and colleagues (PLoS ONE, May 2013). Eighty undergraduates indicated their perceived chronic stress over the previous month and were randomly assigned to either a self-affirmation or control condition.\n- Participants rated 11 values (e.g., art, business, friends/family) in order of personal importance. They then wrote about their first-ranked value and why it was important to them (self-affirmation condition), or about their ninth-ranked value (control condition).\n- Finding (per ScienceDaily summary of the CMU release, May 2013): New research provides the first evidence that self-affirmation can protect against the damaging effects of stress on problem-solving performance.\n\n## Boost your capacity to cope | https://edition.cnn.com/2013/05/24/health/self-affirmation-stress-enayati/\n- Creswell, then assistant professor of psychology at Carnegie Mellon, said the practice may protect against the damaging effects of high stress on creative problem-solving and performance under pressure.\n- Caution: Creswell's claim that \"We found that self-affirmation completely eliminates the effects of chronic stress\" is stronger than the study design supports. The writer should use the moderated finding, not this wording.\n- Creswell also said we still don't have a good understanding of the underlying pathways or why it produces such wide-ranging effects, which is a useful honest limit for an essay.\n\n## Lane Rettig, \"The Value of Values\" (Three Things, Substack) | https://rettig.substack.com/p/the-value-of-values\n- First-person account by Lane Rettig, a blockchain entrepreneur. Unverified self-report; no independent sources are cited.\n- His core values are curiosity, excellence, inclusiveness, privacy, truth, and equality of opportunity. They're the reason I decided to leave the finance industry, go back to school, and become an entrepreneur.\n- Situation and cost: If my goal were to make as much money as possible, values be damned, I would've been better off staying in the traditional finance industry. He says the biggest costs for me have been economic and reputational.\n- Choice: To me a thing isn't worth doing if it isn't done the right way, and I'm not interested in doing things that aren't aligned with my values.\n- What changed: he works on values-aligned projects with values-aligned people. No dates or income figures are given, so verify these before use.",
+  "variation": {
+    "length": 450,
+    "sections": [
+      "a real person's story (sourced)",
+      "why it works",
+      "how to apply it today"
+    ],
+    "use_headings": false,
+    "opening": "a surprising fact or research finding",
+    "tone": "calm and reflective",
+    "closing": "a short, memorable line",
+    "angle": {
+      "name": "why it works",
+      "writer": "explain the psychological or practical reason this idea pays off: what actually changes, in a person or between people, when someone lives it",
+      "research": "a study (its actual finding, who ran it, and who or how many it studied) or an expert's explanation of why this idea works"
+    }
+  },
+  "warnings": [],
+  "api": {
+    "calls": [
+      {
+        "stage": "research",
+        "model": "claude-haiku-5-5",
+        "request_ids": [
+          "req_011ChUgZdyLzGSvCGGKyuBYw"
+        ],
+        "input_tokens": 25909,
+        "output_tokens": 2417,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 2,
+        "model_served": "claude-haiku-5-5",
+        "estimated_cost_usd": 0.0238
+      },
+      {
+        "stage": "write",
+        "model": "claude-sonnet-5-5",
+        "request_ids": [
+          "req_011ChUgaZTFXrNJyCG9BPsLH"
+        ],
+        "input_tokens": 2397,
+        "output_tokens": 1047,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "web_searches": 0,
+        "model_served": "claude-sonnet-5-5",
+        "estimated_cost_usd": 0.0153
+      }
+    ],
+    "web_searches": 2,
+    "estimated_cost_usd": 0.0391
+  },
+  "generated_at": "2026-11-28T04:19:33+00:00",
+  "date": "2026-11-28"
+}
